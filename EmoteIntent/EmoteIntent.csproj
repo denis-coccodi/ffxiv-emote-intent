@@ -18,4 +18,20 @@
     <ProjectReference Include="..\EmoteIntent.Core\EmoteIntent.Core.csproj" />
   </ItemGroup>
 
+  <!-- Every local build, from main or any worktree, also lands in one fixed folder, so Dalamud's Dev Plugin
+       Location is set once (README: Install) and its automatic reloading picks up each new build.
+       Override with -p:DevPluginDir=..., turn off with -p:DevPluginDir=. CI doesn't copy. -->
+  <PropertyGroup>
+    <DevPluginDir Condition="'$(DevPluginDir)' == '' And '$(CI)' != 'true'">$(LOCALAPPDATA)\EmoteIntent\DevPlugin</DevPluginDir>
+  </PropertyGroup>
+
+  <!-- After DalamudPackager, which writes EmoteIntent.json (the manifest Dalamud needs) after Build. -->
+  <Target Name="CopyToDevPluginDir" AfterTargets="Build;DefaultDalamudPackagerDebug;DefaultDalamudPackagerRelease" Condition="'$(DevPluginDir)' != ''">
+    <ItemGroup>
+      <DevPluginFile Include="$(OutDir)EmoteIntent.dll;$(OutDir)EmoteIntent.pdb;$(OutDir)EmoteIntent.json;$(OutDir)EmoteIntent.Core.dll;$(OutDir)EmoteIntent.Core.pdb" />
+    </ItemGroup>
+    <Copy SourceFiles="@(DevPluginFile)" DestinationFolder="$(DevPluginDir)" Condition="Exists('%(FullPath)')" SkipUnchangedFiles="true" />
+    <Message Importance="high" Text="Dev plugin: $(DevPluginDir)\EmoteIntent.dll" />
+  </Target>
+
 </Project>
