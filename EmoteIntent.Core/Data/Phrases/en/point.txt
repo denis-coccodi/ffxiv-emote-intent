@@ -1,0 +1,32 @@
+# /point (Point): point at something.
+point
+pointing
+point at that
+point at you
+look there
+look at that over there
+over there
+there
+right there
+that one
+this one
+see that
+see there
+that way
+go that way
+look
+look!
+behold that
+it's over there
+there it is
+found it
+target
+the target
+the boss is there
+the npc is there
+the vendor
+the aetheryte
+the exit
+the door
+up there
+down there

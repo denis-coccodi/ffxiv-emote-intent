@@ -22,8 +22,6 @@ game set match
 gg ez
 show off
 showing off
-flex
-flexing
 posing for the camera
 photo finish
 cinematic
