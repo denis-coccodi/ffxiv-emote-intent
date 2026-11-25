@@ -10,8 +10,14 @@ public sealed class Configuration : IPluginConfiguration
     public int Version { get; set; }
 
     /// <summary>
-    /// Before every emote /feel plays, print which one and the other emotes that might fit, as links. Off by default:
-    /// then only close alternatives are listed, after the emote ("Also fits: …").
+    /// After an emote plays, say which one in chat ("Played /cheer (Cheer)."): the game's own line ("You cheer
+    /// enthusiastically.") doesn't name the command. On by default; saved settings without it read as on.
     /// </summary>
-    public bool AlwaysShowChoice { get; set; }
+    public bool ShowPlayedEmote { get; set; } = true;
+
+    /// <summary>
+    /// List every other emote that might fit after the one that played, not only close ones ("Also fits: …"). Off by
+    /// default.
+    /// </summary>
+    public bool ShowAllAlternatives { get; set; }
 }

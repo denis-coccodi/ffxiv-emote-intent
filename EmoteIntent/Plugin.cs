@@ -81,17 +81,13 @@ public sealed class Plugin : IDalamudPlugin
         var request = FeelRequest.Parse(args, matcher.IsPhrase);
         switch (resolver.Resolve(request.Text, unlocked))
         {
-            case IntentResult.Play play when configuration.AlwaysShowChoice:
-                suggestions.PrintPlaying(play.Emote, play.Alternatives, request);
-                Play(play.Emote, request);
-                break;
             case IntentResult.Play play:
                 Play(play.Emote, request);
-                if (play.AlsoFits.Count > 0)
-                {
-                    suggestions.PrintAlsoFits(play.AlsoFits, request);
-                }
-
+                suggestions.PrintPlayed(
+                    play.Emote,
+                    configuration.ShowAllAlternatives ? play.Alternatives : play.AlsoFits,
+                    request,
+                    configuration.ShowPlayedEmote);
                 break;
             case IntentResult.Suggest suggest:
                 suggestions.Print(suggest.Emotes, request);

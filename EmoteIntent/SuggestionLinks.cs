@@ -24,24 +24,21 @@ internal sealed class SuggestionLinks(
     public void Print(IReadOnlyList<EmoteInfo> emotes, FeelRequest request) =>
         Print("Not sure which you mean: ", emotes, request, ". Click one, or type it.");
 
-    /// <summary>"Also fits: /a (A), /b (B)." after an emote played, each one a link, for other emotes that fit well.</summary>
-    public void PrintAlsoFits(IReadOnlyList<EmoteInfo> emotes, FeelRequest request) =>
-        Print("Also fits: ", emotes, request, ".");
-
     /// <summary>
-    /// "Playing /read (Read). Others: /a (A), /b (B)." before an emote plays, for the "always show" setting; just
-    /// "Playing /read (Read)." when nothing else fits.
+    /// The line after an emote played: "Played /read (Read). Also fits: /a (A), /b (B)." with the others as links;
+    /// "Played /read (Read)." when there are none. Without <paramref name="sayPlayed"/>, only "Also fits: …", and
+    /// nothing at all when there are no others.
     /// </summary>
-    public void PrintPlaying(EmoteInfo emote, IReadOnlyList<EmoteInfo> others, FeelRequest request)
+    public void PrintPlayed(EmoteInfo emote, IReadOnlyList<EmoteInfo> others, FeelRequest request, bool sayPlayed)
     {
-        var playing = $"Playing {request.CommandFor(emote)} ({emote.Name})";
-        if (others.Count == 0)
+        var played = sayPlayed ? $"Played {request.CommandFor(emote)} ({emote.Name})." : string.Empty;
+        if (others.Count > 0)
         {
-            chatGui.Print(playing + ".");
+            Print(sayPlayed ? played + " Also fits: " : "Also fits: ", others, request, ".");
         }
-        else
+        else if (sayPlayed)
         {
-            Print(playing + ". Others: ", others, request, ".");
+            chatGui.Print(played);
         }
     }
 
