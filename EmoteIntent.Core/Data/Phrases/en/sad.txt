@@ -1,30 +1,7 @@
 # /sad (Sad): a sad face.
-sad
-sadness
 sad face
-feeling sad
-i feel sad
-a bit sad
-kinda sad
-down
-feeling down
-i'm down
 blue mood today
-low
-feeling low
-gloom
-downcast
-dejected
-forlorn
-melancholic
-sorrow
-sorrowful
 grief
-lonely
-so lonely
-i'm lonely
-alone
-all alone
 nobody's online
 sad news today
 that's sad
@@ -42,9 +19,13 @@ frowns
 sad frown
 unhappy face
 heartache
-glum
 bummed face
-depressed
-depression
-feeling depressed
-i'm depressed
+sad face again
+sad eyes
+puppy eyes sad
+pouty frown
+teary eyes
+on the verge of tears
+lip quivering
+trembling lip
+sad look

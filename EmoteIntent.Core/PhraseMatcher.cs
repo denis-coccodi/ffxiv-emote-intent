@@ -1,7 +1,10 @@
 namespace EmoteIntent.Core;
 
-/// <summary>An emote command that fits what the player typed, how well (0 to 1), and the phrase that fit best.</summary>
-public sealed record PhraseMatch(string Command, double Score, string Phrase);
+/// <summary>
+/// An emote command that fits what the player typed, how well (0 to 1), the phrase that fit best, and every command
+/// its phrase file plays in order of preference (just <paramref name="Command"/>, or a family's or a feeling's list).
+/// </summary>
+public sealed record PhraseMatch(string Command, double Score, string Phrase, IReadOnlyList<string> Commands);
 
 /// <summary>
 /// Ranks emotes by how close what the player typed is to their phrases: the words both share, rare words counting
@@ -81,7 +84,7 @@ public sealed class PhraseMatcher
             .Select(entry => (entry, command: entry.Commands.FirstOrDefault(allowed.Contains)))
             .Where(item => item.command is not null)
             .Select(item => (item.entry.Key, Match: new PhraseMatch(
-                item.command!, queries.Max(query => Score(item.entry, query)), item.entry.Phrase)))
+                item.command!, queries.Max(query => Score(item.entry, query)), item.entry.Phrase, item.entry.Commands)))
             .Where(item => item.Match.Score > 0)
             .GroupBy(item => item.Key, StringComparer.OrdinalIgnoreCase)
             .Select(group => group.MaxBy(item => item.Match.Score).Match)

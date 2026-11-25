@@ -1,9 +1,5 @@
 # /scared (Scared): a frightened face.
-scared
-i'm scared
 so scared face
-frightened
-fearful
 afraid face
 spooked face
 creepy
@@ -29,3 +25,7 @@ too scary
 afraid of the dark
 nyctophobia
 heebie jeebies
+stare in fear
+staring in fear
+frozen in fear
+wide eyed fear

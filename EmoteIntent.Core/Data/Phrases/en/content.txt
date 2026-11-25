@@ -5,11 +5,7 @@ contentment
 at peace
 peaceful face
 satisfied look
-calm
-calm face
 serene look
-relaxed
-relaxed face
 comfy
 cozy feeling
 all is right
@@ -29,3 +25,7 @@ laid back
 untroubled
 pleasantly tired
 good day today
+warm smile of satisfaction
+satisfied smile
+content smile
+pleased face
