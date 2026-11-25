@@ -10,7 +10,6 @@ throw petals
 rose petals
 scatter flowers
 flower girl
-flowers for you
 flowers for the bride
 celebrate the couple
 wedding
@@ -35,3 +34,5 @@ garden party
 festival of flowers
 flower festival
 hatching tide
+petal shower
+flower rain

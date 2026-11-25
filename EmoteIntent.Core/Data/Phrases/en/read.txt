@@ -8,8 +8,6 @@ books
 bookworm
 library
 at the library
-study
-studying
 homework
 quiet reading
 novel
@@ -30,3 +28,6 @@ reading the lore
 reading the patch notes
 patch notes
 lost in a book
+read for a while
+reading time
+open a book

@@ -8,8 +8,6 @@ let me think
 let me think about it
 thinking about it
 i'll think about it
-pondering
-ponder
 contemplate
 wonder
 i wonder
@@ -30,3 +28,6 @@ give me a sec
 brain loading
 loading
 processing
+thinking hard
+thinking face
+hmm let me think
