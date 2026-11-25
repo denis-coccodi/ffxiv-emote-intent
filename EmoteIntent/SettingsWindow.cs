@@ -1,6 +1,5 @@
 using System.Numerics;
 using Dalamud.Bindings.ImGui;
-using Dalamud.Interface.Utility.Raii;
 using Dalamud.Interface.Windowing;
 
 namespace EmoteIntent;
@@ -23,42 +22,27 @@ internal sealed class SettingsWindow : Window
 
     public override void Draw()
     {
-        var alwaysShow = configuration.AlwaysShowChoice;
-        if (ImGui.Checkbox("Always show what /feel plays and the alternatives", ref alwaysShow))
+        var showPlayed = configuration.ShowPlayedEmote;
+        if (ImGui.Checkbox("Say which emote /feel played", ref showPlayed))
         {
-            configuration.AlwaysShowChoice = alwaysShow;
+            configuration.ShowPlayedEmote = showPlayed;
             save();
         }
 
         ImGui.TextWrapped(
-            "Before every emote, a chat line says which one plays and lists the others that might fit, as links. "
-            + "Off: only close alternatives are listed, after the emote.");
-
-        // A sub-option of the one above: only meaningful while it's on.
-        using (ImRaii.Disabled(!configuration.AlwaysShowChoice))
-        {
-            ImGui.Indent();
-            var showPlayed = configuration.ShowPlayedEmote;
-            if (ImGui.Checkbox("Say which emote played", ref showPlayed))
-            {
-                configuration.ShowPlayedEmote = showPlayed;
-                save();
-            }
-
-            ImGui.TextWrapped("Off: the line lists only the others, and isn't written when there are none.");
-            ImGui.Unindent();
-        }
+            "After the emote, chat says \"Played /cheer (Cheer).\": the game's own line (\"You cheer "
+            + "enthusiastically.\") doesn't name the command.");
 
         ImGui.Spacing();
-        var showChatLine = configuration.ShowChatLine;
-        if (ImGui.Checkbox("Show the emote's line in the chat log", ref showChatLine))
+        var showAll = configuration.ShowAllAlternatives;
+        if (ImGui.Checkbox("List all alternatives, not only close ones", ref showAll))
         {
-            configuration.ShowChatLine = showChatLine;
+            configuration.ShowAllAlternatives = showAll;
             save();
         }
 
         ImGui.TextWrapped(
-            "The line the game writes for an emote, like \"You hug Avar.\". Off: emotes play as motion only; end a "
-            + "/feel with \"text\" to show the line that time. On: end it with \"motion\" to hide it that time.");
+            "Other emotes that might fit are listed after the one that played, as links (\"Also fits: /carrybook\"). "
+            + "Off: only close ones.");
     }
 }

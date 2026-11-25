@@ -11,9 +11,9 @@ A [Dalamud](https://github.com/goatcorp/Dalamud) plugin for Final Fantasy XIV. T
 | `/feel` | Says how many emotes you have unlocked. |
 | `/feel <what you mean>` | Plays the unlocked emote that clearly fits, the same as typing its command. One command plays one emote. |
 | | When a few emotes might fit, it lists them in chat as links and plays nothing: click the one you want (or type it). |
-| | When it plays one and others fit well too, it lists those after it ("Also fits: /carrybook…"), as links. |
+| | After it plays one, chat says which ("Played /read (Read).") and lists others that fit well too, as links ("Also fits: /carrybook…"). |
 | `/feel <what you mean> motion` | The same, without the emote's line in the chat log (the game's `/hug motion`). Suggested links play that way too. |
-| `/feel <what you mean> text` | The same, with the chat line, also when the settings hide it by default. |
+| `/feel <what you mean> text` | The same, with the emote's line (the plain command). |
 
 `motion` and `text` only count as the last word, and not when the whole text is a phrase that ends with them ("reading the quest text").
 
@@ -21,9 +21,10 @@ A [Dalamud](https://github.com/goatcorp/Dalamud) plugin for Final Fantasy XIV. T
 
 `/feelconfig` (or the gear button in `/xlplugins`) opens the settings:
 
-- **Always show what /feel plays and the alternatives** (off by default): before every emote, a chat line says which one plays and lists the others that might fit, as links ("Playing /read (Read). Others: /carrybook…"). Off, only close alternatives are listed, after the emote.
-  - **Say which emote played** (on by default; only while the option above is on): off, the line lists only the others, and isn't written when there are none.
-- **Show the emote's line in the chat log** (on by default, as the game does): off, every emote plays as motion only ("You hug Avar." isn't written); end a `/feel` with `text` to show it that time. On, end it with `motion` to hide it that time.
+- **Say which emote /feel played** (on by default): after the emote, chat says "Played /cheer (Cheer).", since the game's own line ("You cheer enthusiastically.") doesn't name the command. Off, only alternatives are listed, when there are any.
+- **List all alternatives, not only close ones** (off by default): every other emote that might fit is listed after the one that played ("Also fits: …"), not only those that fit well.
+
+Whether the game writes an emote's own line in the chat log is a game setting; `motion` at the end of a `/feel` skips it for that one emote.
 
 ## Phrase bank
 
