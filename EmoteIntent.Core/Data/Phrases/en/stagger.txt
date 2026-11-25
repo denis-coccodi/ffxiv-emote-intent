@@ -5,11 +5,6 @@ reel
 reeling
 stumble
 stumbling
-dizzy
-i'm dizzy
-woozy
-light headed
-lightheaded
 knocked back
 taken a hit
 i've been hit
@@ -19,14 +14,19 @@ oof
 critical hit
 crit
 stunned by the blow
-drunk
-tipsy
-too much to drink
-one too many
-hammered
-wasted
-stumble home
-the room is spinning
-spinning
-dazed
-seeing stars
+staggered
+rocked
+ate a tankbuster
+took a tankbuster
+got hit by the boss
+hit by the aoe
+took a big hit
+got smacked
+knocked silly
+stagger back
+reel back
+blindsided
+caught off balance
+lose my balance
+off balance
+barely standing
