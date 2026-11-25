@@ -12,6 +12,9 @@ public sealed class PhraseMatcher
     /// <summary>The share of a score that depends on word order (see Score).</summary>
     private const double OrderWeight = 0.2;
 
+    /// <summary>The best a phrase that isn't typed exactly can score, so an exact phrase always wins.</summary>
+    private const double MaxInexactScore = 0.95;
+
     private readonly List<Entry> entries = [];
     private readonly Dictionary<string, double> rarity = new(StringComparer.Ordinal);
     private readonly double unknownRarity;
@@ -25,7 +28,7 @@ public sealed class PhraseMatcher
             {
                 var words = TextNormalizer.Words(phrase);
                 entries.Add(new Entry(
-                    command, phrase, TextNormalizer.Compact(phrase), words.ToHashSet(StringComparer.Ordinal), Pairs(words)));
+                    command, phrase, Exact(phrase), words.ToHashSet(StringComparer.Ordinal), Pairs(words)));
             }
         }
 
@@ -47,7 +50,7 @@ public sealed class PhraseMatcher
     public IReadOnlyList<PhraseMatch> Rank(string text, IEnumerable<string> commands, int count = 5)
     {
         var allowed = commands.ToHashSet(StringComparer.OrdinalIgnoreCase);
-        var compact = TextNormalizer.Compact(text);
+        var compact = Exact(text);
         var ordered = TextNormalizer.Words(text);
         var words = ordered.ToHashSet(StringComparer.Ordinal);
         if (words.Count == 0)
@@ -69,9 +72,10 @@ public sealed class PhraseMatcher
             .ToList();
     }
 
-    // Weighted Dice overlap (twice the rarity of the shared words over the rarity of both sides' words), then up
-    // to OrderWeight off when the phrase's consecutive word pairs aren't in the text: "good night all" is closer
-    // to "night all" than to "all good", though both share two words with it.
+    // The phrase exactly (1), else a weighted Dice overlap (twice the rarity of the shared words over the rarity of
+    // both sides' words) capped below an exact phrase, so "cheers!" is Toast's "cheers" rather than Cheer's "cheer"
+    // (same word once the plural goes); then up to OrderWeight off when the phrase's consecutive word pairs aren't
+    // in the text: "good night all" is closer to "night all" than to "all good", though both share two words.
     private double Score(Entry entry, string compact, HashSet<string> words, double wordsWeight, HashSet<string> pairs)
     {
         if (entry.Compact == compact)
@@ -87,8 +91,11 @@ public sealed class PhraseMatcher
 
         var dice = 2 * shared / (wordsWeight + entry.Words.Sum(Rarity));
         var inOrder = entry.Pairs.Count == 0 ? 1 : (double)entry.Pairs.Count(pairs.Contains) / entry.Pairs.Count;
-        return dice * (1 - OrderWeight + (OrderWeight * inOrder));
+        return MaxInexactScore * dice * (1 - OrderWeight + (OrderWeight * inOrder));
     }
+
+    // What counts as typing a phrase exactly: Compact, minus sentence punctuation around it ("cheers!" is "cheers").
+    private static string Exact(string text) => TextNormalizer.Compact(text).Trim('.', ',', '!', '?', ';', ' ');
 
     private double Rarity(string word) => rarity.TryGetValue(word, out var value) ? value : unknownRarity;
 

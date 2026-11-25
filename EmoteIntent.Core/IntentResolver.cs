@@ -51,8 +51,10 @@ public sealed class IntentResolver(PhraseMatcher matcher)
             return new IntentResult.NoMatch();
         }
 
-        var lead = matches.Count > 1 ? matches[0].Score - matches[1].Score : matches[0].Score;
-        if (matches[0].Score >= PlayScore && lead >= PlayLead)
+        // An exact phrase of one emote alone plays; otherwise the best must be good and clearly ahead.
+        var second = matches.Count > 1 ? matches[1].Score : 0;
+        var exact = matches[0].Score >= 1 && second < 1;
+        if (exact || (matches[0].Score >= PlayScore && matches[0].Score - second >= PlayLead))
         {
             return new IntentResult.Play(byCommand[matches[0].Command]);
         }
