@@ -2,14 +2,14 @@
 <Project Sdk="Dalamud.NET.Sdk/15.0.0">
 
   <PropertyGroup>
-    <Version>0.1.0.0</Version>
+    <Version>0.2.0.0</Version>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <!-- Manifest fields (DalamudPackager). The assembly name, EmoteIntent, is the plugin's
          InternalName and can never change once released. -->
     <Author>Denis Coccodi</Author>
     <Name>Emote Intent</Name>
     <Punchline>Say what you mean, and play the emote that fits.</Punchline>
-    <Description>Type /feel and the emote you want, and Emote Intent plays it if you have it unlocked. Early version: it matches emote names and commands for now; matching what you mean ("/feel so happy to see you") is being built.</Description>
+    <Description>Type /feel and what you mean ("/feel so happy to see you", "/feel lmao", "/feel o7"), and Emote Intent plays the unlocked emote that fits, or lists the few that might. Early version: it understands 30 emotes so far, more with each update; any emote also plays by its name or command. Runs on your PC, no AI needed. The phrase bank was written with AI help.</Description>
     <RepoUrl>https://github.com/denis-coccodi/ffxiv-emote-intent</RepoUrl>
     <Tags>emote;emotes;chat;social;roleplay</Tags>
   </PropertyGroup>

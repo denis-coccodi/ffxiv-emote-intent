@@ -1,0 +1,75 @@
+using EmoteIntent.Core;
+
+namespace EmoteIntent.Core.Tests;
+
+/// <summary>What players type → what /feel does, with the shipped phrase bank and every bank emote unlocked.</summary>
+public class IntentResolverTests
+{
+    private static readonly PhraseBank Bank = PhraseBank.LoadEmbedded();
+    private static readonly IntentResolver Resolver = new(new PhraseMatcher(Bank));
+    private static readonly List<EmoteInfo> AllUnlocked = Bank.Phrases.Keys
+        .Select((command, index) => new EmoteInfo((uint)index + 1, command.TrimStart('/'), command, [], "General"))
+        .ToList();
+
+    [Theory]
+    [InlineData("so happy to see you", "/greet")]
+    [InlineData("Hello everyone!", "/greet")]
+    [InlineData("thank you so much for the help", "/bow")]
+    [InlineData("lmao that's hilarious", "/laugh")]
+    [InlineData("calm down guys", "/soothe")]
+    [InlineData("good night all", "/goodbye")]
+    [InlineData("yay we cleared it!", "/joy")]
+    [InlineData("o7", "/salute")]
+    [InlineData("<3", "/dote")]
+    [InlineData("rip", "/respect")]
+    [InlineData("nice job", "/thumbsup")]
+    [InlineData("will you marry me?", "/kneel")]
+    [InlineData("love you", "/blowkiss")]
+    [InlineData("let's go team", "/rally")]
+    [InlineData("welcome to the FC", "/welcome")]
+    [InlineData("hand on my heart", "/handtoheart")]
+    public void PlaysTheEmoteThatClearlyFits(string text, string command)
+    {
+        var result = Resolver.Resolve(text, AllUnlocked);
+
+        var play = Assert.IsType<IntentResult.Play>(result);
+        Assert.Equal(command, play.Emote.Command);
+    }
+
+    [Fact]
+    public void PlaysAnEmoteNamedOutright() =>
+        Assert.Equal("/dance", Assert.IsType<IntentResult.Play>(Resolver.Resolve("dance", AllUnlocked)).Emote.Command);
+
+    [Fact]
+    public void SuggestsWhenSeveralEmotesMightFit()
+    {
+        var result = Resolver.Resolve("so glad you are here", AllUnlocked);
+
+        var suggest = Assert.IsType<IntentResult.Suggest>(result);
+        Assert.InRange(suggest.Emotes.Count, 2, IntentResolver.SuggestCount);
+    }
+
+    [Theory]
+    [InlineData("purple banana spaceship")]
+    [InlineData("")]
+    public void FindsNothingWhenNothingFits(string text) =>
+        Assert.IsType<IntentResult.NoMatch>(Resolver.Resolve(text, AllUnlocked));
+
+    [Fact]
+    public void OnlyOffersUnlockedEmotes()
+    {
+        var withoutGreet = AllUnlocked.Where(emote => emote.Command != "/greet").ToList();
+
+        var result = Resolver.Resolve("so happy to see you", withoutGreet);
+
+        Assert.NotEmpty(Offered(result));
+        Assert.DoesNotContain(Offered(result), emote => emote.Command == "/greet");
+    }
+
+    private static IEnumerable<EmoteInfo> Offered(IntentResult result) => result switch
+    {
+        IntentResult.Play play => [play.Emote],
+        IntentResult.Suggest suggest => suggest.Emotes,
+        _ => [],
+    };
+}
