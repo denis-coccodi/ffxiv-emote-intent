@@ -28,6 +28,23 @@ internal sealed class SuggestionLinks(
     public void PrintAlsoFits(IReadOnlyList<EmoteInfo> emotes, FeelRequest request) =>
         Print("Also fits: ", emotes, request, ".");
 
+    /// <summary>
+    /// "Playing /read (Read). Others: /a (A), /b (B)." before an emote plays, for the "always show" setting; just
+    /// "Playing /read (Read)." when nothing else fits.
+    /// </summary>
+    public void PrintPlaying(EmoteInfo emote, IReadOnlyList<EmoteInfo> others, FeelRequest request)
+    {
+        var playing = $"Playing {request.CommandFor(emote)} ({emote.Name})";
+        if (others.Count == 0)
+        {
+            chatGui.Print(playing + ".");
+        }
+        else
+        {
+            Print(playing + ". Others: ", others, request, ".");
+        }
+    }
+
     private void Print(string lead, IReadOnlyList<EmoteInfo> emotes, FeelRequest request, string tail)
     {
         var message = new SeStringBuilder().AddText(lead);

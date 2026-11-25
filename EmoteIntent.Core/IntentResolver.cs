@@ -13,8 +13,14 @@ public abstract record IntentResult
     /// </summary>
     public sealed record Play(EmoteInfo Emote) : IntentResult
     {
-        /// <summary>Other emotes that fit well, best first; empty when none do.</summary>
+        /// <summary>Other emotes that fit well (<see cref="IntentResolver.AlsoFitsScore"/>), best first; often empty.</summary>
         public IReadOnlyList<EmoteInfo> AlsoFits { get; init; } = [];
+
+        /// <summary>
+        /// Every other emote worth suggesting (<see cref="IntentResolver.SuggestScore"/>), best first: what the "always
+        /// show" setting lists before the emote plays. Includes <see cref="AlsoFits"/>.
+        /// </summary>
+        public IReadOnlyList<EmoteInfo> Alternatives { get; init; } = [];
     }
 
     /// <summary>Several emotes might fit: show them and let the player choose. Never played on its own.</summary>
@@ -55,19 +61,22 @@ public sealed class IntentResolver(PhraseMatcher matcher)
             .GroupBy(emote => emote.Command, StringComparer.OrdinalIgnoreCase)
             .ToDictionary(group => group.Key, group => group.First(), StringComparer.OrdinalIgnoreCase);
 
+        var matches = matcher.Rank(text, byCommand.Keys)
+            .Where(match => match.Score >= SuggestScore)
+            .ToList();
+
         // An emote named outright plays, unless the name is also a feeling whose preference list holds that emote as
         // a fallback ("sad": Slump first, the Sad frown only without it): then the list's first unlocked emote plays.
         if (EmoteNameMatcher.Match(text, unlocked) is { } named)
         {
-            var ranked = matcher.Rank(text, byCommand.Keys, 1);
-            var feeling = ranked.Count > 0 ? ranked[0] : null;
+            var feeling = matches.Count > 0 ? matches[0] : null;
             var preferred = feeling is { Score: >= 1 } && feeling.Commands.Count > 1
                 && feeling.Commands.Contains(named.Command, StringComparer.OrdinalIgnoreCase);
-            return new IntentResult.Play(preferred ? byCommand[feeling!.Command] : named);
+            return preferred
+                ? Played(byCommand[feeling!.Command], feeling.Commands, matches, byCommand)
+                : Played(named, [named.Command], matches, byCommand);
         }
-        var matches = matcher.Rank(text, byCommand.Keys)
-            .Where(match => match.Score >= SuggestScore)
-            .ToList();
+
         if (matches.Count == 0)
         {
             return new IntentResult.NoMatch();
@@ -78,17 +87,27 @@ public sealed class IntentResolver(PhraseMatcher matcher)
         var exact = matches[0].Score >= 1 && second < 1;
         if (exact || (matches[0].Score >= PlayScore && matches[0].Score - second >= RequiredLead(matches[0].Score)))
         {
-            // Not the emotes of the played one's own family or feeling list: they're the same gesture or a fallback.
-            var alsoFits = matches.Skip(1)
-                .Where(match => match.Score >= AlsoFitsScore
-                    && !matches[0].Commands.Contains(match.Command, StringComparer.OrdinalIgnoreCase))
-                .Take(SuggestCount)
-                .Select(match => byCommand[match.Command])
-                .ToList();
-            return new IntentResult.Play(byCommand[matches[0].Command]) { AlsoFits = alsoFits };
+            return Played(byCommand[matches[0].Command], matches[0].Commands, matches, byCommand);
         }
 
         return new IntentResult.Suggest(matches.Take(SuggestCount).Select(match => byCommand[match.Command]).ToList());
+    }
+
+    // Plays an emote, with the other matches as alternatives: not the emotes of its own family or feeling list
+    // (the same gesture, or a fallback), and those scoring AlsoFitsScore or more as AlsoFits too.
+    private static IntentResult.Play Played(
+        EmoteInfo emote, IReadOnlyList<string> own, List<PhraseMatch> matches, Dictionary<string, EmoteInfo> byCommand)
+    {
+        var others = matches
+            .Where(match => !own.Contains(match.Command, StringComparer.OrdinalIgnoreCase)
+                && !string.Equals(match.Command, emote.Command, StringComparison.OrdinalIgnoreCase))
+            .Take(SuggestCount)
+            .ToList();
+        return new IntentResult.Play(emote)
+        {
+            Alternatives = others.Select(match => byCommand[match.Command]).ToList(),
+            AlsoFits = others.Where(match => match.Score >= AlsoFitsScore).Select(match => byCommand[match.Command]).ToList(),
+        };
     }
 
     /// <summary>
