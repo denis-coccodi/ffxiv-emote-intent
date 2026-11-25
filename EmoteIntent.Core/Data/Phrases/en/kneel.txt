@@ -37,8 +37,6 @@ crouch
 crouch down
 get down low
 lower myself
-beg for mercy
-grovel
 knighted
 knight me
 be knighted

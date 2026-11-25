@@ -27,7 +27,7 @@ public sealed class IntentResolver(PhraseMatcher matcher)
     public const double PlayLead = 0.15;
 
     /// <summary>Matches below this aren't worth suggesting.</summary>
-    public const double SuggestScore = 0.25;
+    public const double SuggestScore = 0.35;
 
     /// <summary>How many emotes a suggestion offers at most.</summary>
     public const int SuggestCount = 3;
