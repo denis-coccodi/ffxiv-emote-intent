@@ -24,23 +24,17 @@ internal sealed class SuggestionLinks(
     public void Print(IReadOnlyList<EmoteInfo> emotes, FeelRequest request) =>
         Print("Not sure which you mean: ", emotes, request, ". Click one, or type it.");
 
-    /// <summary>
-    /// The line after an emote played: "Played /read (Read). Also fits: /a (A), /b (B)." with the others as links;
-    /// "Played /read (Read)." when there are none. Without <paramref name="sayPlayed"/>, only "Also fits: …", and
-    /// nothing at all when there are no others.
-    /// </summary>
-    public void PrintPlayed(EmoteInfo emote, IReadOnlyList<EmoteInfo> others, FeelRequest request, bool sayPlayed)
-    {
-        var played = sayPlayed ? $"Played {request.CommandFor(emote)} ({emote.Name})." : string.Empty;
-        if (others.Count > 0)
-        {
-            Print(sayPlayed ? played + " Also fits: " : "Also fits: ", others, request, ".");
-        }
-        else if (sayPlayed)
-        {
-            chatGui.Print(played);
-        }
-    }
+    /// <summary>"Pick one: /a (A), /b (B). Click it, or type it." for the "let me pick" setting, even for one emote.</summary>
+    public void PrintPick(IReadOnlyList<EmoteInfo> emotes, FeelRequest request) =>
+        Print("Pick one: ", emotes, request, ". Click it, or type it.");
+
+    /// <summary>"Also fits: /a (A), /b (B)." after an emote played, each one a link.</summary>
+    public void PrintAlsoFits(IReadOnlyList<EmoteInfo> emotes, FeelRequest request) =>
+        Print("Also fits: ", emotes, request, ".");
+
+    /// <summary>"Played /cheer (Cheer).": after /feel played an emote by itself, never after a click.</summary>
+    public void PrintPlayed(EmoteInfo emote, FeelRequest request) =>
+        chatGui.Print($"Played {request.CommandFor(emote)} ({emote.Name}).");
 
     private void Print(string lead, IReadOnlyList<EmoteInfo> emotes, FeelRequest request, string tail)
     {
