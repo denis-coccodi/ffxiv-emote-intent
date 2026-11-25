@@ -1,8 +1,6 @@
 # /uchiwasshoi (Uchiwasshoi): a festive dance with a paper fan.
 uchiwasshoi
 uchiwa
-wasshoi
-wasshoi wasshoi
 fan dance
 paper fan
 waving a fan

@@ -13,9 +13,6 @@ yes commander
 reporting for duty
 reporting in
 ready for duty
-at attention
-stand at attention
-attention
 on duty
 orders received
 order received

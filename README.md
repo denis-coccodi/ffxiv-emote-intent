@@ -2,7 +2,7 @@
 
 A [Dalamud](https://github.com/goatcorp/Dalamud) plugin for Final Fantasy XIV. Type `/feel` and the emote you want, and it plays it if your character has it unlocked.
 
-**Early version.** `/feel` understands what you mean for 146 emotes, nearly the whole General tab (`/feel so happy to see you`, `/feel give me a big hug`, `/feel idk`, `/feel i'm hungry`, `/feel o7`); the Special and Expressions tabs come next; more emotes come with each update. Any emote also plays by its name, command or alias (`/feel hug`, `/feel /hug`). Matching runs on your PC from a phrase bank shipped with the plugin; AI will only ever be an option you switch on with your own key.
+**Early version.** `/feel` understands what you mean for 220 of the game's 295 emotes (`/feel so happy to see you`, `/feel give me a big hug`, `/feel idk`, `/feel i'm cold`, `/feel o7`). The rest, mostly colour and side variants such as the penlight cheers and Ranger poses, and a few dances, play by name or command (`/feel cheer wave pink`); more emotes come with each update. Any emote also plays by its name, command or alias (`/feel hug`, `/feel /hug`). Matching runs on your PC from a phrase bank shipped with the plugin; AI will only ever be an option you switch on with your own key.
 
 ## Commands
 

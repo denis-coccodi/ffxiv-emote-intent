@@ -57,6 +57,21 @@ public class IntentResolverTests
     [InlineData("you're the best", "/thumbsup")]
     [InlineData("i'm so sorry", "/grovel")]
     [InlineData("high five!", "/highfive")]
+    [InlineData("smile", "/smile")]
+    [InlineData("i'm cold", "/shiver")]
+    [InlineData("ew gross", "/sneer")]
+    [InlineData("eye roll", "/annoyed")]
+    [InlineData("kiss me", "/puckerup")]
+    [InlineData("are you okay?", "/worried")]
+    [InlineData("drop and give me 20", "/pushups")]
+    [InlineData("take a seat", "/lounge")]
+    [InlineData("kupo!", "/mogdance")]
+    [InlineData("i'm so lonely", "/sad")]
+    [InlineData("evil laugh", "/cackle")]
+    [InlineData("flowers for you", "/bouquet")]
+    [InlineData("thank you!", "/bow")]
+    [InlineData("i'm sorry", "/easternbow")]
+    [InlineData("what a view", "/amazed")]
     public void PlaysTheEmoteThatClearlyFits(string text, string command)
     {
         var result = Resolver.Resolve(text, AllUnlocked);
