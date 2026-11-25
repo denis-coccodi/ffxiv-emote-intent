@@ -13,7 +13,7 @@ A [Dalamud](https://github.com/goatcorp/Dalamud) plugin for Final Fantasy XIV. T
 | | When a few emotes might fit, it lists them in chat as links and plays nothing: click the one you want (or type it). |
 | | When it plays one and others fit well too, it lists those after it ("Also fits: /carrybook…"), as links. |
 | `/feel <what you mean> motion` | The same, without the emote's line in the chat log (the game's `/hug motion`). Suggested links play that way too. |
-| `/feel <what you mean> text` | The same, with the chat line: the game's default today. |
+| `/feel <what you mean> text` | The same, with the chat line, also when the settings hide it by default. |
 
 `motion` and `text` only count as the last word, and not when the whole text is a phrase that ends with them ("reading the quest text").
 
@@ -22,6 +22,7 @@ A [Dalamud](https://github.com/goatcorp/Dalamud) plugin for Final Fantasy XIV. T
 `/feelconfig` (or the gear button in `/xlplugins`) opens the settings:
 
 - **Always show what /feel plays and the alternatives** (off by default): before every emote, a chat line says which one plays and lists the others that might fit, as links ("Playing /read (Read). Others: /carrybook…"). Off, only close alternatives are listed, after the emote.
+- **Show the emote's line in the chat log** (on by default, as the game does): off, every emote plays as motion only ("You hug Avar." isn't written); end a `/feel` with `text` to show it that time. On, end it with `motion` to hide it that time.
 
 ## Phrase bank
 

@@ -42,4 +42,11 @@ public sealed record FeelRequest(string Text, ChatLog Log)
 
     /// <summary>The chat command that plays <paramref name="emote"/> this way ("/hug" or "/hug motion").</summary>
     public string CommandFor(EmoteInfo emote) => Log == ChatLog.Motion ? $"{emote.Command} motion" : emote.Command;
+
+    /// <summary>
+    /// This request with the player's default applied: without a trailing "motion" or "text", the emote's chat line
+    /// shows only when <paramref name="showChatLine"/> is on. "motion" and "text" always win for that one emote.
+    /// </summary>
+    public FeelRequest WithDefault(bool showChatLine) =>
+        Log == ChatLog.GameDefault && !showChatLine ? this with { Log = ChatLog.Motion } : this;
 }

@@ -78,7 +78,7 @@ public sealed class Plugin : IDalamudPlugin
             return;
         }
 
-        var request = FeelRequest.Parse(args, matcher.IsPhrase);
+        var request = FeelRequest.Parse(args, matcher.IsPhrase).WithDefault(configuration.ShowChatLine);
         switch (resolver.Resolve(request.Text, unlocked))
         {
             case IntentResult.Play play when configuration.AlwaysShowChoice:

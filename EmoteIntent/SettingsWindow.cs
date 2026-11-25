@@ -32,5 +32,17 @@ internal sealed class SettingsWindow : Window
         ImGui.TextWrapped(
             "Before every emote, a chat line says which one plays and lists the others that might fit, as links. "
             + "Off: only close alternatives are listed, after the emote.");
+
+        ImGui.Spacing();
+        var showChatLine = configuration.ShowChatLine;
+        if (ImGui.Checkbox("Show the emote's line in the chat log", ref showChatLine))
+        {
+            configuration.ShowChatLine = showChatLine;
+            save();
+        }
+
+        ImGui.TextWrapped(
+            "The line the game writes for an emote, like \"You hug Avar.\". Off: emotes play as motion only; end a "
+            + "/feel with \"text\" to show the line that time. On: end it with \"motion\" to hide it that time.");
     }
 }

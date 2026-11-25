@@ -14,4 +14,11 @@ public sealed class Configuration : IPluginConfiguration
     /// then only close alternatives are listed, after the emote ("Also fits: …").
     /// </summary>
     public bool AlwaysShowChoice { get; set; }
+
+    /// <summary>
+    /// Whether the emote's own line shows in the chat log ("You hug Avar."), as the game does. Off: emotes play as
+    /// motion only, unless "text" ends the /feel. On by default, the game's behaviour. Added in version 0's lifetime:
+    /// older saved settings, without it, read as on.
+    /// </summary>
+    public bool ShowChatLine { get; set; } = true;
 }
