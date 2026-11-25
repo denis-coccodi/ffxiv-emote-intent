@@ -21,9 +21,16 @@ internal sealed class SuggestionLinks(
     /// "Not sure which you mean: /a (A), /b (B). Click one, or type it." with each emote a link that plays it the way
     /// the player asked (with "motion", the links play without the chat line too).
     /// </summary>
-    public void Print(IReadOnlyList<EmoteInfo> emotes, FeelRequest request)
+    public void Print(IReadOnlyList<EmoteInfo> emotes, FeelRequest request) =>
+        Print("Not sure which you mean: ", emotes, request, ". Click one, or type it.");
+
+    /// <summary>"Also fits: /a (A), /b (B)." after an emote played, each one a link, for other emotes that fit well.</summary>
+    public void PrintAlsoFits(IReadOnlyList<EmoteInfo> emotes, FeelRequest request) =>
+        Print("Also fits: ", emotes, request, ".");
+
+    private void Print(string lead, IReadOnlyList<EmoteInfo> emotes, FeelRequest request, string tail)
     {
-        var message = new SeStringBuilder().AddText("Not sure which you mean: ");
+        var message = new SeStringBuilder().AddText(lead);
         for (var i = 0; i < emotes.Count; i++)
         {
             if (i > 0)
@@ -36,7 +43,7 @@ internal sealed class SuggestionLinks(
                 .Add(RawPayload.LinkTerminator);
         }
 
-        chatGui.Print(message.AddText(". Click one, or type it.").Build());
+        chatGui.Print(message.AddText(tail).Build());
     }
 
     /// <summary>Removes every link handler, so old links in the chat log do nothing once the plugin unloads.</summary>

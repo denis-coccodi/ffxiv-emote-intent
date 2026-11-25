@@ -11,6 +11,7 @@ A [Dalamud](https://github.com/goatcorp/Dalamud) plugin for Final Fantasy XIV. T
 | `/feel` | Says how many emotes you have unlocked. |
 | `/feel <what you mean>` | Plays the unlocked emote that clearly fits, the same as typing its command. One command plays one emote. |
 | | When a few emotes might fit, it lists them in chat as links and plays nothing: click the one you want (or type it). |
+| | When it plays one and others fit well too, it lists those after it ("Also fits: /carrybook…"), as links. |
 | `/feel <what you mean> motion` | The same, without the emote's line in the chat log (the game's `/hug motion`). Suggested links play that way too. |
 | `/feel <what you mean> text` | The same, with the chat line: the game's default today. |
 
