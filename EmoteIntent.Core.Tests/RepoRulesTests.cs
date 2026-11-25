@@ -35,7 +35,7 @@ public class RepoRulesTests
     private static bool IsBuildOutput(string path) =>
         path.Split(Path.DirectorySeparatorChar, Path.AltDirectorySeparatorChar).Any(part => part is "bin" or "obj");
 
-    private static string RepoRoot()
+    internal static string RepoRoot()
     {
         var dir = new DirectoryInfo(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location)!);
         while (dir is not null && !File.Exists(Path.Combine(dir.FullName, "EmoteIntent.slnx")))

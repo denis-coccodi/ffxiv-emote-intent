@@ -31,6 +31,15 @@ dotnet format --verify-no-changes
 
 - `EmoteIntent.Core`: everything that doesn't need the game (the emote model, matching). The tests cover it.
 - `EmoteIntent`: the Dalamud plugin (the `/feel` command, reading emotes from the game data, playing them).
+- `tools/EmoteExport`: writes every emote that can be played by command to `EmoteIntent.Core/Data/emotes.json`.
+
+### Emote data
+
+`EmoteIntent.Core/Data/emotes.json` lists the game's emotes (295 today) with their commands and Emote list tab: the list the phrase bank is written against. After a patch that adds emotes, regenerate it from the installed game (English data; it finds the game through XIVLauncher's settings, or takes the game folder as an argument):
+
+```
+dotnet run --project tools/EmoteExport -c Release
+```
 
 Warnings are build errors, with .NET's recommended analyzers and a list of banned APIs (`BannedSymbols.txt`). The first build sets up two git hooks: Conventional Commits messages, and the three checks above before every push.
 
