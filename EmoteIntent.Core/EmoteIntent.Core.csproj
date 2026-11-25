@@ -7,4 +7,9 @@
     <NoWarn>$(NoWarn.Replace('CS1591', ''))</NoWarn>
   </PropertyGroup>
 
+  <!-- The phrase bank ships inside the assembly (PhraseBank.LoadEmbedded). -->
+  <ItemGroup>
+    <EmbeddedResource Include="Data\Phrases\en\*.txt" LogicalName="EmoteIntent.Phrases.en.%(Filename)%(Extension)" />
+  </ItemGroup>
+
 </Project>

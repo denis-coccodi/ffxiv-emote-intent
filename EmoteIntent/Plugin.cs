@@ -19,13 +19,15 @@ public sealed class Plugin : IDalamudPlugin
     [PluginService] internal static IPluginLog Log { get; private set; } = null!;
 
     private readonly EmoteCatalog catalog;
+    private readonly IntentResolver resolver;
 
     public Plugin()
     {
         catalog = new EmoteCatalog(DataManager, UnlockState);
+        resolver = new IntentResolver(new PhraseMatcher(PhraseBank.LoadEmbedded()));
         CommandManager.AddHandler(CommandName, new CommandInfo(OnCommand)
         {
-            HelpMessage = "Play the emote that fits what you mean, e.g. /feel hug (matching by meaning is coming).",
+            HelpMessage = "Play the emote that fits what you mean, e.g. /feel so happy to see you, or /feel hug.",
         });
     }
 
@@ -40,14 +42,19 @@ public sealed class Plugin : IDalamudPlugin
             return;
         }
 
-        var emote = EmoteNameMatcher.Match(args, unlocked);
-        if (emote is null)
+        switch (resolver.Resolve(args, unlocked))
         {
-            ChatGui.Print($"No unlocked emote is called \"{args.Trim()}\". Matching by meaning isn't built yet.");
-            return;
+            case IntentResult.Play play:
+                Log.Debug("Playing {Command} for \"{Args}\"", play.Emote.Command, args);
+                ChatCommand.Run(play.Emote.Command);
+                break;
+            case IntentResult.Suggest suggest:
+                var options = string.Join(", ", suggest.Emotes.Select(emote => $"{emote.Command} ({emote.Name})"));
+                ChatGui.Print($"Not sure which you mean: {options}. Type the one you want.");
+                break;
+            default:
+                ChatGui.Print($"No unlocked emote fits \"{args.Trim()}\" yet. The phrase bank covers more emotes with each update.");
+                break;
         }
-
-        Log.Debug("Playing {Command} for \"{Args}\"", emote.Command, args);
-        ChatCommand.Run(emote.Command);
     }
 }

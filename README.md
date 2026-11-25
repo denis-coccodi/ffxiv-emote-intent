@@ -2,14 +2,19 @@
 
 A [Dalamud](https://github.com/goatcorp/Dalamud) plugin for Final Fantasy XIV. Type `/feel` and the emote you want, and it plays it if your character has it unlocked.
 
-**Early version.** For now `/feel` matches an emote's name, command or alias (`/feel hug`, `/feel big clap`, `/feel bclap`). Matching what you mean (`/feel so happy to see you`) is being built. It will run on your PC from a phrase bank shipped with the plugin, and AI will only be an option you switch on with your own key.
+**Early version.** `/feel` understands what you mean for the first 30 emotes of the General tab (Bow to Thumbs Up: `/feel so happy to see you`, `/feel lmao`, `/feel o7`); more emotes come with each update. Any emote also plays by its name, command or alias (`/feel hug`, `/feel /hug`). Matching runs on your PC from a phrase bank shipped with the plugin; AI will only ever be an option you switch on with your own key.
 
 ## Commands
 
 | Command | What it does |
 | --- | --- |
 | `/feel` | Says how many emotes you have unlocked. |
-| `/feel <emote>` | Plays that emote, the same as typing its command. One command plays one emote. |
+| `/feel <what you mean>` | Plays the unlocked emote that clearly fits, the same as typing its command. One command plays one emote. |
+| | When a few emotes might fit, it lists them in chat and plays nothing: type the one you want. |
+
+## Phrase bank
+
+`EmoteIntent.Core/Data/Phrases/en/<command>.txt` holds, for each emote, the ways players might say it (one phrase per line; `#` lines are comments). `/feel` ranks emotes by the words your text shares with their phrases, rarer words counting more, and word order a little. The phrases were written with AI help (Claude) and are checked by tests: every file is a real emote, has at least 30 phrases, and no phrase belongs to two emotes.
 
 ## Install
 
