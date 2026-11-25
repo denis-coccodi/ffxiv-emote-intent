@@ -3,6 +3,8 @@
   <!-- Everything that doesn't need the game: the tests cover it without Dalamud. -->
   <PropertyGroup>
     <TargetFramework>net10.0</TargetFramework>
+    <!-- Core is the shared logic: every public member says what it does. -->
+    <NoWarn>$(NoWarn.Replace('CS1591', ''))</NoWarn>
   </PropertyGroup>
 
 </Project>
