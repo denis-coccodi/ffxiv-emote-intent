@@ -85,8 +85,12 @@ public sealed class Plugin : IDalamudPlugin
         var request = FeelRequest.Parse(args, matcher.IsPhrase);
         switch (resolver.Resolve(request.Text, unlocked))
         {
-            case IntentResult.Play play when configuration.LetMePick:
-                suggestions.PrintPick(configuration.ShowAlternatives ? [play.Emote, .. play.Alternatives] : [play.Emote], request);
+            case IntentResult.Play play when configuration.WhenFound == WhenFound.AlwaysPick:
+                suggestions.PrintPick([play.Emote, .. play.Alternatives], request);
+                break;
+            case IntentResult.Play play when configuration.WhenFound == WhenFound.AskWhenSeveral
+                && !play.Named && play.Alternatives.Count > 0:
+                suggestions.Print([play.Emote, .. play.Alternatives], request);
                 break;
             case IntentResult.Play play:
                 Play(play.Emote, request);
@@ -95,7 +99,7 @@ public sealed class Plugin : IDalamudPlugin
                     suggestions.PrintPlayed(play.Emote, request);
                 }
 
-                if (configuration.ShowAlternatives && play.Alternatives.Count > 0)
+                if (configuration.WhenFound == WhenFound.PlayBest && play.Alternatives.Count > 0)
                 {
                     suggestions.PrintAlsoFits(play.Alternatives, request);
                 }

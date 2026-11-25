@@ -24,25 +24,14 @@ internal sealed class SettingsWindow : Window
     public override void Draw()
     {
         ImGui.TextUnformatted("When /feel finds an emote:");
-        if (ImGui.RadioButton("Play it", !configuration.LetMePick))
-        {
-            Set(() => configuration.LetMePick = false);
-        }
-
-        if (ImGui.RadioButton("Let me pick (list the matches as links, even just one)", configuration.LetMePick))
-        {
-            Set(() => configuration.LetMePick = true);
-        }
+        Choice(WhenFound.PlayBest, "Play the best match", "then list the others that might fit as links");
+        Choice(WhenFound.AskWhenSeveral, "Ask when several fit", "play it if it's the only one; otherwise list them all as links");
+        Choice(WhenFound.AlwaysPick, "Always let me pick", "list the matches as links, even just one");
 
         ImGui.Spacing();
-        var showAlternatives = configuration.ShowAlternatives;
-        if (ImGui.Checkbox("Also list other emotes that might fit", ref showAlternatives))
-        {
-            Set(() => configuration.ShowAlternatives = showAlternatives);
-        }
 
         // Only when /feel plays by itself: when the player picks, they already know which one played.
-        using (ImRaii.Disabled(configuration.LetMePick))
+        using (ImRaii.Disabled(configuration.WhenFound == WhenFound.AlwaysPick))
         {
             var showPlayed = configuration.ShowPlayedEmote;
             if (ImGui.Checkbox("Say which emote played", ref showPlayed))
@@ -52,6 +41,17 @@ internal sealed class SettingsWindow : Window
 
             ImGui.TextWrapped("\"Played /cheer (Cheer).\": the game's own line doesn't name the command.");
         }
+    }
+
+    private void Choice(WhenFound value, string label, string detail)
+    {
+        if (ImGui.RadioButton(label, configuration.WhenFound == value))
+        {
+            Set(() => configuration.WhenFound = value);
+        }
+
+        ImGui.SameLine();
+        ImGui.TextDisabled($"({detail})");
     }
 
     private void Set(Action change)

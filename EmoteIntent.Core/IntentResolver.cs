@@ -17,10 +17,13 @@ public abstract record IntentResult
         public IReadOnlyList<EmoteInfo> AlsoFits { get; init; } = [];
 
         /// <summary>
-        /// Every other emote worth suggesting (<see cref="IntentResolver.SuggestScore"/>), best first: what the "always
-        /// show" setting lists before the emote plays. Includes <see cref="AlsoFits"/>.
+        /// Every other emote worth suggesting (<see cref="IntentResolver.SuggestScore"/>), best first. Includes
+        /// <see cref="AlsoFits"/>.
         /// </summary>
         public IReadOnlyList<EmoteInfo> Alternatives { get; init; } = [];
+
+        /// <summary>The player typed this emote's name or command ("hug", "/hug"): it's the one they mean.</summary>
+        public bool Named { get; init; }
     }
 
     /// <summary>Several emotes might fit: show them and let the player choose. Never played on its own.</summary>
@@ -74,7 +77,7 @@ public sealed class IntentResolver(PhraseMatcher matcher)
                 && feeling.Commands.Contains(named.Command, StringComparer.OrdinalIgnoreCase);
             return preferred
                 ? Played(byCommand[feeling!.Command], feeling.Commands, matches, byCommand)
-                : Played(named, [named.Command], matches, byCommand);
+                : Played(named, [named.Command], matches, byCommand) with { Named = true };
         }
 
         if (matches.Count == 0)

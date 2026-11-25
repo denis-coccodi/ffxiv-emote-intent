@@ -27,7 +27,14 @@ public class AlternativesTests
         var play = Assert.IsType<IntentResult.Play>(Resolver.Resolve("hug", AllUnlocked));
 
         Assert.Equal("/hug", play.Emote.Command);
+        Assert.True(play.Named);
         Assert.NotEmpty(play.Alternatives);
         Assert.DoesNotContain(play.Alternatives, emote => emote.Command == "/hug");
     }
+
+    [Theory]
+    [InlineData("give me a big hug")]
+    [InlineData("book")]
+    public void APhraseMatchIsNotANamedEmote(string text) =>
+        Assert.False(Assert.IsType<IntentResult.Play>(Resolver.Resolve(text, AllUnlocked)).Named);
 }
