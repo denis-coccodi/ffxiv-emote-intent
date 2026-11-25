@@ -28,6 +28,20 @@ public class IntentResolverTests
     [InlineData("let's go team", "/rally")]
     [InlineData("welcome to the FC", "/welcome")]
     [InlineData("hand on my heart", "/handtoheart")]
+    [InlineData("congrats on your clear!", "/congratulate")]
+    [InlineData("give me a big hug", "/hug")]
+    [InlineData("good boy", "/stroke")]
+    [InlineData("cheers!", "/toast")]
+    [InlineData("happy halloween everyone", "/allsaintscharm")]
+    [InlineData("here's a tip for you", "/gratuity")]
+    [InlineData("omg", "/wow")]
+    [InlineData("come at me", "/battlestance")]
+    [InlineData("never let me go", "/embrace")]
+    [InlineData("paint the town red", "/paintred")]
+    [InlineData("i'm all ears", "/earwiggle")]
+    [InlineData("it was nothing", "/humbletriumph")]
+    [InlineData("brofist", "/fistbump")]
+    [InlineData("ta da!", "/magictrick")]
     public void PlaysTheEmoteThatClearlyFits(string text, string command)
     {
         var result = Resolver.Resolve(text, AllUnlocked);
@@ -50,7 +64,7 @@ public class IntentResolverTests
     }
 
     [Theory]
-    [InlineData("purple banana spaceship")]
+    [InlineData("qwertyuiop zxcvbnm")]
     [InlineData("")]
     public void FindsNothingWhenNothingFits(string text) =>
         Assert.IsType<IntentResult.NoMatch>(Resolver.Resolve(text, AllUnlocked));
