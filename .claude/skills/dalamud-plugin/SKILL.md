@@ -60,8 +60,8 @@ These hold even though the plugin ships from our own repository:
 
 ## Trying it in the game
 
-1. `dotnet build -c Release` (the output is `EmoteIntent\bin\Release\EmoteIntent`).
-2. First time: `/xlsettings` → Experimental → Dev Plugin Locations → add that folder → Save; then `/xlplugins` → Dev Tools → Installed Dev Plugins → enable Emote Intent.
+1. `dotnet build -c Release`: the plugin is `EmoteIntent\bin\Release\EmoteIntent.dll` (with `EmoteIntent.json` beside it; the `bin\Release\EmoteIntent\` folder only holds the packaged `latest.zip`).
+2. First time: `/xlsettings` → Experimental → Dev Plugin Locations → add the full path to `EmoteIntent.dll` (Dalamud refuses a folder) → **+** → Save; then `/xlplugins` → Dev Tools → Installed Dev Plugins → enable Emote Intent.
 3. After rebuilding: disable and enable it there, or turn on its automatic reloading so each new build loads by itself.
 4. `/xllog` shows the plugin's log; `/xldata` browses the game's sheets.
 
