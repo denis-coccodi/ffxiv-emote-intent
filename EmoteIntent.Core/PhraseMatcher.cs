@@ -43,6 +43,13 @@ public sealed class PhraseMatcher
         unknownRarity = Math.Log(1 + entries.Count);
     }
 
+    /// <summary>Whether <paramref name="text"/> is exactly one of the bank's phrases (case and punctuation aside).</summary>
+    public bool IsPhrase(string text)
+    {
+        var exact = Exact(text);
+        return entries.Exists(entry => entry.Compact == exact);
+    }
+
     /// <summary>
     /// The best-fitting emotes among <paramref name="commands"/> (the ones the character can play), best first,
     /// one entry per command, at most <paramref name="count"/>.

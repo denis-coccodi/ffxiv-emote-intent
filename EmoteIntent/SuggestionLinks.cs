@@ -9,15 +9,19 @@ namespace EmoteIntent;
 /// Prints suggested emotes in chat as links: clicking one plays that emote, once, the same as typing its command.
 /// A click is the player's own action, so this stays within Dalamud's no-automation rule.
 /// </summary>
-internal sealed class SuggestionLinks(IChatGui chatGui, Func<uint, EmoteInfo?> unlockedById, Action<EmoteInfo> play) : IDisposable
+internal sealed class SuggestionLinks(
+    IChatGui chatGui, Func<uint, EmoteInfo?> unlockedById, Action<EmoteInfo, FeelRequest> play) : IDisposable
 {
     /// <summary>The UIColor row the links are drawn in, so they stand out from the message text.</summary>
     private const ushort LinkColor = 500;
 
     private readonly Dictionary<uint, DalamudLinkPayload> links = [];
 
-    /// <summary>"Not sure which you mean: /a (A), /b (B). Click one, or type it." with each emote a link.</summary>
-    public void Print(IReadOnlyList<EmoteInfo> emotes)
+    /// <summary>
+    /// "Not sure which you mean: /a (A), /b (B). Click one, or type it." with each emote a link that plays it the way
+    /// the player asked (with "motion", the links play without the chat line too).
+    /// </summary>
+    public void Print(IReadOnlyList<EmoteInfo> emotes, FeelRequest request)
     {
         var message = new SeStringBuilder().AddText("Not sure which you mean: ");
         for (var i = 0; i < emotes.Count; i++)
@@ -27,8 +31,8 @@ internal sealed class SuggestionLinks(IChatGui chatGui, Func<uint, EmoteInfo?> u
                 message.AddText(", ");
             }
 
-            message.Add(LinkFor(emotes[i]))
-                .AddUiForeground($"{emotes[i].Command} ({emotes[i].Name})", LinkColor)
+            message.Add(LinkFor(emotes[i], request.Log == ChatLog.Motion))
+                .AddUiForeground($"{request.CommandFor(emotes[i])} ({emotes[i].Name})", LinkColor)
                 .Add(RawPayload.LinkTerminator);
         }
 
@@ -38,13 +42,15 @@ internal sealed class SuggestionLinks(IChatGui chatGui, Func<uint, EmoteInfo?> u
     /// <summary>Removes every link handler, so old links in the chat log do nothing once the plugin unloads.</summary>
     public void Dispose() => chatGui.RemoveChatLinkHandler();
 
-    // One handler per emote, keyed by its Emote row id, registered the first time it's suggested.
-    private DalamudLinkPayload LinkFor(EmoteInfo emote)
+    // One handler per emote and way of playing it, registered the first time it's suggested. The link id is the
+    // Emote row id shifted left once, its lowest bit saying "motion" (Emote ids are far below 2^31).
+    private DalamudLinkPayload LinkFor(EmoteInfo emote, bool motion)
     {
-        if (!links.TryGetValue(emote.Id, out var link))
+        var id = (emote.Id << 1) | (motion ? 1u : 0u);
+        if (!links.TryGetValue(id, out var link))
         {
-            link = chatGui.AddChatLinkHandler(emote.Id, OnClick);
-            links[emote.Id] = link;
+            link = chatGui.AddChatLinkHandler(id, OnClick);
+            links[id] = link;
         }
 
         return link;
@@ -52,11 +58,12 @@ internal sealed class SuggestionLinks(IChatGui chatGui, Func<uint, EmoteInfo?> u
 
     // Runs on the game's main thread when the player clicks a link, possibly long after it was printed:
     // check the emote is still unlocked (another character may be logged in by now).
-    private void OnClick(uint emoteId, SeString link)
+    private void OnClick(uint id, SeString link)
     {
-        if (unlockedById(emoteId) is { } emote)
+        var log = (id & 1) == 1 ? ChatLog.Motion : ChatLog.GameDefault;
+        if (unlockedById(id >> 1) is { } emote)
         {
-            play(emote);
+            play(emote, new FeelRequest(emote.Name, log));
         }
         else
         {

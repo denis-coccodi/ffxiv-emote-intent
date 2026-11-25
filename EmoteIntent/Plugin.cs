@@ -19,17 +19,20 @@ public sealed class Plugin : IDalamudPlugin
     [PluginService] internal static IPluginLog Log { get; private set; } = null!;
 
     private readonly EmoteCatalog catalog;
+    private readonly PhraseMatcher matcher;
     private readonly IntentResolver resolver;
     private readonly SuggestionLinks suggestions;
 
     public Plugin()
     {
         catalog = new EmoteCatalog(DataManager, UnlockState);
-        resolver = new IntentResolver(new PhraseMatcher(PhraseBank.LoadEmbedded()));
+        matcher = new PhraseMatcher(PhraseBank.LoadEmbedded());
+        resolver = new IntentResolver(matcher);
         suggestions = new SuggestionLinks(ChatGui, id => catalog.Unlocked().FirstOrDefault(emote => emote.Id == id), Play);
         CommandManager.AddHandler(CommandName, new CommandInfo(OnCommand)
         {
-            HelpMessage = "Play the emote that fits what you mean, e.g. /feel so happy to see you, or /feel hug.",
+            HelpMessage = "Play the emote that fits what you mean, e.g. /feel so happy to see you, or /feel hug. "
+                + "End with \"motion\" to play it without the chat line, or \"text\" to show it.",
         });
     }
 
@@ -39,10 +42,11 @@ public sealed class Plugin : IDalamudPlugin
         suggestions.Dispose();
     }
 
-    private static void Play(EmoteInfo emote)
+    private static void Play(EmoteInfo emote, FeelRequest request)
     {
-        Log.Debug("Playing {Command}", emote.Command);
-        ChatCommand.Run(emote.Command);
+        var command = request.CommandFor(emote);
+        Log.Debug("Playing {Command}", command);
+        ChatCommand.Run(command);
     }
 
     private void OnCommand(string command, string args)
@@ -54,16 +58,17 @@ public sealed class Plugin : IDalamudPlugin
             return;
         }
 
-        switch (resolver.Resolve(args, unlocked))
+        var request = FeelRequest.Parse(args, matcher.IsPhrase);
+        switch (resolver.Resolve(request.Text, unlocked))
         {
             case IntentResult.Play play:
-                Play(play.Emote);
+                Play(play.Emote, request);
                 break;
             case IntentResult.Suggest suggest:
-                suggestions.Print(suggest.Emotes);
+                suggestions.Print(suggest.Emotes, request);
                 break;
             default:
-                ChatGui.Print($"No unlocked emote fits \"{args.Trim()}\" yet. The phrase bank covers more emotes with each update.");
+                ChatGui.Print($"No unlocked emote fits \"{request.Text}\" yet. The phrase bank covers more emotes with each update.");
                 break;
         }
     }
