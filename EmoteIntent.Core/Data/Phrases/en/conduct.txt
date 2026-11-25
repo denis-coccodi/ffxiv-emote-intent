@@ -23,9 +23,10 @@ fortissimo
 encore maestro
 bard performance
 performing
-perform
 recital
 concert hall
 music lead
 lead the band
 lead the song
+conducting the music
+lead the orchestra
