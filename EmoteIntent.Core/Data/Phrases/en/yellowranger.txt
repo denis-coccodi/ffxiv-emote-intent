@@ -1,4 +1,5 @@
 # /rangerpose3r (Yellow Ranger Pose A): a yellow ranger's pose, one arm raised high.
+@ /rangerpose3r /rangerpose3l
 yellow ranger
 yellow ranger pose
 the yellow one
@@ -13,7 +14,6 @@ arm raised high
 hand to the sky
 hand on my chest
 proud hero
-pride
 proud pose
 hero of the sun
 sunshine hero

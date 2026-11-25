@@ -1,4 +1,5 @@
 # /wink (Wink (Right)): wink.
+@ /wink /leftwink
 wink
 winking
 wink at you

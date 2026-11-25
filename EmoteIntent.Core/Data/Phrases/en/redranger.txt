@@ -1,4 +1,5 @@
 # /rangerpose1r (Red Ranger Pose A): a sentai hero pose, palm thrust forward.
+@ /rangerpose1r /rangerpose1l
 red ranger
 red ranger pose
 the red one

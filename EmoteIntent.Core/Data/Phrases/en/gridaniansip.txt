@@ -1,4 +1,5 @@
 # /gridaniansip (Gridanian Sip): drink in the Gridanian manner.
+@ /gridaniansip /gridaniangulp
 gridanian sip
 gridania drink
 drink like a gridanian
@@ -31,3 +32,6 @@ herbal
 drink in gridania
 a sip in the forest
 nature's drink
+gridanian punch
+mulled gridanian punch
+gridanian gulp

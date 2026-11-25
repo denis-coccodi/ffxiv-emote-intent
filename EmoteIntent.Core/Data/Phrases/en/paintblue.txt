@@ -19,7 +19,6 @@ sky
 paint the sky
 paint the ocean
 paint the sea
-water
 rain
 feeling blue
 blue mood
@@ -33,3 +32,4 @@ draw in blue
 paint in blue
 blue art
 sea blue
+blue paint everywhere

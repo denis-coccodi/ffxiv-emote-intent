@@ -1,0 +1,22 @@
+# Simulation M / F: synthesize a shimmering sword or spear (Omega).
+@ /simulationm /simulationf
+simulation
+synthesize a sword
+synthesize a spear
+shimmering sword
+shimmering spear
+omega
+omega m
+omega f
+alphascape
+the simulation
+summon a sword
+summon a spear
+conjure a sword
+conjure a weapon
+energy sword
+light sword
+hologram sword
+materialize a weapon
+program a weapon
+omega simulation

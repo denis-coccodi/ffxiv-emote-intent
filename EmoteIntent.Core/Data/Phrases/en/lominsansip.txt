@@ -1,4 +1,5 @@
 # /lominsansip (Lominsan Sip): drink in the Lominsan manner.
+@ /lominsansip /lominsangulp
 lominsan sip
 limsa drink
 drink like a pirate
@@ -31,3 +32,7 @@ salty
 drink in limsa
 a sailor's drink
 rum time
+lominsan punch
+mulled punch
+mulled lominsan punch
+lominsan gulp

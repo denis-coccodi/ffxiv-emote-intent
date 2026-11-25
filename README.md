@@ -2,7 +2,7 @@
 
 A [Dalamud](https://github.com/goatcorp/Dalamud) plugin for Final Fantasy XIV. Type `/feel` and the emote you want, and it plays it if your character has it unlocked.
 
-**Early version.** `/feel` understands what you mean for 248 of the game's 295 emotes (`/feel so happy to see you`, `/feel give me a big hug`, `/feel idk`, `/feel i'm cold`, `/feel o7`). The rest, mostly colour and side variants such as the penlight cheers and Ranger poses, and a few dances, play by name or command (`/feel cheer wave pink`); more emotes come with each update. Any emote also plays by its name, command or alias (`/feel hug`, `/feel /hug`). Matching runs on your PC from a phrase bank shipped with the plugin; AI will only ever be an option you switch on with your own key.
+**Early version.** `/feel` understands what you mean for 287 of the game's 295 emotes (`/feel so happy to see you`, `/feel excited`, `/feel give me a big hug`, `/feel idk`, `/feel i'm cold`, `/feel o7`). Near-identical emotes share their phrases and play whichever you have unlocked (Jump for Joy 1–5, the penlight cheers, the Ranger poses, both winks). A few dances and utility commands (Visor, Change Pose) play by name or command only. Any emote also plays by its name, command or alias (`/feel hug`, `/feel /hug`). Matching runs on your PC from a phrase bank shipped with the plugin; AI will only ever be an option you switch on with your own key.
 
 ## Commands
 
@@ -18,7 +18,9 @@ A [Dalamud](https://github.com/goatcorp/Dalamud) plugin for Final Fantasy XIV. T
 
 ## Phrase bank
 
-`EmoteIntent.Core/Data/Phrases/en/<command>.txt` holds, for each emote, the ways players might say it (one phrase per line; `#` lines are comments). `/feel` ranks emotes by the words your text shares with their phrases, rarer words counting more, and word order a little. The phrases were written with AI help (Claude) and are checked by tests: every file is a real emote, has at least 30 phrases, and no phrase belongs to two emotes.
+`EmoteIntent.Core/Data/Phrases/en/<command>.txt` holds, for each emote, the ways players might say it (one phrase per line; `#` lines are comments). A line `@ /a /b /c` makes a file a family of near-identical emotes: its phrases play the first one you have unlocked. `/feel` ranks emotes by the words your text shares with their phrases, rarer words counting more, and word order a little.
+
+The phrases follow what each emote does in the game: its own description, exported with the emote list to `EmoteIntent.Core/Data/emotes.json` ("Cup your face in barely contained ecstasy."), and screenshots where that isn't enough. They were written with AI help (Claude) and are checked by tests: every file names real emotes, has at least 30 phrases (20 for a family), no phrase belongs to two files, and about 150 everyday words and sentences ("excited", "jealous", "brb", "i'm back") must keep playing the emote they play now.
 
 ## Install
 

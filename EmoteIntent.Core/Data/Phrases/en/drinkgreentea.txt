@@ -1,4 +1,5 @@
 # /drinkgreentea (Drink Green Tea): drink green tea from a teacup.
+@ /drinkgreentea /savortea
 green tea
 drink green tea
 matcha
@@ -31,3 +32,7 @@ a cup of green tea
 green tea please
 hot green tea
 tea in a teacup
+savor tea
+savoring tea
+sit and sip tea
+seated tea

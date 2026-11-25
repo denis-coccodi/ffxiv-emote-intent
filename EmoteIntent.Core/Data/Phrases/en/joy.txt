@@ -1,6 +1,4 @@
 # /joy (Joy): jump for joy.
-jump for joy
-jumping for joy
 yay
 yaaay
 yippee
@@ -40,5 +38,3 @@ wooo
 let's goooo
 pog
 poggers
-i'm so excited
-super excited

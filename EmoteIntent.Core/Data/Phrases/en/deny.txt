@@ -31,3 +31,6 @@ i object
 denial
 x
 do not
+stop
+stop that
+stop it now

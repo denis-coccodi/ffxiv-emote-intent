@@ -4,7 +4,8 @@
     "name": "Bow",
     "command": "/bow",
     "aliases": [],
-    "category": "General"
+    "category": "General",
+    "description": "\u2192Perform a bow."
   },
   {
     "id": 154,
@@ -13,77 +14,88 @@
     "aliases": [
       "/ebow"
     ],
-    "category": "General"
+    "category": "General",
+    "description": "\u2192Perform a bow in the Far Eastern fashion."
   },
   {
     "id": 41,
     "name": "Welcome",
     "command": "/welcome",
     "aliases": [],
-    "category": "General"
+    "category": "General",
+    "description": "\u2192Make a welcoming gesture."
   },
   {
     "id": 172,
     "name": "Greeting",
     "command": "/greet",
     "aliases": [],
-    "category": "General"
+    "category": "General",
+    "description": "\u2192Wave your hand in greeting."
   },
   {
     "id": 15,
     "name": "Goodbye",
     "command": "/goodbye",
     "aliases": [],
-    "category": "General"
+    "category": "General",
+    "description": "\u2192Bid farewell."
   },
   {
     "id": 16,
     "name": "Wave",
     "command": "/wave",
     "aliases": [],
-    "category": "General"
+    "category": "General",
+    "description": "\u2192Wave your hand."
   },
   {
     "id": 19,
     "name": "Kneel",
     "command": "/kneel",
     "aliases": [],
-    "category": "General"
+    "category": "General",
+    "description": "\u2192Kneel in respect."
   },
   {
     "id": 31,
     "name": "Salute",
     "command": "/salute",
     "aliases": [],
-    "category": "General"
+    "category": "General",
+    "description": "\u2192Perform a salute."
   },
   {
     "id": 55,
     "name": "Storm Salute",
     "command": "/gcsalute",
     "aliases": [],
-    "category": "General"
+    "category": "General",
+    "description": "\u2192Perform an official Maelstrom salute."
   },
   {
     "id": 56,
     "name": "Serpent Salute",
     "command": "/gcsalute",
     "aliases": [],
-    "category": "General"
+    "category": "General",
+    "description": "\u2192Perform an official Order of the Twin Adder salute."
   },
   {
     "id": 57,
     "name": "Flame Salute",
     "command": "/gcsalute",
     "aliases": [],
-    "category": "General"
+    "category": "General",
+    "description": "\u2192Perform an official Immortal Flames salute."
   },
   {
     "id": 59,
     "name": "Imperial Salute",
     "command": "/imperialsalute",
     "aliases": [],
-    "category": "General"
+    "category": "General",
+    "description": "\u2192Perform an Imperial Garlean Army salute."
   },
   {
     "id": 124,
@@ -92,168 +104,192 @@
     "aliases": [
       "/egreeting"
     ],
-    "category": "General"
+    "category": "General",
+    "description": "ALIASES: /easterngreeting, /egreeting USAGE: /egreeting [subcommand] \u2192Perform a greeting common in the Far East."
   },
   {
     "id": 199,
     "name": "Lali-ho",
     "command": "/laliho",
     "aliases": [],
-    "category": "General"
+    "category": "General",
+    "description": "\u2192Perform a traditional dwarven greeting."
   },
   {
     "id": 285,
     "name": "Ohokaliy",
     "command": "/ohokaliy",
     "aliases": [],
-    "category": "General"
+    "category": "General",
+    "description": "\u2192Perform a proper Hanuhanu greeting."
   },
   {
     "id": 20,
     "name": "Chuckle",
     "command": "/chuckle",
     "aliases": [],
-    "category": "General"
+    "category": "General",
+    "description": "\u2192Chuckle in amusement."
   },
   {
     "id": 21,
     "name": "Laugh",
     "command": "/laugh",
     "aliases": [],
-    "category": "General"
+    "category": "General",
+    "description": "\u2192Burst out laughing."
   },
   {
     "id": 18,
     "name": "Joy",
     "command": "/joy",
     "aliases": [],
-    "category": "General"
+    "category": "General",
+    "description": "\u2192Express joy."
   },
   {
     "id": 48,
     "name": "Happy",
     "command": "/happy",
     "aliases": [],
-    "category": "General"
+    "category": "General",
+    "description": "\u2192Display extreme happiness."
   },
   {
     "id": 34,
     "name": "Rally",
     "command": "/rally",
     "aliases": [],
-    "category": "General"
+    "category": "General",
+    "description": "\u2192Give encouragement."
   },
   {
     "id": 35,
     "name": "Soothe",
     "command": "/soothe",
     "aliases": [],
-    "category": "General"
+    "category": "General",
+    "description": "\u2192Make a comforting gesture."
   },
   {
     "id": 4,
     "name": "Blush",
     "command": "/blush",
     "aliases": [],
-    "category": "General"
+    "category": "General",
+    "description": "\u2192Blush with embarrassment."
   },
   {
     "id": 9,
     "name": "Comfort",
     "command": "/comfort",
     "aliases": [],
-    "category": "General"
+    "category": "General",
+    "description": "\u2192Make a consoling gesture."
   },
   {
     "id": 30,
     "name": "Psych",
     "command": "/psych",
     "aliases": [],
-    "category": "General"
+    "category": "General",
+    "description": "\u2192Psych yourself up."
   },
   {
     "id": 58,
     "name": "Pray",
     "command": "/pray",
     "aliases": [],
-    "category": "General"
+    "category": "General",
+    "description": "\u2192Offer solemn words of prayer to the Twelve or whatever gods it is you keep."
   },
   {
     "id": 140,
     "name": "Pay Respects",
     "command": "/respect",
     "aliases": [],
-    "category": "General"
+    "category": "General",
+    "description": "\u2192Offer up a silent prayer."
   },
   {
     "id": 263,
     "name": "Hand to Heart",
     "command": "/handtoheart",
     "aliases": [],
-    "category": "General"
+    "category": "General",
+    "description": "\u2192Gently place your hand on your heart."
   },
   {
     "id": 46,
     "name": "Blow Kiss",
     "command": "/blowkiss",
     "aliases": [],
-    "category": "General"
+    "category": "General",
+    "description": "\u2192Throw an airborne smooch in someone\u0027s general direction."
   },
   {
     "id": 146,
     "name": "Dote",
     "command": "/dote",
     "aliases": [],
-    "category": "General"
+    "category": "General",
+    "description": "\u2192Throw a heartfelt kiss at your beloved."
   },
   {
     "id": 11,
     "name": "Dance",
     "command": "/dance",
     "aliases": [],
-    "category": "General"
+    "category": "General",
+    "description": "\u2192Start dancing."
   },
   {
     "id": 42,
     "name": "Yes",
     "command": "/yes",
     "aliases": [],
-    "category": "General"
+    "category": "General",
+    "description": "\u2192Nod in approval."
   },
   {
     "id": 43,
     "name": "Thumbs Up",
     "command": "/thumbsup",
     "aliases": [],
-    "category": "General"
+    "category": "General",
+    "description": "\u2192Strongly agree."
   },
   {
     "id": 7,
     "name": "Clap",
     "command": "/clap",
     "aliases": [],
-    "category": "General"
+    "category": "General",
+    "description": "\u2192Applaud."
   },
   {
     "id": 29,
     "name": "Congratulate",
     "command": "/congratulate",
     "aliases": [],
-    "category": "General"
+    "category": "General",
+    "description": "\u2192Offer congratulations."
   },
   {
     "id": 6,
     "name": "Cheer",
     "command": "/cheer",
     "aliases": [],
-    "category": "General"
+    "category": "General",
+    "description": "\u2192Cheer enthusiastically."
   },
   {
     "id": 240,
     "name": "Determined",
     "command": "/determined",
     "aliases": [],
-    "category": "General"
+    "category": "General",
+    "description": "\u2192Punch your own palm with readiness."
   },
   {
     "id": 110,
@@ -262,21 +298,24 @@
     "aliases": [
       "/huzzah"
     ],
-    "category": "General"
+    "category": "General",
+    "description": "ALIASES: /huzzah, /hurray USAGE: /huzzah [subcommand] \u2192Give a hearty cheer."
   },
   {
     "id": 112,
     "name": "Hug",
     "command": "/hug",
     "aliases": [],
-    "category": "General"
+    "category": "General",
+    "description": "\u2192Give a warm hug."
   },
   {
     "id": 113,
     "name": "Embrace",
     "command": "/embrace",
     "aliases": [],
-    "category": "General"
+    "category": "General",
+    "description": "\u2192Perform a loving embrace."
   },
   {
     "id": 105,
@@ -285,7 +324,8 @@
     "aliases": [
       "/pet"
     ],
-    "category": "General"
+    "category": "General",
+    "description": "\u2192Take the love within your heart and focus it into your hand."
   },
   {
     "id": 115,
@@ -296,7 +336,8 @@
       "/fistbump",
       "/brofist"
     ],
-    "category": "General"
+    "category": "General",
+    "description": "ALIASES: /fistbump, /brofist USAGE: /fistbump [subcommand] \u2192Attempt a fistbump."
   },
   {
     "id": 121,
@@ -305,7 +346,8 @@
     "aliases": [
       "/bstance"
     ],
-    "category": "General"
+    "category": "General",
+    "description": "ALIASES: /battlestance, /bstance USAGE: /bstance [subcommand] \u2192Prepare yourself for battle."
   },
   {
     "id": 122,
@@ -314,14 +356,16 @@
     "aliases": [
       "/vpose"
     ],
-    "category": "General"
+    "category": "General",
+    "description": "ALIASES: /victorypose, /vpose USAGE: /vpose [subcommand] \u2192Celebrate victory."
   },
   {
     "id": 125,
     "name": "Eureka",
     "command": "/eureka",
     "aliases": [],
-    "category": "General"
+    "category": "General",
+    "description": "\u2192Experience a brief moment of enlightenment."
   },
   {
     "id": 127,
@@ -330,14 +374,16 @@
     "aliases": [
       "/hknight"
     ],
-    "category": "General"
+    "category": "General",
+    "description": "ALIASES: /haurchefant, /hknight USAGE: /haurchefant [subcommand] \u2192Express your fervent approval."
   },
   {
     "id": 246,
     "name": "Wow",
     "command": "/wow",
     "aliases": [],
-    "category": "General"
+    "category": "General",
+    "description": "\u2192Sparkle with amazement."
   },
   {
     "id": 194,
@@ -346,35 +392,40 @@
     "aliases": [
       "/makeithail"
     ],
-    "category": "General"
+    "category": "General",
+    "description": "\u2192Humbly scatter gold coins at the feet of your admirers."
   },
   {
     "id": 195,
     "name": "Fist Pump",
     "command": "/fistpump",
     "aliases": [],
-    "category": "General"
+    "category": "General",
+    "description": "\u2192Express an unbridled satisfaction at the crushing defeat of your enemies via a swift pumping motion of your arms."
   },
   {
     "id": 197,
     "name": "Senor Sabotender",
     "command": "/sabotender",
     "aliases": [],
-    "category": "General"
+    "category": "General",
+    "description": "\u2192Do your finest impression of the Manderville Gold Saucer\u0027s mascot Senor Sabotender."
   },
   {
     "id": 202,
     "name": "Toast",
     "command": "/toast",
     "aliases": [],
-    "category": "General"
+    "category": "General",
+    "description": "\u2192Raise a toast to those around you."
   },
   {
     "id": 205,
     "name": "Snap",
     "command": "/snap",
     "aliases": [],
-    "category": "General"
+    "category": "General",
+    "description": "\u2192Snap your fingers."
   },
   {
     "id": 211,
@@ -383,56 +434,64 @@
     "aliases": [
       "/petals"
     ],
-    "category": "General"
+    "category": "General",
+    "description": "ALIASES: /flowershower, /petals USAGE: /flowershower [subcommand] \u2192Toss fragrant flower petals into the air."
   },
   {
     "id": 224,
     "name": "Paint It Black",
     "command": "/paintblack",
     "aliases": [],
-    "category": "General"
+    "category": "General",
+    "description": "\u2192Swab the floor with black paint."
   },
   {
     "id": 225,
     "name": "Paint It Red",
     "command": "/paintred",
     "aliases": [],
-    "category": "General"
+    "category": "General",
+    "description": "\u2192Swab the floor with red paint."
   },
   {
     "id": 226,
     "name": "Paint It Yellow",
     "command": "/paintyellow",
     "aliases": [],
-    "category": "General"
+    "category": "General",
+    "description": "\u2192Swab the floor with yellow paint."
   },
   {
     "id": 227,
     "name": "Paint It Blue",
     "command": "/paintblue",
     "aliases": [],
-    "category": "General"
+    "category": "General",
+    "description": "\u2192Swab the floor with blue paint."
   },
   {
     "id": 252,
     "name": "Ear Wiggle",
     "command": "/earwiggle",
     "aliases": [],
-    "category": "General"
+    "category": "General",
+    "description": "\u2192Wiggle suddenly enormous ears."
   },
   {
     "id": 249,
     "name": "Magic Trick",
     "command": "/magictrick",
     "aliases": [],
-    "category": "General"
+    "category": "General",
+    "description": "\u2192Perform a magic trick."
   },
   {
     "id": 267,
     "name": "All Saints\u0027 Charm",
     "command": "/allsaintscharm",
     "aliases": [],
-    "category": "General"
+    "category": "General",
+    "description": "\u2192Swish and flick to cast a spell."
   },
   {
     "id": 258,
@@ -441,7 +500,8 @@
     "aliases": [
       "/jj1"
     ],
-    "category": "General"
+    "category": "General",
+    "description": "\u2192Jump happily for joy."
   },
   {
     "id": 259,
@@ -450,7 +510,8 @@
     "aliases": [
       "/jj2"
     ],
-    "category": "General"
+    "category": "General",
+    "description": "\u2192Jump merrily for joy."
   },
   {
     "id": 260,
@@ -459,7 +520,8 @@
     "aliases": [
       "/jj3"
     ],
-    "category": "General"
+    "category": "General",
+    "description": "\u2192Jump enthusiastically for joy."
   },
   {
     "id": 261,
@@ -468,7 +530,8 @@
     "aliases": [
       "/jj4"
     ],
-    "category": "General"
+    "category": "General",
+    "description": "\u2192Jump cheerfully for joy."
   },
   {
     "id": 262,
@@ -477,7 +540,8 @@
     "aliases": [
       "/jj5"
     ],
-    "category": "General"
+    "category": "General",
+    "description": "\u2192Jump for joy like a sabotender."
   },
   {
     "id": 276,
@@ -486,7 +550,8 @@
     "aliases": [
       "/vreveal"
     ],
-    "category": "General"
+    "category": "General",
+    "description": "ALIASES: /victoryreveal, /vreveal USAGE: /victoryreveal [subcommand] \u2192Await news of your victory."
   },
   {
     "id": 275,
@@ -495,7 +560,8 @@
     "aliases": [
       "/waitforit"
     ],
-    "category": "General"
+    "category": "General",
+    "description": "ALIASES: /humbletriumph, /waitforit USAGE: /humbletriumph [subcommand] \u2192Strike a mildly triumphant pose."
   },
   {
     "id": 278,
@@ -504,7 +570,8 @@
     "aliases": [
       "/bigfan"
     ],
-    "category": "General"
+    "category": "General",
+    "description": "ALIASES: /uchiwasshoi, /bigfan USAGE: /uchiwasshoi [subcommand] \u2192Stir the air with a giant fan."
   },
   {
     "id": 297,
@@ -513,7 +580,8 @@
     "aliases": [
       "/breaking"
     ],
-    "category": "General"
+    "category": "General",
+    "description": "ALIASES: /breakdance, /breaking USAGE: /breakdance [subcommand] \u2192Perform a stylish and powerful dance."
   },
   {
     "id": 304,
@@ -522,7 +590,8 @@
     "aliases": [
       "/limber"
     ],
-    "category": "General"
+    "category": "General",
+    "description": "ALIASES: /limberup, /limber USAGE: /limberup [subcommand] \u2192Wind up your arm in a brisk stretch."
   },
   {
     "id": 312,
@@ -531,105 +600,120 @@
     "aliases": [
       "/delight"
     ],
-    "category": "General"
+    "category": "General",
+    "description": "ALIASES: /delighted, /delight USAGE: /delighted [subcommand] \u2192Cup your face in barely contained ecstasy."
   },
   {
     "id": 318,
     "name": "Divine Arm",
     "command": "/divinearm",
     "aliases": [],
-    "category": "General"
+    "category": "General",
+    "description": "\u2192Send forth radiant light from the Divine Artifact upon your arm."
   },
   {
     "id": 319,
     "name": "Divine Disk",
     "command": "/divinedisk",
     "aliases": [],
-    "category": "General"
+    "category": "General",
+    "description": "\u2192Send forth radiant light from the Divine Artifact around your neck."
   },
   {
     "id": 320,
     "name": "Divine Tiara",
     "command": "/divinetiara",
     "aliases": [],
-    "category": "General"
+    "category": "General",
+    "description": "\u2192Send forth radiant light from the Divine Artifact atop your head."
   },
   {
     "id": 24,
     "name": "No",
     "command": "/no",
     "aliases": [],
-    "category": "General"
+    "category": "General",
+    "description": "\u2192Disagree."
   },
   {
     "id": 25,
     "name": "Deny",
     "command": "/deny",
     "aliases": [],
-    "category": "General"
+    "category": "General",
+    "description": "\u2192Strongly disagree."
   },
   {
     "id": 10,
     "name": "Cry",
     "command": "/cry",
     "aliases": [],
-    "category": "General"
+    "category": "General",
+    "description": "\u2192Break into tears."
   },
   {
     "id": 3,
     "name": "Furious",
     "command": "/furious",
     "aliases": [],
-    "category": "General"
+    "category": "General",
+    "description": "\u2192Be furious."
   },
   {
     "id": 14,
     "name": "Fume",
     "command": "/fume",
     "aliases": [],
-    "category": "General"
+    "category": "General",
+    "description": "\u2192Express annoyance."
   },
   {
     "id": 309,
     "name": "Stomp",
     "command": "/stomp",
     "aliases": [],
-    "category": "General"
+    "category": "General",
+    "description": "\u2192Vent your anger and frustration upon the ground beneath you with a well-placed stomp."
   },
   {
     "id": 26,
     "name": "Panic",
     "command": "/panic",
     "aliases": [],
-    "category": "General"
+    "category": "General",
+    "description": "\u2192Start to panic."
   },
   {
     "id": 40,
     "name": "Upset",
     "command": "/upset",
     "aliases": [],
-    "category": "General"
+    "category": "General",
+    "description": "\u2192Express disgust."
   },
   {
     "id": 49,
     "name": "Disappointed",
     "command": "/disappointed",
     "aliases": [],
-    "category": "General"
+    "category": "General",
+    "description": "\u2192Convey utter disappointment."
   },
   {
     "id": 38,
     "name": "Sulk",
     "command": "/sulk",
     "aliases": [],
-    "category": "General"
+    "category": "General",
+    "description": "\u2192Wallow in self-pity."
   },
   {
     "id": 2,
     "name": "Angry",
     "command": "/angry",
     "aliases": [],
-    "category": "General"
+    "category": "General",
+    "description": "\u2192Be angry."
   },
   {
     "id": 245,
@@ -638,126 +722,144 @@
     "aliases": [
       "/pagaga"
     ],
-    "category": "General"
+    "category": "General",
+    "description": "ALIASES: /deride, /pagaga USAGE: /deride [subcommand] \u2192Bare your teeth derisively."
   },
   {
     "id": 17,
     "name": "Huh",
     "command": "/huh",
     "aliases": [],
-    "category": "General"
+    "category": "General",
+    "description": "\u2192Act bemused."
   },
   {
     "id": 32,
     "name": "Shocked",
     "command": "/shocked",
     "aliases": [],
-    "category": "General"
+    "category": "General",
+    "description": "\u2192Act shocked."
   },
   {
     "id": 33,
     "name": "Shrug",
     "command": "/shrug",
     "aliases": [],
-    "category": "General"
+    "category": "General",
+    "description": "\u2192Shrug."
   },
   {
     "id": 36,
     "name": "Stagger",
     "command": "/stagger",
     "aliases": [],
-    "category": "General"
+    "category": "General",
+    "description": "\u2192Stagger for a moment."
   },
   {
     "id": 1,
     "name": "Surprised",
     "command": "/surprised",
     "aliases": [],
-    "category": "General"
+    "category": "General",
+    "description": "\u2192Act surprised."
   },
   {
     "id": 256,
     "name": "Frighten",
     "command": "/frighten",
     "aliases": [],
-    "category": "General"
+    "category": "General",
+    "description": "\u2192Attempt to appear menacing."
   },
   {
     "id": 12,
     "name": "Doubt",
     "command": "/doubt",
     "aliases": [],
-    "category": "General"
+    "category": "General",
+    "description": "\u2192Appear doubtful."
   },
   {
     "id": 47,
     "name": "Grovel",
     "command": "/grovel",
     "aliases": [],
-    "category": "General"
+    "category": "General",
+    "description": "\u2192Fall to your knees in unworthiness."
   },
   {
     "id": 111,
     "name": "Slap",
     "command": "/slap",
     "aliases": [],
-    "category": "General"
+    "category": "General",
+    "description": "\u2192Let your hand do the talking."
   },
   {
     "id": 137,
     "name": "Facepalm",
     "command": "/facepalm",
     "aliases": [],
-    "category": "General"
+    "category": "General",
+    "description": "\u2192Bury your head into your hands in frustration."
   },
   {
     "id": 233,
     "name": "Clutch Head",
     "command": "/clutchhead",
     "aliases": [],
-    "category": "General"
+    "category": "General",
+    "description": "\u2192Seize your head in pain or anguish."
   },
   {
     "id": 171,
     "name": "Aback",
     "command": "/aback",
     "aliases": [],
-    "category": "General"
+    "category": "General",
+    "description": "\u2192Act taken aback."
   },
   {
     "id": 204,
     "name": "Headache",
     "command": "/headache",
     "aliases": [],
-    "category": "General"
+    "category": "General",
+    "description": "\u2192Reel from a terrible headache."
   },
   {
     "id": 230,
     "name": "Vexed",
     "command": "/vexed",
     "aliases": [],
-    "category": "General"
+    "category": "General",
+    "description": "\u2192Appear visibly frustrated."
   },
   {
     "id": 291,
     "name": "Overreact",
     "command": "/overreact",
     "aliases": [],
-    "category": "General"
+    "category": "General",
+    "description": "\u2192Look on in absolute shock."
   },
   {
     "id": 45,
     "name": "Pose",
     "command": "/pose",
     "aliases": [],
-    "category": "General"
+    "category": "General",
+    "description": "\u2192Strike a pose."
   },
   {
     "id": 139,
     "name": "Flex",
     "command": "/flex",
     "aliases": [],
-    "category": "General"
+    "category": "General",
+    "description": "\u2192Flex your muscles."
   },
   {
     "id": 282,
@@ -766,7 +868,8 @@
     "aliases": [
       "/unbound"
     ],
-    "category": "General"
+    "category": "General",
+    "description": "ALIASES: /poseoftheunbound, /unbound USAGE: /poseoftheunbound [subcommand] \u2192Pose as if freed from all inhibition and common sense."
   },
   {
     "id": 313,
@@ -775,98 +878,112 @@
     "aliases": [
       "/runway"
     ],
-    "category": "General"
+    "category": "General",
+    "description": "ALIASES: /runwaywalk, /runway USAGE: /runwaywalk [subcommand] \u2192Confidently strut your stuff."
   },
   {
     "id": 8,
     "name": "Beckon",
     "command": "/beckon",
     "aliases": [],
-    "category": "General"
+    "category": "General",
+    "description": "\u2192Make a beckoning motion."
   },
   {
     "id": 85,
     "name": "Throw",
     "command": "/throw",
     "aliases": [],
-    "category": "General"
+    "category": "General",
+    "description": "\u2192Throw an object."
   },
   {
     "id": 178,
     "name": "Splash",
     "command": "/splash",
     "aliases": [],
-    "category": "General"
+    "category": "General",
+    "description": "\u2192Splash playfully when in water."
   },
   {
     "id": 106,
     "name": "Hand Over",
     "command": "/handover",
     "aliases": [],
-    "category": "General"
+    "category": "General",
+    "description": "\u2192Extend your hand in a giving gesture."
   },
   {
     "id": 39,
     "name": "Think",
     "command": "/think",
     "aliases": [],
-    "category": "General"
+    "category": "General",
+    "description": "\u2192Become lost in thought."
   },
   {
     "id": 44,
     "name": "Examine Self",
     "command": "/examineself",
     "aliases": [],
-    "category": "General"
+    "category": "General",
+    "description": "\u2192Admire yourself."
   },
   {
     "id": 13,
     "name": "Doze",
     "command": "/doze",
     "aliases": [],
-    "category": "General"
+    "category": "General",
+    "description": "\u2192Start dozing off. If a bed is nearby, your character will sleep in it."
   },
   {
     "id": 27,
     "name": "Point",
     "command": "/point",
     "aliases": [],
-    "category": "General"
+    "category": "General",
+    "description": "\u2192Point at something."
   },
   {
     "id": 28,
     "name": "Poke",
     "command": "/poke",
     "aliases": [],
-    "category": "General"
+    "category": "General",
+    "description": "\u2192Make a poking gesture."
   },
   {
     "id": 37,
     "name": "Stretch",
     "command": "/stretch",
     "aliases": [],
-    "category": "General"
+    "category": "General",
+    "description": "\u2192Stretch."
   },
   {
     "id": 22,
     "name": "Lookout",
     "command": "/lookout",
     "aliases": [],
-    "category": "General"
+    "category": "General",
+    "description": "\u2192Scan the area."
   },
   {
     "id": 54,
     "name": "Air Quotes",
     "command": "/airquotes",
     "aliases": [],
-    "category": "General"
+    "category": "General",
+    "description": "\u2192Make air quotes with your fingers for added sarcasm, emphasis, etc. No system message is displayed with this emote."
   },
   {
     "id": 23,
     "name": "Me",
     "command": "/me",
     "aliases": [],
-    "category": "General"
+    "category": "General",
+    "description": "\u2192Motion to yourself."
   },
   {
     "id": 123,
@@ -875,7 +992,8 @@
     "aliases": [
       "/bflip"
     ],
-    "category": "General"
+    "category": "General",
+    "description": "ALIASES: /backflip, /bflip USAGE: /bflip [subcommand] \u2192Perform a backflip."
   },
   {
     "id": 128,
@@ -885,7 +1003,8 @@
       "/estretch",
       "/easternstretch"
     ],
-    "category": "General"
+    "category": "General",
+    "description": "ALIASES: /easternstretch, /estretch USAGE: /estretch [subcommand] \u2192Stretch your muscles in the Far Eastern fashion."
   },
   {
     "id": 142,
@@ -894,42 +1013,48 @@
     "aliases": [
       "/pplease"
     ],
-    "category": "General"
+    "category": "General",
+    "description": "ALIASES: /prettyplease, /pplease USAGE: /prettyplease [subcommand] \u2192Make a pleading motion."
   },
   {
     "id": 148,
     "name": "Spectacles",
     "command": "/spectacles",
     "aliases": [],
-    "category": "General"
+    "category": "General",
+    "description": "\u2192Adjust your spectacles."
   },
   {
     "id": 151,
     "name": "Water Flip",
     "command": "/waterflip",
     "aliases": [],
-    "category": "General"
+    "category": "General",
+    "description": "\u2192Perform a somersault underwater. No system message is displayed with this emote."
   },
   {
     "id": 153,
     "name": "Power Up",
     "command": "/powerup",
     "aliases": [],
-    "category": "General"
+    "category": "General",
+    "description": "\u2192Put your true strength on display."
   },
   {
     "id": 159,
     "name": "Converse",
     "command": "/converse",
     "aliases": [],
-    "category": "General"
+    "category": "General",
+    "description": "\u2192Strike up a conversation."
   },
   {
     "id": 182,
     "name": "Elucidate",
     "command": "/elucidate",
     "aliases": [],
-    "category": "General"
+    "category": "General",
+    "description": "\u2192Explain yourself to any who will listen."
   },
   {
     "id": 231,
@@ -938,14 +1063,16 @@
     "aliases": [
       "/shh"
     ],
-    "category": "General"
+    "category": "General",
+    "description": "ALIASES: /shush, /shh USAGE: /shush [subcommand] \u2192Gesture to be quiet."
   },
   {
     "id": 63,
     "name": "Crimson Lotus",
     "command": "/crimsonlotus",
     "aliases": [],
-    "category": "General"
+    "category": "General",
+    "description": "\u2192Practice the art of the crimson lotus."
   },
   {
     "id": 250,
@@ -954,21 +1081,24 @@
     "aliases": [
       "/ladance"
     ],
-    "category": "General"
+    "category": "General",
+    "description": "ALIASES: /littleladiesdance, /ladance USAGE: /ladance [subcommand] \u2192Perform the Little Ladies\u0027 Dance."
   },
   {
     "id": 191,
     "name": "Tomestone",
     "command": "/tomestone",
     "aliases": [],
-    "category": "General"
+    "category": "General",
+    "description": "\u2192Lovingly tap your tomestone."
   },
   {
     "id": 208,
     "name": "Insist",
     "command": "/insist",
     "aliases": [],
-    "category": "General"
+    "category": "General",
+    "description": "\u2192Speak emphatically to get your point across."
   },
   {
     "id": 206,
@@ -977,7 +1107,8 @@
     "aliases": [
       "/bread"
     ],
-    "category": "General"
+    "category": "General",
+    "description": "ALIASES: /breakfast, /bread USAGE: /bread [subcommand] \u2192Chow down on a piece of bread."
   },
   {
     "id": 220,
@@ -986,7 +1117,8 @@
     "aliases": [
       "/riceball"
     ],
-    "category": "General"
+    "category": "General",
+    "description": "ALIASES: /eatriceball, /riceball USAGE: /eatriceball [subcommand] \u2192Eat a rice ball."
   },
   {
     "id": 221,
@@ -995,7 +1127,8 @@
     "aliases": [
       "/apple"
     ],
-    "category": "General"
+    "category": "General",
+    "description": "ALIASES: /eatapple, /apple USAGE: /eatapple [subcommand] \u2192Bite into an apple."
   },
   {
     "id": 232,
@@ -1004,7 +1137,8 @@
     "aliases": [
       "/pizza"
     ],
-    "category": "General"
+    "category": "General",
+    "description": "ALIASES: /eatpizza, /pizza USAGE: /eatpizza [subcommand] \u2192Snack on a slice of pizza."
   },
   {
     "id": 235,
@@ -1013,7 +1147,8 @@
     "aliases": [
       "/egg"
     ],
-    "category": "General"
+    "category": "General",
+    "description": "ALIASES: /eategg, /egg USAGE: /eategg [subcommand] \u2192Casually eat a boiled egg."
   },
   {
     "id": 247,
@@ -1022,7 +1157,8 @@
     "aliases": [
       "/cookie"
     ],
-    "category": "General"
+    "category": "General",
+    "description": "ALIASES: /eatpumpkincookie, /cookie USAGE: /eatpumpkincookie [subcommand] \u2192Nibble on a pumpkin cookie."
   },
   {
     "id": 234,
@@ -1031,14 +1167,16 @@
     "aliases": [
       "/choco"
     ],
-    "category": "General"
+    "category": "General",
+    "description": "ALIASES: /eatchocolate, /choco USAGE: /eatchocolate [subcommand] \u2192Snack on Valentione\u0027s chocolate."
   },
   {
     "id": 271,
     "name": "Eat Chicken",
     "command": "/eatchicken",
     "aliases": [],
-    "category": "General"
+    "category": "General",
+    "description": "\u2192Snack on a piece of fried chicken."
   },
   {
     "id": 330,
@@ -1047,14 +1185,16 @@
     "aliases": [
       "/taco"
     ],
-    "category": "General"
+    "category": "General",
+    "description": "ALIASES: /eattaco, /taco USAGE: /eattaco [subcommand] \u2192Eat a sizable taco."
   },
   {
     "id": 239,
     "name": "Drink Tea",
     "command": "/tea",
     "aliases": [],
-    "category": "General"
+    "category": "General",
+    "description": "\u2192Sip serenely from a teacup."
   },
   {
     "id": 305,
@@ -1063,49 +1203,56 @@
     "aliases": [
       "/greentea"
     ],
-    "category": "General"
+    "category": "General",
+    "description": "ALIASES: /drinkgreentea, /greentea USAGE: /drinkgreentea [subcommand] \u2192Sip at a soothing cup of green tea."
   },
   {
     "id": 300,
     "name": "Lominsan Sip",
     "command": "/lominsansip",
     "aliases": [],
-    "category": "General"
+    "category": "General",
+    "description": "\u2192Take a brief draught from a decorative mug of mulled Lominsan punch."
   },
   {
     "id": 298,
     "name": "Gridanian Sip",
     "command": "/gridaniansip",
     "aliases": [],
-    "category": "General"
+    "category": "General",
+    "description": "\u2192Take a brief draught from a decorative mug of mulled Gridanian punch."
   },
   {
     "id": 299,
     "name": "Ul\u0027dahn Sip",
     "command": "/uldahnsip",
     "aliases": [],
-    "category": "General"
+    "category": "General",
+    "description": "\u2192Take a brief draught from a decorative mug of mulled Ul\u0027dahn punch."
   },
   {
     "id": 277,
     "name": "Fry Egg",
     "command": "/fryegg",
     "aliases": [],
-    "category": "General"
+    "category": "General",
+    "description": "\u2192Fry an egg."
   },
   {
     "id": 207,
     "name": "Read",
     "command": "/read",
     "aliases": [],
-    "category": "General"
+    "category": "General",
+    "description": "\u2192Pore over a book."
   },
   {
     "id": 270,
     "name": "Reference",
     "command": "/reference",
     "aliases": [],
-    "category": "General"
+    "category": "General",
+    "description": "\u2192Consult literature."
   },
   {
     "id": 209,
@@ -1114,7 +1261,8 @@
     "aliases": [
       "/hmm"
     ],
-    "category": "General"
+    "category": "General",
+    "description": "ALIASES: /consider, /hmm USAGE: /consider [subcommand] \u2192Mull over a curious question."
   },
   {
     "id": 213,
@@ -1123,7 +1271,8 @@
     "aliases": [
       "/hifive"
     ],
-    "category": "General"
+    "category": "General",
+    "description": "ALIASES: /highfive, /hifive USAGE: /highfive [subcommand] \u2192Give someone a high five."
   },
   {
     "id": 229,
@@ -1132,14 +1281,16 @@
     "aliases": [
       "/mime"
     ],
-    "category": "General"
+    "category": "General",
+    "description": "ALIASES: /pantomime, /mime USAGE: /pantomime [subcommand] \u2192Perform a pantomime."
   },
   {
     "id": 251,
     "name": "Linkpearl",
     "command": "/linkpearl",
     "aliases": [],
-    "category": "General"
+    "category": "General",
+    "description": "\u2192Make a linkpearl call."
   },
   {
     "id": 257,
@@ -1148,49 +1299,56 @@
     "aliases": [
       "/advent"
     ],
-    "category": "General"
+    "category": "General",
+    "description": "\u2192Soar to the heavens, then make a suitably heroic landing."
   },
   {
     "id": 284,
     "name": "Blow Bubbles",
     "command": "/blowbubbles",
     "aliases": [],
-    "category": "General"
+    "category": "General",
+    "description": "\u2192Blow bubbles into the air."
   },
   {
     "id": 288,
     "name": "Photograph",
     "command": "/photograph",
     "aliases": [],
-    "category": "General"
+    "category": "General",
+    "description": "\u2192Take out your instant camera and snap a photo."
   },
   {
     "id": 286,
     "name": "Visage Capture",
     "command": "/visage",
     "aliases": [],
-    "category": "General"
+    "category": "General",
+    "description": "\u2192Capture your visage in your exotablet."
   },
   {
     "id": 292,
     "name": "Twirl",
     "command": "/twirl",
     "aliases": [],
-    "category": "General"
+    "category": "General",
+    "description": "\u2192Merrily spin around to flaunt your currently equipped attire."
   },
   {
     "id": 308,
     "name": "Blown Away",
     "command": "/blownaway",
     "aliases": [],
-    "category": "General"
+    "category": "General",
+    "description": "\u2192Be hurled backwards by a great force."
   },
   {
     "id": 327,
     "name": "Magitype",
     "command": "/magitype",
     "aliases": [],
-    "category": "General"
+    "category": "General",
+    "description": "\u2192Conjure a convenient terminal for all your recordkeeping needs."
   },
   {
     "id": 326,
@@ -1199,21 +1357,24 @@
     "aliases": [
       "/checkmap"
     ],
-    "category": "General"
+    "category": "General",
+    "description": "ALIASES: /navigate, /checkmap USAGE: /navigate [subcommand] \u2192Get your bearings by consulting a map."
   },
   {
     "id": 238,
     "name": "Draw Weapon",
     "command": "/draw",
     "aliases": [],
-    "category": "General"
+    "category": "General",
+    "description": "\u2192Ready your weapon."
   },
   {
     "id": 237,
     "name": "Sheathe Weapon",
     "command": "/sheathe",
     "aliases": [],
-    "category": "General"
+    "category": "General",
+    "description": "\u2192Put away your weapon."
   },
   {
     "id": 101,
@@ -1222,7 +1383,8 @@
     "aliases": [
       "/sdance"
     ],
-    "category": "Special"
+    "category": "Special",
+    "description": "ALIASES: /stepdance, /sdance USAGE: /stepdance [subcommand] \u2192Perform a step dance."
   },
   {
     "id": 102,
@@ -1231,7 +1393,8 @@
     "aliases": [
       "/hdance"
     ],
-    "category": "Special"
+    "category": "Special",
+    "description": "ALIASES: /harvestdance, /hdance USAGE: /harvestdance [subcommand] \u2192Perform a harvest dance."
   },
   {
     "id": 103,
@@ -1240,7 +1403,8 @@
     "aliases": [
       "/bdance"
     ],
-    "category": "Special"
+    "category": "Special",
+    "description": "ALIASES: /balldance, /bdance USAGE: /balldance [subcommand] \u2192Perform a ball dance."
   },
   {
     "id": 104,
@@ -1249,14 +1413,16 @@
     "aliases": [
       "/mdance"
     ],
-    "category": "Special"
+    "category": "Special",
+    "description": "ALIASES: /mandervilledance, /mdance USAGE: /mdance [subcommand] \u2192Perform the Manderville dance."
   },
   {
     "id": 109,
     "name": "Bomb Dance",
     "command": "/bombdance",
     "aliases": [],
-    "category": "Special"
+    "category": "Special",
+    "description": "\u2192Perform a bomb dance."
   },
   {
     "id": 114,
@@ -1265,7 +1431,8 @@
     "aliases": [
       "/hildy"
     ],
-    "category": "Special"
+    "category": "Special",
+    "description": "ALIASES: /hildibrand, /hildy USAGE: /hildy [subcommand] \u2192Flex like a gentleman."
   },
   {
     "id": 118,
@@ -1274,7 +1441,8 @@
     "aliases": [
       "/tdance"
     ],
-    "category": "Special"
+    "category": "Special",
+    "description": "ALIASES: /thavdance, /tdance USAGE: /tdance [subcommand] \u2192Perform a Thavnairian dance."
   },
   {
     "id": 119,
@@ -1283,7 +1451,8 @@
     "aliases": [
       "/gdance"
     ],
-    "category": "Special"
+    "category": "Special",
+    "description": "ALIASES: /golddance, /gdance USAGE: /gdance [subcommand] \u2192Perform the Gold dance."
   },
   {
     "id": 120,
@@ -1292,21 +1461,24 @@
     "aliases": [
       "/sundropdance"
     ],
-    "category": "Special"
+    "category": "Special",
+    "description": "ALIASES: /sundropdance, /sundance USAGE: /sundance [subcommand] \u2192Perform the sundrop dance."
   },
   {
     "id": 145,
     "name": "Moonlift Dance",
     "command": "/moonlift",
     "aliases": [],
-    "category": "Special"
+    "category": "Special",
+    "description": "\u2192Perform the moonlift dance."
   },
   {
     "id": 126,
     "name": "Moogle Dance",
     "command": "/mogdance",
     "aliases": [],
-    "category": "Special"
+    "category": "Special",
+    "description": "\u2192Perform the moogle dance."
   },
   {
     "id": 130,
@@ -1317,7 +1489,8 @@
       "/redrangerposea",
       "/rrpa"
     ],
-    "category": "Special"
+    "category": "Special",
+    "description": "ALIASES: /redrangerposea, /rrpa USAGE: /rrpa [subcommand] \u2192Do the Red Ranger pose A."
   },
   {
     "id": 134,
@@ -1328,7 +1501,8 @@
       "/redrangerposeb",
       "/rrpb"
     ],
-    "category": "Special"
+    "category": "Special",
+    "description": "ALIASES: /redrangerposeb, /rrpb USAGE: /rrpb [subcommand] \u2192Do the Red Ranger pose B."
   },
   {
     "id": 131,
@@ -1339,7 +1513,8 @@
       "/blackrangerposea",
       "/brpa"
     ],
-    "category": "Special"
+    "category": "Special",
+    "description": "ALIASES: /blackrangerposea, /brpa USAGE: /brpa [subcommand] \u2192Do the Black Ranger pose A."
   },
   {
     "id": 135,
@@ -1350,7 +1525,8 @@
       "/blackrangerposeb",
       "/brpb"
     ],
-    "category": "Special"
+    "category": "Special",
+    "description": "ALIASES: /blackrangerposeb, /brpb USAGE: /brpb [subcommand] \u2192Do the Black Ranger pose B."
   },
   {
     "id": 132,
@@ -1361,7 +1537,8 @@
       "/yellowrangerposea",
       "/yrpa"
     ],
-    "category": "Special"
+    "category": "Special",
+    "description": "ALIASES: /yellowrangerposea, /yrpa USAGE: /yrpa [subcommand] \u2192Do the Yellow Ranger pose A."
   },
   {
     "id": 136,
@@ -1372,7 +1549,8 @@
       "/yellowrangerposeb",
       "/yrpb"
     ],
-    "category": "Special"
+    "category": "Special",
+    "description": "ALIASES: /yellowrangerposeb, /yrpb USAGE: /yrpb [subcommand] \u2192Do the Yellow Ranger pose B."
   },
   {
     "id": 129,
@@ -1381,28 +1559,32 @@
     "aliases": [
       "/edance"
     ],
-    "category": "Special"
+    "category": "Special",
+    "description": "ALIASES: /easterndance, /edance USAGE: /edance [subcommand] \u2192Perform a Far Eastern dance."
   },
   {
     "id": 149,
     "name": "Songbird",
     "command": "/songbird",
     "aliases": [],
-    "category": "Special"
+    "category": "Special",
+    "description": "\u2192Perform the Songbird\u0027s special dance."
   },
   {
     "id": 167,
     "name": "Ritual Prayer",
     "command": "/ritualprayer",
     "aliases": [],
-    "category": "Special"
+    "category": "Special",
+    "description": "\u2192Offer a prayer to the gods."
   },
   {
     "id": 64,
     "name": "Charmed",
     "command": "/charmed",
     "aliases": [],
-    "category": "Special"
+    "category": "Special",
+    "description": "\u2192Fall into a lovestruck trance."
   },
   {
     "id": 65,
@@ -1411,7 +1593,8 @@
     "aliases": [
       "/cheerob"
     ],
-    "category": "Special"
+    "category": "Special",
+    "description": "ALIASES: /cheeronblue, /cheerob USAGE: /cheeronblue [subcommand] \u2192Wave your hands enthusiastically with blue illuminated rods."
   },
   {
     "id": 264,
@@ -1420,7 +1603,8 @@
     "aliases": [
       "/cheerow"
     ],
-    "category": "Special"
+    "category": "Special",
+    "description": "ALIASES: /cheeronbright, /cheerow USAGE: /cheeronbright [subcommand] \u2192Wave your hands enthusiastically with white illuminated rods."
   },
   {
     "id": 314,
@@ -1429,7 +1613,8 @@
     "aliases": [
       "/cheeroo"
     ],
-    "category": "Special"
+    "category": "Special",
+    "description": "ALIASES: /cheeronorange, /cheeroo USAGE: /cheeronorange [subcommand] \u2192Wave your hands enthusiastically with orange illuminated rods."
   },
   {
     "id": 66,
@@ -1440,7 +1625,8 @@
       "/cheerwave",
       "/hiphophurray"
     ],
-    "category": "Special"
+    "category": "Special",
+    "description": "ALIASES: /cheerwaveyellow, /cheerwy USAGE: /cheerwaveyellow [subcommand] \u2192Wave your hand in the air with a yellow illuminated rod."
   },
   {
     "id": 265,
@@ -1449,7 +1635,8 @@
     "aliases": [
       "/cheerwv"
     ],
-    "category": "Special"
+    "category": "Special",
+    "description": "ALIASES: /cheerwaveviolet, /cheerwv USAGE: /cheerwaveviolet [subcommand] \u2192Wave your hand in the air with a violet illuminated rod."
   },
   {
     "id": 315,
@@ -1458,7 +1645,8 @@
     "aliases": [
       "/cheerwp"
     ],
-    "category": "Special"
+    "category": "Special",
+    "description": "ALIASES: /cheerwavepink, /cheerwp USAGE: /cheerwavepink [subcommand] \u2192Wave your hand in the air with a pink illuminated rod."
   },
   {
     "id": 67,
@@ -1469,7 +1657,8 @@
       "/cheerjump",
       "/jumparound"
     ],
-    "category": "Special"
+    "category": "Special",
+    "description": "ALIASES: /cheerjumpred, /cheerjr USAGE: /cheerjumpred [subcommand] \u2192Jump and cheer enthusiastically with red illuminated rods."
   },
   {
     "id": 266,
@@ -1478,7 +1667,8 @@
     "aliases": [
       "/cheerjg"
     ],
-    "category": "Special"
+    "category": "Special",
+    "description": "ALIASES: /cheerjumpgreen, /cheerjg USAGE: /cheerjumpgreen [subcommand] \u2192Jump and cheer enthusiastically with green illuminated rods."
   },
   {
     "id": 316,
@@ -1487,7 +1677,8 @@
     "aliases": [
       "/cheerji"
     ],
-    "category": "Special"
+    "category": "Special",
+    "description": "ALIASES: /cheerjumpindigo, /cheerji USAGE: /cheerjumpindigo [subcommand] \u2192Jump and cheer enthusiastically with indigo illuminated rods."
   },
   {
     "id": 310,
@@ -1496,7 +1687,8 @@
     "aliases": [
       "/cheerrr"
     ],
-    "category": "Special"
+    "category": "Special",
+    "description": "ALIASES: /cheerrhythmred, /cheerrr USAGE: /cheerrhythmred [subcommand] \u2192Keep the beat enthusiastically with red illuminated rods."
   },
   {
     "id": 321,
@@ -1505,7 +1697,8 @@
     "aliases": [
       "/cheerrv"
     ],
-    "category": "Special"
+    "category": "Special",
+    "description": "ALIASES: /cheerrhythmviolet, /cheerrv USAGE: /cheerrhythmviolet [subcommand] \u2192Keep the beat enthusiastically with violet illuminated rods."
   },
   {
     "id": 322,
@@ -1514,7 +1707,8 @@
     "aliases": [
       "/cheerrw"
     ],
-    "category": "Special"
+    "category": "Special",
+    "description": "ALIASES: /cheerrhythmbright, /cheerrw USAGE: /cheerrhythmbright [subcommand] \u2192Keep the beat enthusiastically with white illuminated rods."
   },
   {
     "id": 311,
@@ -1523,7 +1717,8 @@
     "aliases": [
       "/cheerly"
     ],
-    "category": "Special"
+    "category": "Special",
+    "description": "ALIASES: /cheerlightyellow, /cheerly USAGE: /cheerlightyellow [subcommand] \u2192Sway gently from side to side with yellow illuminated rods."
   },
   {
     "id": 323,
@@ -1532,7 +1727,8 @@
     "aliases": [
       "/cheerlb"
     ],
-    "category": "Special"
+    "category": "Special",
+    "description": "ALIASES: /cheerlightblue, /cheerlb USAGE: /cheerlightblue [subcommand] \u2192Sway gently from side to side with blue illuminated rods."
   },
   {
     "id": 324,
@@ -1541,14 +1737,16 @@
     "aliases": [
       "/cheerlg"
     ],
-    "category": "Special"
+    "category": "Special",
+    "description": "ALIASES: /cheerlightgreen, /cheerlg USAGE: /cheerlightgreen [subcommand] \u2192Sway gently from side to side with green illuminated rods."
   },
   {
     "id": 176,
     "name": "Yol Dance",
     "command": "/yoldance",
     "aliases": [],
-    "category": "Special"
+    "category": "Special",
+    "description": "\u2192Perform the yol dance."
   },
   {
     "id": 173,
@@ -1557,35 +1755,40 @@
     "aliases": [
       "/2legit"
     ],
-    "category": "Special"
+    "category": "Special",
+    "description": "\u2192Perform a box step dance."
   },
   {
     "id": 174,
     "name": "Side Step",
     "command": "/sidestep",
     "aliases": [],
-    "category": "Special"
+    "category": "Special",
+    "description": "\u2192Perform a side step dance."
   },
   {
     "id": 185,
     "name": "Get Fantasy",
     "command": "/getfantasy",
     "aliases": [],
-    "category": "Special"
+    "category": "Special",
+    "description": "\u2192Perform the Get Fantasy dance."
   },
   {
     "id": 186,
     "name": "Popoto Step",
     "command": "/popotostep",
     "aliases": [],
-    "category": "Special"
+    "category": "Special",
+    "description": "\u2192Perform the popoto step."
   },
   {
     "id": 192,
     "name": "Heel Toe",
     "command": "/heeltoe",
     "aliases": [],
-    "category": "Special"
+    "category": "Special",
+    "description": "\u2192Perform a slick heel toe dance step."
   },
   {
     "id": 193,
@@ -1594,14 +1797,16 @@
     "aliases": [
       "/mysterymachine"
     ],
-    "category": "Special"
+    "category": "Special",
+    "description": "\u2192Perform the realm-famous \u0022goobbue do\u0022 dance step."
   },
   {
     "id": 187,
     "name": "Hum",
     "command": "/hum",
     "aliases": [],
-    "category": "Special"
+    "category": "Special",
+    "description": "\u2192Swing your arms and hum a merry tune."
   },
   {
     "id": 198,
@@ -1610,42 +1815,48 @@
     "aliases": [
       "/mmambo"
     ],
-    "category": "Special"
+    "category": "Special",
+    "description": "ALIASES: /mandervillemambo, /mmambo USAGE: /mmambo [subcommand] \u2192Perform the Manderville Mambo."
   },
   {
     "id": 210,
     "name": "Wasshoi",
     "command": "/wasshoi",
     "aliases": [],
-    "category": "Special"
+    "category": "Special",
+    "description": "\u2192Let out a joyous \u0022wasshoi.\u0022"
   },
   {
     "id": 212,
     "name": "Flame Dance",
     "command": "/flamedance",
     "aliases": [],
-    "category": "Special"
+    "category": "Special",
+    "description": "\u2192Perform the flame dance."
   },
   {
     "id": 216,
     "name": "Bee\u0027s Knees",
     "command": "/beesknees",
     "aliases": [],
-    "category": "Special"
+    "category": "Special",
+    "description": "\u2192Perform the bee\u0027s knees dance."
   },
   {
     "id": 217,
     "name": "Lali Hop",
     "command": "/lalihop",
     "aliases": [],
-    "category": "Special"
+    "category": "Special",
+    "description": "\u2192Perform the lali hop."
   },
   {
     "id": 269,
     "name": "Lop Hop",
     "command": "/lophop",
     "aliases": [],
-    "category": "Special"
+    "category": "Special",
+    "description": "\u2192Perform the Lop Hop."
   },
   {
     "id": 274,
@@ -1654,77 +1865,88 @@
     "aliases": [
       "/heart"
     ],
-    "category": "Special"
+    "category": "Special",
+    "description": "ALIASES: /loveheart, /heart USAGE: /loveheart [subcommand] \u2192Make a heart shape with your hands."
   },
   {
     "id": 283,
     "name": "Bouquet",
     "command": "/bouquet",
     "aliases": [],
-    "category": "Special"
+    "category": "Special",
+    "description": "\u2192Bestow a beautiful bouquet."
   },
   {
     "id": 328,
     "name": "Cackle",
     "command": "/cackle",
     "aliases": [],
-    "category": "Special"
+    "category": "Special",
+    "description": "\u2192Erupt into a haughty cackle that will put all who hear it in their place."
   },
   {
     "id": 150,
     "name": "Water Float",
     "command": "/waterfloat",
     "aliases": [],
-    "category": "Special"
+    "category": "Special",
+    "description": "\u2192Perform a back float in water. No system message is displayed with this emote."
   },
   {
     "id": 155,
     "name": "Squats",
     "command": "/squats",
     "aliases": [],
-    "category": "Special"
+    "category": "Special",
+    "description": "\u2192Do a set of squats."
   },
   {
     "id": 156,
     "name": "Push-ups",
     "command": "/pushups",
     "aliases": [],
-    "category": "Special"
+    "category": "Special",
+    "description": "\u2192Do a set of push-ups."
   },
   {
     "id": 157,
     "name": "Sit-ups",
     "command": "/situps",
     "aliases": [],
-    "category": "Special"
+    "category": "Special",
+    "description": "\u2192Do a set of sit-ups."
   },
   {
     "id": 158,
     "name": "Breath Control",
     "command": "/breathcontrol",
     "aliases": [],
-    "category": "Special"
+    "category": "Special",
+    "description": "\u2192Take a breath and relax."
   },
   {
     "id": 164,
     "name": "Attention",
     "command": "/attention",
     "aliases": [],
-    "category": "Special"
+    "category": "Special",
+    "description": "\u2192Stand at attention."
   },
   {
     "id": 165,
     "name": "At Ease",
     "command": "/atease",
     "aliases": [],
-    "category": "Special"
+    "category": "Special",
+    "description": "\u2192Stand relaxed with your feet apart."
   },
   {
     "id": 166,
     "name": "Box",
     "command": "/box",
     "aliases": [],
-    "category": "Special"
+    "category": "Special",
+    "description": "\u2192Put up your dukes."
   },
   {
     "id": 180,
@@ -1733,42 +1955,48 @@
     "aliases": [
       "/tillyoubleed"
     ],
-    "category": "Special"
+    "category": "Special",
+    "description": "\u2192Wipe the sweat from your brow."
   },
   {
     "id": 181,
     "name": "Shiver",
     "command": "/shiver",
     "aliases": [],
-    "category": "Special"
+    "category": "Special",
+    "description": "\u2192Tremble from the cold."
   },
   {
     "id": 169,
     "name": "Tremble",
     "command": "/tremble",
     "aliases": [],
-    "category": "Special"
+    "category": "Special",
+    "description": "\u2192Tremble with fear."
   },
   {
     "id": 170,
     "name": "Winded",
     "command": "/winded",
     "aliases": [],
-    "category": "Special"
+    "category": "Special",
+    "description": "\u2192Fall to one knee, exhausted."
   },
   {
     "id": 188,
     "name": "Confirm",
     "command": "/confirm",
     "aliases": [],
-    "category": "Special"
+    "category": "Special",
+    "description": "\u2192Make sure that all is as it should be."
   },
   {
     "id": 189,
     "name": "Scheme",
     "command": "/scheme",
     "aliases": [],
-    "category": "Special"
+    "category": "Special",
+    "description": "\u2192Spin a web of lies and deceit."
   },
   {
     "id": 196,
@@ -1777,14 +2005,16 @@
     "aliases": [
       "/youknowyourname"
     ],
-    "category": "Special"
+    "category": "Special",
+    "description": "\u2192Let that special someone know what\u0027s for."
   },
   {
     "id": 273,
     "name": "Slump",
     "command": "/slump",
     "aliases": [],
-    "category": "Special"
+    "category": "Special",
+    "description": "\u2192Hang your head in defeat."
   },
   {
     "id": 143,
@@ -1793,35 +2023,40 @@
     "aliases": [
       "/pdead"
     ],
-    "category": "Special"
+    "category": "Special",
+    "description": "ALIASES: /playdead, /pdead USAGE: /playdead [subcommand] \u2192Feign death."
   },
   {
     "id": 203,
     "name": "Lean",
     "command": "/lean",
     "aliases": [],
-    "category": "Special"
+    "category": "Special",
+    "description": "\u2192Lean back and get comfortable. No system message is displayed with this emote."
   },
   {
     "id": 214,
     "name": "Guard",
     "command": "/guard",
     "aliases": [],
-    "category": "Special"
+    "category": "Special",
+    "description": "\u2192Keep watch over someone."
   },
   {
     "id": 215,
     "name": "Malevolence",
     "command": "/malevolence",
     "aliases": [],
-    "category": "Special"
+    "category": "Special",
+    "description": "\u2192Place a curse on someone."
   },
   {
     "id": 222,
     "name": "Wring Hands",
     "command": "/wringhands",
     "aliases": [],
-    "category": "Special"
+    "category": "Special",
+    "description": "\u2192Wring your hands obsequiously."
   },
   {
     "id": 223,
@@ -1830,140 +2065,160 @@
     "aliases": [
       "/broom"
     ],
-    "category": "Special"
+    "category": "Special",
+    "description": "ALIASES: /sweep, /broom USAGE: /sweep [subcommand] \u2192Sweep the floor."
   },
   {
     "id": 241,
     "name": "Show Right",
     "command": "/showright",
     "aliases": [],
-    "category": "Special"
+    "category": "Special",
+    "description": "\u2192Show off what\u0027s on your right."
   },
   {
     "id": 242,
     "name": "Show Left",
     "command": "/showleft",
     "aliases": [],
-    "category": "Special"
+    "category": "Special",
+    "description": "\u2192Show off what\u0027s on your left."
   },
   {
     "id": 248,
     "name": "Spirit",
     "command": "/spirit",
     "aliases": [],
-    "category": "Special"
+    "category": "Special",
+    "description": "\u2192Show off your team spirit."
   },
   {
     "id": 279,
     "name": "Attend",
     "command": "/attend",
     "aliases": [],
-    "category": "Special"
+    "category": "Special",
+    "description": "\u2192Await your next orders."
   },
   {
     "id": 281,
     "name": "Shake Drink",
     "command": "/shakedrink",
     "aliases": [],
-    "category": "Special"
+    "category": "Special",
+    "description": "\u2192Shake up a refreshing cocktail."
   },
   {
     "id": 280,
     "name": "Water",
     "command": "/water",
     "aliases": [],
-    "category": "Special"
+    "category": "Special",
+    "description": "\u2192Sprinkle water over the ground."
   },
   {
     "id": 293,
     "name": "Dazed",
     "command": "/dazed",
     "aliases": [],
-    "category": "Special"
+    "category": "Special",
+    "description": "\u2192See stars as you stumble in a stupor."
   },
   {
     "id": 294,
     "name": "Rage",
     "command": "/rage",
     "aliases": [],
-    "category": "Special"
+    "category": "Special",
+    "description": "\u2192Shake with rage."
   },
   {
     "id": 295,
     "name": "Tomescroll",
     "command": "/tomescroll",
     "aliases": [],
-    "category": "Special"
+    "category": "Special",
+    "description": "\u2192Lovingly tap your tomestone in search of succor."
   },
   {
     "id": 296,
     "name": "Study",
     "command": "/study",
     "aliases": [],
-    "category": "Special"
+    "category": "Special",
+    "description": "\u2192Study intently."
   },
   {
     "id": 317,
     "name": "Carry Book",
     "command": "/carrybook",
     "aliases": [],
-    "category": "Special"
+    "category": "Special",
+    "description": "\u2192Clasp a tome tight to your bosom."
   },
   {
     "id": 307,
     "name": "Pen",
     "command": "/pen",
     "aliases": [],
-    "category": "Special"
+    "category": "Special",
+    "description": "\u2192Scrawl down some notes with a quill pen."
   },
   {
     "id": 331,
     "name": "Devour Taco",
     "command": "/devourtaco",
     "aliases": [],
-    "category": "Special"
+    "category": "Special",
+    "description": "\u2192Continuously chow down on a sizable taco."
   },
   {
     "id": 306,
     "name": "Savor Tea",
     "command": "/savortea",
     "aliases": [],
-    "category": "Special"
+    "category": "Special",
+    "description": "\u2192Continuously sip at a cup of green tea while seated."
   },
   {
     "id": 303,
     "name": "Lominsan Gulp",
     "command": "/lominsangulp",
     "aliases": [],
-    "category": "Special"
+    "category": "Special",
+    "description": "\u2192Continuously sip at a serving of mulled Lominsan punch."
   },
   {
     "id": 301,
     "name": "Gridanian Gulp",
     "command": "/gridaniangulp",
     "aliases": [],
-    "category": "Special"
+    "category": "Special",
+    "description": "\u2192Continuously sip at a serving of mulled Gridanian punch."
   },
   {
     "id": 302,
     "name": "Ul\u0027dahn Gulp",
     "command": "/uldahngulp",
     "aliases": [],
-    "category": "Special"
+    "category": "Special",
+    "description": "\u2192Continuously sip at a serving of mulled Ul\u0027dahn punch."
   },
   {
     "id": 329,
     "name": "Conduct",
     "command": "/conduct",
     "aliases": [],
-    "category": "Special"
+    "category": "Special",
+    "description": "\u2192Confidently conduct whatever may be unfolding before you."
   },
   {
     "id": 332,
     "name": "Look Back",
     "command": "/lookback",
     "aliases": [],
-    "category": "Special"
+    "category": "Special",
+    "description": "\u2192Cast a glance over your shoulder."
   },
   {
     "id": 138,
@@ -1972,42 +2227,48 @@
     "aliases": [
       "/ztk"
     ],
-    "category": "Special"
+    "category": "Special",
+    "description": "ALIASES: /zantetsuken, /ztk USAGE: /zantetsuken [subcommand] \u2192Perform the Zantetsuken attack."
   },
   {
     "id": 144,
     "name": "Diamond Dust",
     "command": "/iceheart",
     "aliases": [],
-    "category": "Special"
+    "category": "Special",
+    "description": "\u2192Envelop yourself in diamond dust."
   },
   {
     "id": 62,
     "name": "Megaflare",
     "command": "/megaflare",
     "aliases": [],
-    "category": "Special"
+    "category": "Special",
+    "description": "\u2192Cast Megaflare."
   },
   {
     "id": 175,
     "name": "Ultima",
     "command": "/ultima",
     "aliases": [],
-    "category": "Special"
+    "category": "Special",
+    "description": "\u2192Unleash the savage might of Ultima!"
   },
   {
     "id": 200,
     "name": "Simulation M",
     "command": "/simulationm",
     "aliases": [],
-    "category": "Special"
+    "category": "Special",
+    "description": "\u2192Synthesize a shimmering sword."
   },
   {
     "id": 201,
     "name": "Simulation F",
     "command": "/simulationf",
     "aliases": [],
-    "category": "Special"
+    "category": "Special",
+    "description": "\u2192Synthesize a shimmering spear."
   },
   {
     "id": 272,
@@ -2016,7 +2277,8 @@
     "aliases": [
       "/exodus"
     ],
-    "category": "Special"
+    "category": "Special",
+    "description": "ALIASES: /sundering, /exodus USAGE: /sundering [subcommand] \u2192Perform Exodus and sunder the world."
   },
   {
     "id": 50,
@@ -2026,14 +2288,16 @@
       "/sit",
       "/lounge"
     ],
-    "category": "Special"
+    "category": "Special",
+    "description": "ALIASES: /sit, /lounge USAGE: /sit \u2192Assume a sitting position. Certain emotes have special sitting equivalents. Also sits your character in a chair if the chair is nearby."
   },
   {
     "id": 52,
     "name": "Sit on Ground",
     "command": "/groundsit",
     "aliases": [],
-    "category": "Special"
+    "category": "Special",
+    "description": "\u2192Assume a sitting position. Certain emotes have special sitting equivalents. Does not sit your character in a chair even if the chair is nearby."
   },
   {
     "id": 90,
@@ -2042,14 +2306,16 @@
     "aliases": [
       "/cpose"
     ],
-    "category": "Special"
+    "category": "Special",
+    "description": "ALIASES: /changepose, /cpose USAGE: /changepose \u2192Assume the next pose in a series of idle stances."
   },
   {
     "id": 60,
     "name": "Visor",
     "command": "/visor",
     "aliases": [],
-    "category": "Special"
+    "category": "Special",
+    "description": "\u2192Open/close helm visor. This function can also be used to toggle on/off helms that light up. No system message is displayed with this emote."
   },
   {
     "id": 68,
@@ -2058,21 +2324,24 @@
     "aliases": [
       "/straight"
     ],
-    "category": "Expressions"
+    "category": "Expressions",
+    "description": "ALIASES: /straightface, /straight USAGE: /straight [subcommand] \u2192Restore your facial expression to a neutral state."
   },
   {
     "id": 69,
     "name": "Smile",
     "command": "/smile",
     "aliases": [],
-    "category": "Expressions"
+    "category": "Expressions",
+    "description": "\u2192Beam with happiness."
   },
   {
     "id": 70,
     "name": "Grin",
     "command": "/grin",
     "aliases": [],
-    "category": "Expressions"
+    "category": "Expressions",
+    "description": "\u2192Beam with delight."
   },
   {
     "id": 133,
@@ -2082,35 +2351,40 @@
       "/rightwink",
       "/wink"
     ],
-    "category": "Expressions"
+    "category": "Expressions",
+    "description": "ALIASES: /rightwink, /wink USAGE: /rightwink [subcommand] \u2192Perform the wink emote with your right eye."
   },
   {
     "id": 184,
     "name": "Wink (Left)",
     "command": "/leftwink",
     "aliases": [],
-    "category": "Expressions"
+    "category": "Expressions",
+    "description": "\u2192Perform the wink emote with your left eye."
   },
   {
     "id": 236,
     "name": "Content",
     "command": "/content",
     "aliases": [],
-    "category": "Expressions"
+    "category": "Expressions",
+    "description": "\u2192Smile in warm satisfaction."
   },
   {
     "id": 71,
     "name": "Smirk",
     "command": "/smirk",
     "aliases": [],
-    "category": "Expressions"
+    "category": "Expressions",
+    "description": "\u2192Smirk wryly."
   },
   {
     "id": 72,
     "name": "Taunt",
     "command": "/taunt",
     "aliases": [],
-    "category": "Expressions"
+    "category": "Expressions",
+    "description": "\u2192Put on a taunting grin."
   },
   {
     "id": 73,
@@ -2119,14 +2393,16 @@
     "aliases": [
       "/shut"
     ],
-    "category": "Expressions"
+    "category": "Expressions",
+    "description": "ALIASES: /shuteyes, /shut USAGE: /shuteyes [subcommand] \u2192Shut your eyes."
   },
   {
     "id": 74,
     "name": "Sad",
     "command": "/sad",
     "aliases": [],
-    "category": "Expressions"
+    "category": "Expressions",
+    "description": "\u2192Frown."
   },
   {
     "id": 75,
@@ -2135,7 +2411,8 @@
     "aliases": [
       "/fear"
     ],
-    "category": "Expressions"
+    "category": "Expressions",
+    "description": "ALIASES: /scared, /fear USAGE: /scared [subcommand] \u2192Stare in fear."
   },
   {
     "id": 76,
@@ -2144,7 +2421,8 @@
     "aliases": [
       "/awe"
     ],
-    "category": "Expressions"
+    "category": "Expressions",
+    "description": "ALIASES: /amazed, /awe USAGE: /amazed [subcommand] \u2192Stare in awe."
   },
   {
     "id": 77,
@@ -2153,7 +2431,8 @@
     "aliases": [
       "/ow"
     ],
-    "category": "Expressions"
+    "category": "Expressions",
+    "description": "ALIASES: /ouch, /ow USAGE: /ouch [subcommand] \u2192Cringe in pain."
   },
   {
     "id": 78,
@@ -2162,14 +2441,16 @@
     "aliases": [
       "/annoy"
     ],
-    "category": "Expressions"
+    "category": "Expressions",
+    "description": "ALIASES: /annoyed, /annoy USAGE: /annoyed [subcommand] \u2192Furrow your brow."
   },
   {
     "id": 79,
     "name": "Alert",
     "command": "/alert",
     "aliases": [],
-    "category": "Expressions"
+    "category": "Expressions",
+    "description": "\u2192Sense something amiss."
   },
   {
     "id": 80,
@@ -2178,77 +2459,88 @@
     "aliases": [
       "/worry"
     ],
-    "category": "Expressions"
+    "category": "Expressions",
+    "description": "ALIASES: /worried, /worry USAGE: /worried [subcommand] \u2192Appear worried."
   },
   {
     "id": 141,
     "name": "Sneer",
     "command": "/sneer",
     "aliases": [],
-    "category": "Expressions"
+    "category": "Expressions",
+    "description": "\u2192Sneer contemptuously."
   },
   {
     "id": 152,
     "name": "Pucker Up",
     "command": "/puckerup",
     "aliases": [],
-    "category": "Expressions"
+    "category": "Expressions",
+    "description": "\u2192Close your eyes and pucker your lips."
   },
   {
     "id": 160,
     "name": "Concentrate",
     "command": "/concentrate",
     "aliases": [],
-    "category": "Expressions"
+    "category": "Expressions",
+    "description": "\u2192Knit your brows in thought."
   },
   {
     "id": 161,
     "name": "Confused",
     "command": "/disturbed",
     "aliases": [],
-    "category": "Expressions"
+    "category": "Expressions",
+    "description": "\u2192Twist your face in confusion."
   },
   {
     "id": 162,
     "name": "Simper",
     "command": "/simper",
     "aliases": [],
-    "category": "Expressions"
+    "category": "Expressions",
+    "description": "\u2192Give a lazy smile."
   },
   {
     "id": 163,
     "name": "Beam",
     "command": "/beam",
     "aliases": [],
-    "category": "Expressions"
+    "category": "Expressions",
+    "description": "\u2192Grin from ear to ear."
   },
   {
     "id": 81,
     "name": "Big Grin",
     "command": "/biggrin",
     "aliases": [],
-    "category": "Expressions"
+    "category": "Expressions",
+    "description": "\u2192Break into a broad smile."
   },
   {
     "id": 82,
     "name": "Reflect",
     "command": "/reflect",
     "aliases": [],
-    "category": "Expressions"
+    "category": "Expressions",
+    "description": "\u2192Close your eyes and gather your thoughts."
   },
   {
     "id": 83,
     "name": "Furrow",
     "command": "/furrow",
     "aliases": [],
-    "category": "Expressions"
+    "category": "Expressions",
+    "description": "\u2192Furrow your eyebrows."
   },
   {
     "id": 84,
     "name": "Scoff",
     "command": "/scoff",
     "aliases": [],
-    "category": "Expressions"
+    "category": "Expressions",
+    "description": "\u2192Smile wryly."
   },
   {
     "id": 183,
@@ -2257,20 +2549,23 @@
     "aliases": [
       "/makeyougohmmm"
     ],
-    "category": "Expressions"
+    "category": "Expressions",
+    "description": "\u2192Lose yourself in thought."
   },
   {
     "id": 190,
     "name": "Endure",
     "command": "/endure",
     "aliases": [],
-    "category": "Expressions"
+    "category": "Expressions",
+    "description": "\u2192Grit your teeth and bear all that comes your way."
   },
   {
     "id": 228,
     "name": "Fake Smile",
     "command": "/fakesmile",
     "aliases": [],
-    "category": "Expressions"
+    "category": "Expressions",
+    "description": "\u2192Force a smile."
   }
 ]

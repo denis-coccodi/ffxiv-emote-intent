@@ -22,13 +22,13 @@ public sealed class PhraseMatcher
     /// <summary>Prepares the bank's phrases for matching.</summary>
     public PhraseMatcher(PhraseBank bank)
     {
-        foreach (var (command, phrases) in bank.Phrases)
+        foreach (var (key, phrases) in bank.Phrases)
         {
             foreach (var phrase in phrases)
             {
                 var words = TextNormalizer.Words(phrase);
                 entries.Add(new Entry(
-                    command, phrase, Exact(phrase), words.ToHashSet(StringComparer.Ordinal), Pairs(words)));
+                    key, bank.Commands[key], phrase, Exact(phrase), words.ToHashSet(StringComparer.Ordinal), Pairs(words)));
             }
         }
 
@@ -52,7 +52,8 @@ public sealed class PhraseMatcher
 
     /// <summary>
     /// The best-fitting emotes among <paramref name="commands"/> (the ones the character can play), best first,
-    /// one entry per command, at most <paramref name="count"/>.
+    /// one entry per phrase file, at most <paramref name="count"/>. For a family, the command is its first member the
+    /// character can play.
     /// </summary>
     public IReadOnlyList<PhraseMatch> Rank(string text, IEnumerable<string> commands, int count = 5)
     {
@@ -68,11 +69,13 @@ public sealed class PhraseMatcher
         var wordsWeight = words.Sum(Rarity);
         var pairs = Pairs(ordered);
         return entries
-            .Where(entry => allowed.Contains(entry.Command))
-            .Select(entry => new PhraseMatch(entry.Command, Score(entry, compact, words, wordsWeight, pairs), entry.Phrase))
-            .Where(match => match.Score > 0)
-            .GroupBy(match => match.Command, StringComparer.OrdinalIgnoreCase)
-            .Select(group => group.MaxBy(match => match.Score)!)
+            .Select(entry => (entry, command: entry.Commands.FirstOrDefault(allowed.Contains)))
+            .Where(item => item.command is not null)
+            .Select(item => (item.entry.Key, Match: new PhraseMatch(
+                item.command!, Score(item.entry, compact, words, wordsWeight, pairs), item.entry.Phrase)))
+            .Where(item => item.Match.Score > 0)
+            .GroupBy(item => item.Key, StringComparer.OrdinalIgnoreCase)
+            .Select(group => group.MaxBy(item => item.Match.Score).Match)
             .OrderByDescending(match => match.Score)
             .ThenBy(match => match.Command, StringComparer.Ordinal)
             .Take(count)
@@ -109,5 +112,6 @@ public sealed class PhraseMatcher
     private static HashSet<string> Pairs(IReadOnlyList<string> words) =>
         words.Zip(words.Skip(1), (first, second) => $"{first} {second}").ToHashSet(StringComparer.Ordinal);
 
-    private sealed record Entry(string Command, string Phrase, string Compact, HashSet<string> Words, HashSet<string> Pairs);
+    private sealed record Entry(
+        string Key, IReadOnlyList<string> Commands, string Phrase, string Compact, HashSet<string> Words, HashSet<string> Pairs);
 }

@@ -1,32 +1,35 @@
-# /upset (Upset): visibly upset.
+# /upset (Upset): express disgust.
 upset
-i'm upset
-so upset
-hurt
-my feelings are hurt
-you hurt my feelings
-that was mean
-how could you
-why would you do that
-why
-betrayed
-i feel betrayed
-offended
-i'm offended
-wounded
-that stings
-unhappy
-not happy
-distressed
-troubled
-bothered
-i'm bothered
-this bothers me
-not okay
-i'm not okay
-bad day
-having a bad day
-rough day
-worst day
-everything went wrong
-miserable
+disgust
+disgusted
+i'm disgusted
+disgusting
+ew
+eww
+ewww
+ew gross
+gross
+so gross
+yuck
+yuck gross
+nasty
+revolting
+repulsive
+sickening
+icky
+blech
+bleh
+blegh
+ugh gross
+that's disgusting
+how disgusting
+makes me sick
+i'm gonna be sick
+vomit
+barf
+eww no
+no thanks gross
+smells bad
+it stinks
+stinky
+what's that smell

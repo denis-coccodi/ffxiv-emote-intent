@@ -1,4 +1,5 @@
 # /eattaco (Eat Taco): eat a taco.
+@ /eattaco /devourtaco
 eat taco
 taco
 tacos
@@ -29,3 +30,9 @@ delicious
 tasty
 so good
 food is good
+devour taco
+devour
+devouring
+chow down on a taco
+keep eating
+can't stop eating
