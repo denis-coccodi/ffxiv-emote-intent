@@ -1,10 +1,4 @@
 # /amazed (Amazed): an amazed face.
-amazed
-i'm amazed
-amazement
-in awe
-awe
-awestruck
 awe inspiring
 breathtaking
 stunning
@@ -29,3 +23,10 @@ that's so cool
 cool view
 spectacular
 sightseeing
+stare in awe
+staring in awe
+wide eyed
+eyes wide
+starstruck face
+mouth open
+big eyes

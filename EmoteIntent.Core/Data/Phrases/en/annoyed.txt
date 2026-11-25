@@ -1,11 +1,4 @@
 # /annoyed (Annoyed): an annoyed face.
-annoyed
-i'm annoyed
-so annoyed
-annoying
-you're annoying
-that's annoying
-how annoying
 irritating
 pet peeve
 bugging me
@@ -29,3 +22,10 @@ if you say so
 sure whatever
 yeah yeah
 yeah yeah whatever
+furrowed brow annoyed
+irritated face
+annoyed face
+unimpressed face
+side eye annoyed
+brow furrowed
+deadpan annoyed

@@ -66,7 +66,7 @@ public class IntentResolverTests
     [InlineData("drop and give me 20", "/pushups")]
     [InlineData("take a seat", "/lounge")]
     [InlineData("kupo!", "/mogdance")]
-    [InlineData("i'm so lonely", "/sad")]
+    [InlineData("i'm so lonely", "/sulk")]
     [InlineData("evil laugh", "/cackle")]
     [InlineData("flowers for you", "/bouquet")]
     [InlineData("thank you!", "/bow")]

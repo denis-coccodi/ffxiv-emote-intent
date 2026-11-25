@@ -2,9 +2,6 @@
 slump
 slumped
 slumping
-defeated
-i'm defeated
-feeling defeated
 give up
 i give up
 i quit

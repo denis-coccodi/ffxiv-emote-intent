@@ -35,14 +35,20 @@ public sealed class IntentResolver(PhraseMatcher matcher)
     /// <summary>What to do with <paramref name="text"/>, given the character's unlocked emotes.</summary>
     public IntentResult Resolve(string text, IReadOnlyList<EmoteInfo> unlocked)
     {
-        if (EmoteNameMatcher.Match(text, unlocked) is { } named)
-        {
-            return new IntentResult.Play(named);
-        }
-
         var byCommand = unlocked
             .GroupBy(emote => emote.Command, StringComparer.OrdinalIgnoreCase)
             .ToDictionary(group => group.Key, group => group.First(), StringComparer.OrdinalIgnoreCase);
+
+        // An emote named outright plays, unless the name is also a feeling whose preference list holds that emote as
+        // a fallback ("sad": Slump first, the Sad frown only without it): then the list's first unlocked emote plays.
+        if (EmoteNameMatcher.Match(text, unlocked) is { } named)
+        {
+            var ranked = matcher.Rank(text, byCommand.Keys, 1);
+            var feeling = ranked.Count > 0 ? ranked[0] : null;
+            var preferred = feeling is { Score: >= 1 } && feeling.Commands.Count > 1
+                && feeling.Commands.Contains(named.Command, StringComparer.OrdinalIgnoreCase);
+            return new IntentResult.Play(preferred ? byCommand[feeling!.Command] : named);
+        }
         var matches = matcher.Rank(text, byCommand.Keys)
             .Where(match => match.Score >= SuggestScore)
             .ToList();
