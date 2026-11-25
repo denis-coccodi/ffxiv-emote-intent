@@ -81,6 +81,15 @@ public class IntentResolverTests
     [InlineData("eat bread", "/breakfast")]
     [InlineData("cast a spell", "/allsaintscharm")]
     [InlineData("sing a song", "/hum")]
+    [InlineData("aloha!", "/flamedance")]
+    [InlineData("jojo pose", "/poseoftheunbound")]
+    [InlineData("bunny hop", "/lophop")]
+    [InlineData("disco time", "/popotostep")]
+    [InlineData("kung fu", "/crimsonlotus")]
+    [InlineData("dab on them", "/rangerpose2r")]
+    [InlineData("it's morphin time", "/rangerpose1r")]
+    [InlineData("check this out", "/showright")]
+    [InlineData("raise my sword to the sky", "/divinearm")]
     public void PlaysTheEmoteThatClearlyFits(string text, string command)
     {
         var result = Resolver.Resolve(text, AllUnlocked);
