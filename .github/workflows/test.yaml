@@ -1,0 +1,31 @@
+name: test
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    # Dalamud plugins build on Windows (the official sample plugin does too).
+    runs-on: windows-2022
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-dotnet@v5
+        with:
+          global-json-file: global.json
+      # Dalamud.NET.Sdk compiles against the Dalamud dev build in
+      # %AppData%\XIVLauncher\addon\Hooks\dev, as goatcorp/SamplePlugin's CI does.
+      - name: Download Dalamud
+        shell: pwsh
+        run: |
+          Invoke-WebRequest -Uri https://goatcorp.github.io/dalamud-distrib/latest.zip -OutFile latest.zip
+          Expand-Archive -Force latest.zip "$env:AppData\XIVLauncher\addon\Hooks\dev"
+      - run: dotnet build -c Release
+      - run: dotnet test -c Release --no-build
+      - run: dotnet format --verify-no-changes
+      # A build to try in the game (README: Install).
+      - uses: actions/upload-artifact@v4
+        with:
+          name: EmoteIntent
+          path: EmoteIntent/bin/Release/EmoteIntent/*
