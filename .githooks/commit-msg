@@ -1,0 +1,12 @@
+#!/bin/sh
+# Refuses a commit message that isn't Conventional Commits (feature-branch skill).
+# Git runs it from here: the first `dotnet build` points core.hooksPath at .githooks.
+# Git's own messages (merges, reverts, fixup!, squash!, amend!) pass as they are.
+first=$(grep -v '^#' "$1" | grep -m1 '[^[:space:]]')
+types='feat|fix|docs|style|refactor|perf|test|build|ci|chore|revert|wip'
+if printf '%s\n' "$first" | grep -Eq "^($types)(\([A-Za-z0-9_./-]+(, ?[A-Za-z0-9_./-]+)*\))?!?: [^[:space:]]" ||
+  printf '%s\n' "$first" | grep -Eq '^(Merge |Revert "|fixup! |squash! |amend! )'; then
+  exit 0
+fi
+echo "Commit message \"$first\" isn't Conventional Commits. Start it with a type, an optional scope and a summary: \"fix(matcher): ignore punctuation\" (types: $(printf '%s' "$types" | sed 's/|/, /g'); CLAUDE.md)." >&2
+exit 1

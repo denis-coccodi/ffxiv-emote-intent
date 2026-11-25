@@ -1,0 +1,14 @@
+<Project>
+  <PropertyGroup>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
+    <Authors>Denis Coccodi</Authors>
+  </PropertyGroup>
+
+  <!-- Points git at .githooks (the Conventional Commits check), as `npm install` does in the Everise repos. -->
+  <Target Name="UseRepoGitHooks" BeforeTargets="Build" Condition="Exists('$(MSBuildThisFileDirectory).git') And '$(CI)' != 'true'">
+    <Exec Command="git config core.hooksPath .githooks" WorkingDirectory="$(MSBuildThisFileDirectory)" ContinueOnError="true" StandardOutputImportance="low" />
+  </Target>
+</Project>
