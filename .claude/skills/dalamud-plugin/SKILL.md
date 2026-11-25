@@ -60,9 +60,9 @@ These hold even though the plugin ships from our own repository:
 
 ## Trying it in the game
 
-1. `dotnet build -c Release`: the plugin is `EmoteIntent\bin\Release\EmoteIntent.dll` (with `EmoteIntent.json` beside it; the `bin\Release\EmoteIntent\` folder only holds the packaged `latest.zip`).
-2. First time: `/xlsettings` → Experimental → Dev Plugin Locations → add the full path to `EmoteIntent.dll` (Dalamud refuses a folder) → **+** → Save; then `/xlplugins` → Dev Tools → Installed Dev Plugins → enable Emote Intent.
-3. After rebuilding: disable and enable it there, or turn on its automatic reloading so each new build loads by itself.
+1. `dotnet build -c Release` in whichever checkout or worktree holds the change. Besides `EmoteIntent\bin\Release\`, every local build copies the plugin (`EmoteIntent.dll`, `EmoteIntent.Core.dll`, `EmoteIntent.json`) to the fixed folder `%LOCALAPPDATA%\EmoteIntent\DevPlugin` (`CopyToDevPluginDir` in `EmoteIntent.csproj`; not in CI). The last build wins, so build the branch the user should try last, and tell them which one it is.
+2. The user's Dalamud points at `%LOCALAPPDATA%\EmoteIntent\DevPlugin\EmoteIntent.dll` once, with automatic reloading on: never ask them to change the path for a branch or worktree. First time only: `/xlsettings` → Experimental → Dev Plugin Locations → add that full path (Dalamud refuses a folder) → **+** → Save; then `/xlplugins` → Dev Tools → Installed Dev Plugins → enable Emote Intent and its automatic reloading.
+3. Removing a worktree doesn't break their setup; rebuild `main` afterwards if the fixed folder should hold what `main` has.
 4. `/xllog` shows the plugin's log; `/xldata` browses the game's sheets.
 
 Say in the pull request whether a change was tried in the game and what was checked; tests can't cover game calls.
