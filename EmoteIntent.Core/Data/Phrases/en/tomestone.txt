@@ -1,5 +1,4 @@
 # /tomestone (Tomestone): check your tomestone.
-@ /tomestone /tomescroll
 tomestone
 check my tomestone
 check tomestone
@@ -11,8 +10,6 @@ my phone
 texting
 text you
 reading messages
-scrolling
-doomscrolling
 check the news
 check the time
 what time is it
@@ -31,11 +28,9 @@ check the guide
 look up the strat
 in game phone
 social media
-tomescroll
-scroll my tomestone
-scrolling for comfort
-looking for comfort online
 smartphone
 on my smartphone
-phone scrolling
 check my notifications
+check my phone real quick
+a quick look at my phone
+one tap

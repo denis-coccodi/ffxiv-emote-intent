@@ -15,6 +15,9 @@ public sealed class PhraseMatcher
     /// <summary>The best a phrase that isn't typed exactly can score, so an exact phrase always wins.</summary>
     private const double MaxInexactScore = 0.95;
 
+    /// <summary>A phrase typed exactly once the lead-in is gone ("feel like being spooky"): just below the text itself.</summary>
+    private const double StrippedExactScore = 0.97;
+
     private readonly List<Entry> entries = [];
     private readonly Dictionary<string, double> rarity = new(StringComparer.Ordinal);
     private readonly double unknownRarity;
@@ -58,21 +61,27 @@ public sealed class PhraseMatcher
     public IReadOnlyList<PhraseMatch> Rank(string text, IEnumerable<string> commands, int count = 5)
     {
         var allowed = commands.ToHashSet(StringComparer.OrdinalIgnoreCase);
-        var compact = Exact(text);
-        var ordered = TextNormalizer.Words(text);
-        var words = ordered.ToHashSet(StringComparer.Ordinal);
-        if (words.Count == 0)
+
+        // The text as typed, and without its lead-in ("feel like being spooky" → "spooky"); each phrase keeps the
+        // better of the two scores, so an exact phrase that starts with a lead-in ("so happy to see you") still wins.
+        var stripped = LeadIn.Strip(text);
+        var queries = new List<Query> { ToQuery(text, isStripped: false) };
+        if (stripped != TextNormalizer.Compact(text))
+        {
+            queries.Add(ToQuery(stripped, isStripped: true));
+        }
+
+        queries.RemoveAll(query => query.Words.Count == 0);
+        if (queries.Count == 0)
         {
             return [];
         }
 
-        var wordsWeight = words.Sum(Rarity);
-        var pairs = Pairs(ordered);
         return entries
             .Select(entry => (entry, command: entry.Commands.FirstOrDefault(allowed.Contains)))
             .Where(item => item.command is not null)
             .Select(item => (item.entry.Key, Match: new PhraseMatch(
-                item.command!, Score(item.entry, compact, words, wordsWeight, pairs), item.entry.Phrase)))
+                item.command!, queries.Max(query => Score(item.entry, query)), item.entry.Phrase)))
             .Where(item => item.Match.Score > 0)
             .GroupBy(item => item.Key, StringComparer.OrdinalIgnoreCase)
             .Select(group => group.MaxBy(item => item.Match.Score).Match)
@@ -86,23 +95,33 @@ public sealed class PhraseMatcher
     // both sides' words) capped below an exact phrase, so "cheers!" is Toast's "cheers" rather than Cheer's "cheer"
     // (same word once the plural goes); then up to OrderWeight off when the phrase's consecutive word pairs aren't
     // in the text: "good night all" is closer to "night all" than to "all good", though both share two words.
-    private double Score(Entry entry, string compact, HashSet<string> words, double wordsWeight, HashSet<string> pairs)
+    private double Score(Entry entry, Query query)
     {
-        if (entry.Compact == compact)
+        if (entry.Compact == query.Exact)
         {
-            return 1;
+            return query.IsStripped ? StrippedExactScore : 1;
         }
 
-        var shared = words.Where(entry.Words.Contains).Sum(Rarity);
+        var shared = query.Words.Where(entry.Words.Contains).Sum(Rarity);
         if (shared == 0)
         {
             return 0;
         }
 
-        var dice = 2 * shared / (wordsWeight + entry.Words.Sum(Rarity));
-        var inOrder = entry.Pairs.Count == 0 ? 1 : (double)entry.Pairs.Count(pairs.Contains) / entry.Pairs.Count;
+        var dice = 2 * shared / (query.Weight + entry.Words.Sum(Rarity));
+        var inOrder = entry.Pairs.Count == 0 ? 1 : (double)entry.Pairs.Count(query.Pairs.Contains) / entry.Pairs.Count;
         return MaxInexactScore * dice * (1 - OrderWeight + (OrderWeight * inOrder));
     }
+
+    // What a query brings to scoring: its exact form, its words, their total rarity and its consecutive word pairs.
+    private Query ToQuery(string text, bool isStripped)
+    {
+        var ordered = TextNormalizer.Words(text);
+        var words = ordered.ToHashSet(StringComparer.Ordinal);
+        return new Query(Exact(text), words, words.Sum(Rarity), Pairs(ordered), isStripped);
+    }
+
+    private sealed record Query(string Exact, HashSet<string> Words, double Weight, HashSet<string> Pairs, bool IsStripped);
 
     // What counts as typing a phrase exactly: Compact, minus sentence punctuation around it ("cheers!" is "cheers").
     private static string Exact(string text) => TextNormalizer.Compact(text).Trim('.', ',', '!', '?', ';', ' ');
