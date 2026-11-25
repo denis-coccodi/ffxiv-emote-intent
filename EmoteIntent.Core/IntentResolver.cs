@@ -23,8 +23,14 @@ public sealed class IntentResolver(PhraseMatcher matcher)
     /// <summary>A match at least this good plays at once when no other emote comes close.</summary>
     public const double PlayScore = 0.6;
 
-    /// <summary>The best match must beat the second by this much to play at once.</summary>
+    /// <summary>A match of <see cref="PlayScore"/> must beat the second by this much to play at once.</summary>
     public const double PlayLead = 0.15;
+
+    /// <summary>The lead a near-perfect match (0.95) needs: the stronger the match, the smaller the lead it needs.</summary>
+    public const double MinPlayLead = 0.05;
+
+    /// <summary>The best score a match that isn't a phrase typed exactly can reach.</summary>
+    private const double BestInexactScore = 0.95;
 
     /// <summary>Matches below this aren't worth suggesting.</summary>
     public const double SuggestScore = 0.35;
@@ -60,11 +66,22 @@ public sealed class IntentResolver(PhraseMatcher matcher)
         // An exact phrase of one emote alone plays; otherwise the best must be good and clearly ahead.
         var second = matches.Count > 1 ? matches[1].Score : 0;
         var exact = matches[0].Score >= 1 && second < 1;
-        if (exact || (matches[0].Score >= PlayScore && matches[0].Score - second >= PlayLead))
+        if (exact || (matches[0].Score >= PlayScore && matches[0].Score - second >= RequiredLead(matches[0].Score)))
         {
             return new IntentResult.Play(byCommand[matches[0].Command]);
         }
 
         return new IntentResult.Suggest(matches.Take(SuggestCount).Select(match => byCommand[match.Command]).ToList());
+    }
+
+    /// <summary>
+    /// How far ahead of the second a match must be to play: <see cref="PlayLead"/> at <see cref="PlayScore"/>, down to
+    /// <see cref="MinPlayLead"/> for a near-perfect one. "hand on my heart" (0.82, 0.14 ahead) plays; a borderline
+    /// 0.6 still needs a clear lead.
+    /// </summary>
+    public static double RequiredLead(double score)
+    {
+        var strength = Math.Clamp((score - PlayScore) / (BestInexactScore - PlayScore), 0, 1);
+        return PlayLead - (strength * (PlayLead - MinPlayLead));
     }
 }
