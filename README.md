@@ -17,6 +17,12 @@ A [Dalamud](https://github.com/goatcorp/Dalamud) plugin for Final Fantasy XIV. T
 
 `motion` and `text` only count as the last word, and not when the whole text is a phrase that ends with them ("reading the quest text").
 
+## Settings
+
+`/feelconfig` (or the gear button in `/xlplugins`) opens the settings:
+
+- **Always show what /feel plays and the alternatives** (off by default): before every emote, a chat line says which one plays and lists the others that might fit, as links ("Playing /read (Read). Others: /carrybook…"). Off, only close alternatives are listed, after the emote.
+
 ## Phrase bank
 
 `EmoteIntent.Core/Data/Phrases/en/<command>.txt` holds, for each emote, the ways players might say it (one phrase per line; `#` lines are comments). A line `@ /a /b /c` makes a file a family of near-identical emotes, or a preference list for a feeling (`feelexcited.txt`: Jump for Joy, else Psych, else Delighted): its phrases play the first one you have unlocked. Strong feelings prefer a full-body emote over a face-only expression, even when the word is also an expression's name ("sad" plays Slump, the Sad frown only without it). `/feel` ranks emotes by the words your text shares with their phrases, rarer words counting more, and word order a little. Lead-in words that say nothing about the emote ("feel like being spooky", "i'm feeling", "i want to be") are also tried without, and filler words ("like", "my", "it") count for little: they never make a match on their own.
