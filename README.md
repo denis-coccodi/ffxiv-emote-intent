@@ -15,8 +15,8 @@ A [Dalamud](https://github.com/goatcorp/Dalamud) plugin for Final Fantasy XIV. T
 
 The plugin isn't released yet. To try a build:
 
-1. Build it (below), or download the `EmoteIntent` artifact from a [test run](https://github.com/denis-coccodi/ffxiv-emote-intent/actions/workflows/test.yaml).
-2. In the game, open `/xlsettings` → Experimental → Dev Plugin Locations, add the folder that holds `EmoteIntent.dll` (`EmoteIntent\bin\Release\EmoteIntent`), and save.
+1. Build it (below), or download the `EmoteIntent` artifact from a [test run](https://github.com/denis-coccodi/ffxiv-emote-intent/actions/workflows/test.yaml) and unzip the `latest.zip` inside it.
+2. In the game, open `/xlsettings` → Experimental → Dev Plugin Locations, add the path to the DLL itself (a folder is refused): `EmoteIntent\bin\Release\EmoteIntent.dll` after a build, or `EmoteIntent.dll` from the unzipped `latest.zip`. Press **+**, then save.
 3. Enable it in `/xlplugins` → Dev Tools → Installed Dev Plugins.
 
 ## Development
@@ -31,6 +31,8 @@ dotnet format --verify-no-changes
 
 - `EmoteIntent.Core`: everything that doesn't need the game (the emote model, matching). The tests cover it.
 - `EmoteIntent`: the Dalamud plugin (the `/feel` command, reading emotes from the game data, playing them).
+
+Warnings are build errors, with .NET's recommended analyzers and a list of banned APIs (`BannedSymbols.txt`). The first build sets up two git hooks: Conventional Commits messages, and the three checks above before every push.
 
 Changes go through pull requests to `main`; see [CLAUDE.md](CLAUDE.md).
 
