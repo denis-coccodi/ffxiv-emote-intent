@@ -2,7 +2,7 @@
 
 A [Dalamud](https://github.com/goatcorp/Dalamud) plugin for Final Fantasy XIV. Type `/feel` and the emote you want, and it plays it if your character has it unlocked.
 
-**Early version.** `/feel` understands what you mean for 287 of the game's 295 emotes (`/feel so happy to see you`, `/feel excited`, `/feel give me a big hug`, `/feel idk`, `/feel i'm cold`, `/feel o7`). Near-identical emotes share their phrases and play whichever you have unlocked (Jump for Joy 1–5, the penlight cheers, the Ranger poses, both winks). A few dances and utility commands (Visor, Change Pose) play by name or command only. Any emote also plays by its name, command or alias (`/feel hug`, `/feel /hug`). Matching runs on your PC from a phrase bank shipped with the plugin; AI will only ever be an option you switch on with your own key.
+**Early version.** `/feel` understands what you mean for 292 of the game's 295 emotes (`/feel so happy to see you`, `/feel excited`, `/feel give me a big hug`, `/feel idk`, `/feel i'm cold`, `/feel o7`). Near-identical emotes share their phrases and play whichever you have unlocked (Jump for Joy 1–5, the penlight cheers, the Ranger poses, both winks). Only Visor and Change Pose (utilities) and Water Flip (underwater only) play by name or command alone. Any emote also plays by its name, command or alias (`/feel hug`, `/feel /hug`). Matching runs on your PC from a phrase bank shipped with the plugin; AI will only ever be an option you switch on with your own key.
 
 ## Commands
 

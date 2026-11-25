@@ -20,3 +20,21 @@ hologram sword
 materialize a weapon
 program a weapon
 omega simulation
+levitate
+levitating
+float in the air
+floating sword
+spin into the air
+spin in the air
+luminous sword
+luminous spear
+glowing sword
+glowing spear
+hover
+hovering
+levitate with a sword
+levitate with a glowing sword
+levitating with a sword
+float with a glowing sword
+spin up with a glowing sword
+levitate with a spear

@@ -90,6 +90,15 @@ public class IntentResolverTests
     [InlineData("it's morphin time", "/rangerpose1r")]
     [InlineData("check this out", "/showright")]
     [InlineData("raise my sword to the sky", "/divinearm")]
+    [InlineData("riverdance!", "/stepdance")]
+    [InlineData("rain dance", "/harvestdance")]
+    [InlineData("praise the sun", "/sundance")]
+    [InlineData("do the mambo", "/mandervillemambo")]
+    [InlineData("sexy dance", "/beesknees")]
+    [InlineData("levitate with a glowing sword", "/simulationm")]
+    [InlineData("plunge my sword into the ground", "/sundering")]
+    [InlineData("water the flowers", "/water")]
+    [InlineData("on my smartphone", "/tomestone")]
     public void PlaysTheEmoteThatClearlyFits(string text, string command)
     {
         var result = Resolver.Resolve(text, AllUnlocked);

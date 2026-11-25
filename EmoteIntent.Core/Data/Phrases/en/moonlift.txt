@@ -12,8 +12,6 @@ skip
 skipping
 skippy dance
 jolly dance
-jig
-dance a jig
 merry dance
 frolic
 frolicking
@@ -29,3 +27,5 @@ leaping
 kick and skip
 skipping dance
 happy skipping
+happy kick dance
+kick kick hooray
