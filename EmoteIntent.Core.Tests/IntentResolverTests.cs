@@ -72,6 +72,15 @@ public class IntentResolverTests
     [InlineData("thank you!", "/bow")]
     [InlineData("i'm sorry", "/easternbow")]
     [InlineData("what a view", "/amazed")]
+    [InlineData("superhero landing!", "/adventoflight")]
+    [InlineData("did we win?", "/victoryreveal")]
+    [InlineData("i'm so drunk", "/dazed")]
+    [InlineData("i'll watch over you", "/guard")]
+    [InlineData("what are my orders", "/attend")]
+    [InlineData("shaking with rage", "/rage")]
+    [InlineData("eat bread", "/breakfast")]
+    [InlineData("cast a spell", "/allsaintscharm")]
+    [InlineData("sing a song", "/hum")]
     public void PlaysTheEmoteThatClearlyFits(string text, string command)
     {
         var result = Resolver.Resolve(text, AllUnlocked);

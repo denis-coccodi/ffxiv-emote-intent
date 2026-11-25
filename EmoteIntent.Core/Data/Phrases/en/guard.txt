@@ -1,31 +1,37 @@
-# /guard (Guard): raise your guard.
+# /guard (Guard): keep watch over someone.
 guard
-on guard pose
 guarding
-raise my guard
-guard up
-block
-blocking
-defend
-defending
-defense
-defensive
-protect
-protect you
-i'll protect you
-shield
-shield up
-shields up
-bodyguard
-your bodyguard
 stand guard
 keep watch
+keeping watch
+i'll keep watch
+watch over you
+i'll watch over you
+watch over them
+watching over you
+keep you safe
+i'll keep you safe
+keep an eye on you
+keep an eye out
+i'm watching
+standing watch
+on watch
+guard duty
+posted
+guardian
+your guardian
+sentinel
+watchman
+night watch
+keep vigil
+vigil
+protect you
+i'll protect you
+bodyguard
+your bodyguard
+you're safe with me
+nothing will happen to you
+i'll stay with you
 watch your back
 i've got your back
 got your back
-cover me
-covering you
-tank stance
-holding aggro
-aggro
-mitigation
