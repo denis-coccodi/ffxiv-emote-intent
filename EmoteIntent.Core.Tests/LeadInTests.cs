@@ -37,6 +37,9 @@ public class LeadInTests
     [InlineData("i wanna hug you", "/hug")]
     [InlineData("so happy to see you", "/greet")]
     [InlineData("be quiet", "/shush")]
+    [InlineData("i keep scrolling", "/tomescroll")]
+    [InlineData("doomscrolling", "/tomescroll")]
+    [InlineData("check my phone", "/tomestone")]
     public void PlaysWhatFollowsTheLeadIn(string text, string command) =>
         Assert.Equal(command, Assert.IsType<IntentResult.Play>(Resolver.Resolve(text, AllUnlocked)).Emote.Command);
 }
