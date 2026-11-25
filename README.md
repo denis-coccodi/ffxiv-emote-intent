@@ -22,6 +22,7 @@ A [Dalamud](https://github.com/goatcorp/Dalamud) plugin for Final Fantasy XIV. T
 `/feelconfig` (or the gear button in `/xlplugins`) opens the settings:
 
 - **Always show what /feel plays and the alternatives** (off by default): before every emote, a chat line says which one plays and lists the others that might fit, as links ("Playing /read (Read). Others: /carrybook…"). Off, only close alternatives are listed, after the emote.
+  - **Say which emote played** (on by default; only while the option above is on): off, the line lists only the others, and isn't written when there are none.
 - **Show the emote's line in the chat log** (on by default, as the game does): off, every emote plays as motion only ("You hug Avar." isn't written); end a `/feel` with `text` to show it that time. On, end it with `motion` to hide it that time.
 
 ## Phrase bank

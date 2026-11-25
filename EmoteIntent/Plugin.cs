@@ -82,7 +82,7 @@ public sealed class Plugin : IDalamudPlugin
         switch (resolver.Resolve(request.Text, unlocked))
         {
             case IntentResult.Play play when configuration.AlwaysShowChoice:
-                suggestions.PrintPlaying(play.Emote, play.Alternatives, request);
+                suggestions.PrintPlaying(play.Emote, play.Alternatives, request, configuration.ShowPlayedEmote);
                 Play(play.Emote, request);
                 break;
             case IntentResult.Play play:

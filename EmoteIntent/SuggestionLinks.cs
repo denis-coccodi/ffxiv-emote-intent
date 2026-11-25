@@ -29,19 +29,20 @@ internal sealed class SuggestionLinks(
         Print("Also fits: ", emotes, request, ".");
 
     /// <summary>
-    /// "Playing /read (Read). Others: /a (A), /b (B)." before an emote plays, for the "always show" setting; just
-    /// "Playing /read (Read)." when nothing else fits.
+    /// The "always show" line, before an emote plays: "Playing /read (Read). Others: /a (A), /b (B).", just
+    /// "Playing /read (Read)." when nothing else fits. Without <paramref name="sayPlayed"/>, only "Others: …", and
+    /// nothing at all when there are no others.
     /// </summary>
-    public void PrintPlaying(EmoteInfo emote, IReadOnlyList<EmoteInfo> others, FeelRequest request)
+    public void PrintPlaying(EmoteInfo emote, IReadOnlyList<EmoteInfo> others, FeelRequest request, bool sayPlayed)
     {
-        var playing = $"Playing {request.CommandFor(emote)} ({emote.Name})";
-        if (others.Count == 0)
+        var playing = sayPlayed ? $"Playing {request.CommandFor(emote)} ({emote.Name}). " : string.Empty;
+        if (others.Count > 0)
         {
-            chatGui.Print(playing + ".");
+            Print(playing + "Others: ", others, request, ".");
         }
-        else
+        else if (sayPlayed)
         {
-            Print(playing + ". Others: ", others, request, ".");
+            chatGui.Print(playing.TrimEnd());
         }
     }
 
