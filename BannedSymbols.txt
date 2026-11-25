@@ -1,0 +1,10 @@
+T:System.Console;Nothing reads the console inside the game: log through IPluginLog in the plugin, return results from Core
+M:System.Threading.Thread.Sleep(System.Int32);Never block a thread, least of all the game's: use await Task.Delay or IFramework.RunOnTick
+M:System.Threading.Thread.Sleep(System.TimeSpan);Never block a thread, least of all the game's: use await Task.Delay or IFramework.RunOnTick
+M:System.Threading.Tasks.Task.Wait;Blocking on a task can freeze or deadlock the game's main thread: await it
+P:System.Threading.Tasks.Task`1.Result;Blocking on a task can freeze or deadlock the game's main thread: await it
+M:System.Runtime.CompilerServices.TaskAwaiter`1.GetResult;Blocking on a task can freeze or deadlock the game's main thread: await it
+P:System.DateTime.Now;Use DateTime.UtcNow (or TimeProvider), and convert to local time only for display
+M:System.Environment.Exit(System.Int32);A plugin must never close the game
+M:System.GC.Collect;Don't force garbage collections inside the game's process
+T:System.Net.Http.HttpClient;No network calls without the player opting in: go through the AI-fallback client once it exists, never new HttpClient

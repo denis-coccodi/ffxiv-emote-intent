@@ -32,6 +32,8 @@ dotnet format --verify-no-changes
 - `EmoteIntent.Core`: everything that doesn't need the game (the emote model, matching). The tests cover it.
 - `EmoteIntent`: the Dalamud plugin (the `/feel` command, reading emotes from the game data, playing them).
 
+Warnings are build errors, with .NET's recommended analyzers and a list of banned APIs (`BannedSymbols.txt`). The first build sets up two git hooks: Conventional Commits messages, and the three checks above before every push.
+
 Changes go through pull requests to `main`; see [CLAUDE.md](CLAUDE.md).
 
 ## License
