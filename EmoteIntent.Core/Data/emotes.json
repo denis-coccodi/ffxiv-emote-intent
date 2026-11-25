@@ -1,0 +1,2276 @@
+[
+  {
+    "id": 5,
+    "name": "Bow",
+    "command": "/bow",
+    "aliases": [],
+    "category": "General"
+  },
+  {
+    "id": 154,
+    "name": "Eastern Bow",
+    "command": "/easternbow",
+    "aliases": [
+      "/ebow"
+    ],
+    "category": "General"
+  },
+  {
+    "id": 41,
+    "name": "Welcome",
+    "command": "/welcome",
+    "aliases": [],
+    "category": "General"
+  },
+  {
+    "id": 172,
+    "name": "Greeting",
+    "command": "/greet",
+    "aliases": [],
+    "category": "General"
+  },
+  {
+    "id": 15,
+    "name": "Goodbye",
+    "command": "/goodbye",
+    "aliases": [],
+    "category": "General"
+  },
+  {
+    "id": 16,
+    "name": "Wave",
+    "command": "/wave",
+    "aliases": [],
+    "category": "General"
+  },
+  {
+    "id": 19,
+    "name": "Kneel",
+    "command": "/kneel",
+    "aliases": [],
+    "category": "General"
+  },
+  {
+    "id": 31,
+    "name": "Salute",
+    "command": "/salute",
+    "aliases": [],
+    "category": "General"
+  },
+  {
+    "id": 55,
+    "name": "Storm Salute",
+    "command": "/gcsalute",
+    "aliases": [],
+    "category": "General"
+  },
+  {
+    "id": 56,
+    "name": "Serpent Salute",
+    "command": "/gcsalute",
+    "aliases": [],
+    "category": "General"
+  },
+  {
+    "id": 57,
+    "name": "Flame Salute",
+    "command": "/gcsalute",
+    "aliases": [],
+    "category": "General"
+  },
+  {
+    "id": 59,
+    "name": "Imperial Salute",
+    "command": "/imperialsalute",
+    "aliases": [],
+    "category": "General"
+  },
+  {
+    "id": 124,
+    "name": "Eastern Greeting",
+    "command": "/easterngreeting",
+    "aliases": [
+      "/egreeting"
+    ],
+    "category": "General"
+  },
+  {
+    "id": 199,
+    "name": "Lali-ho",
+    "command": "/laliho",
+    "aliases": [],
+    "category": "General"
+  },
+  {
+    "id": 285,
+    "name": "Ohokaliy",
+    "command": "/ohokaliy",
+    "aliases": [],
+    "category": "General"
+  },
+  {
+    "id": 20,
+    "name": "Chuckle",
+    "command": "/chuckle",
+    "aliases": [],
+    "category": "General"
+  },
+  {
+    "id": 21,
+    "name": "Laugh",
+    "command": "/laugh",
+    "aliases": [],
+    "category": "General"
+  },
+  {
+    "id": 18,
+    "name": "Joy",
+    "command": "/joy",
+    "aliases": [],
+    "category": "General"
+  },
+  {
+    "id": 48,
+    "name": "Happy",
+    "command": "/happy",
+    "aliases": [],
+    "category": "General"
+  },
+  {
+    "id": 34,
+    "name": "Rally",
+    "command": "/rally",
+    "aliases": [],
+    "category": "General"
+  },
+  {
+    "id": 35,
+    "name": "Soothe",
+    "command": "/soothe",
+    "aliases": [],
+    "category": "General"
+  },
+  {
+    "id": 4,
+    "name": "Blush",
+    "command": "/blush",
+    "aliases": [],
+    "category": "General"
+  },
+  {
+    "id": 9,
+    "name": "Comfort",
+    "command": "/comfort",
+    "aliases": [],
+    "category": "General"
+  },
+  {
+    "id": 30,
+    "name": "Psych",
+    "command": "/psych",
+    "aliases": [],
+    "category": "General"
+  },
+  {
+    "id": 58,
+    "name": "Pray",
+    "command": "/pray",
+    "aliases": [],
+    "category": "General"
+  },
+  {
+    "id": 140,
+    "name": "Pay Respects",
+    "command": "/respect",
+    "aliases": [],
+    "category": "General"
+  },
+  {
+    "id": 263,
+    "name": "Hand to Heart",
+    "command": "/handtoheart",
+    "aliases": [],
+    "category": "General"
+  },
+  {
+    "id": 46,
+    "name": "Blow Kiss",
+    "command": "/blowkiss",
+    "aliases": [],
+    "category": "General"
+  },
+  {
+    "id": 146,
+    "name": "Dote",
+    "command": "/dote",
+    "aliases": [],
+    "category": "General"
+  },
+  {
+    "id": 11,
+    "name": "Dance",
+    "command": "/dance",
+    "aliases": [],
+    "category": "General"
+  },
+  {
+    "id": 42,
+    "name": "Yes",
+    "command": "/yes",
+    "aliases": [],
+    "category": "General"
+  },
+  {
+    "id": 43,
+    "name": "Thumbs Up",
+    "command": "/thumbsup",
+    "aliases": [],
+    "category": "General"
+  },
+  {
+    "id": 7,
+    "name": "Clap",
+    "command": "/clap",
+    "aliases": [],
+    "category": "General"
+  },
+  {
+    "id": 29,
+    "name": "Congratulate",
+    "command": "/congratulate",
+    "aliases": [],
+    "category": "General"
+  },
+  {
+    "id": 6,
+    "name": "Cheer",
+    "command": "/cheer",
+    "aliases": [],
+    "category": "General"
+  },
+  {
+    "id": 240,
+    "name": "Determined",
+    "command": "/determined",
+    "aliases": [],
+    "category": "General"
+  },
+  {
+    "id": 110,
+    "name": "Huzzah",
+    "command": "/hurray",
+    "aliases": [
+      "/huzzah"
+    ],
+    "category": "General"
+  },
+  {
+    "id": 112,
+    "name": "Hug",
+    "command": "/hug",
+    "aliases": [],
+    "category": "General"
+  },
+  {
+    "id": 113,
+    "name": "Embrace",
+    "command": "/embrace",
+    "aliases": [],
+    "category": "General"
+  },
+  {
+    "id": 105,
+    "name": "Pet",
+    "command": "/stroke",
+    "aliases": [
+      "/pet"
+    ],
+    "category": "General"
+  },
+  {
+    "id": 115,
+    "name": "Fist Bump",
+    "command": "/fistbump",
+    "aliases": [
+      "/fist",
+      "/fistbump",
+      "/brofist"
+    ],
+    "category": "General"
+  },
+  {
+    "id": 121,
+    "name": "Battle Stance",
+    "command": "/battlestance",
+    "aliases": [
+      "/bstance"
+    ],
+    "category": "General"
+  },
+  {
+    "id": 122,
+    "name": "Victory",
+    "command": "/victorypose",
+    "aliases": [
+      "/vpose"
+    ],
+    "category": "General"
+  },
+  {
+    "id": 125,
+    "name": "Eureka",
+    "command": "/eureka",
+    "aliases": [],
+    "category": "General"
+  },
+  {
+    "id": 127,
+    "name": "Haurchefant",
+    "command": "/haurchefant",
+    "aliases": [
+      "/hknight"
+    ],
+    "category": "General"
+  },
+  {
+    "id": 246,
+    "name": "Wow",
+    "command": "/wow",
+    "aliases": [],
+    "category": "General"
+  },
+  {
+    "id": 194,
+    "name": "Gratuity",
+    "command": "/gratuity",
+    "aliases": [
+      "/makeithail"
+    ],
+    "category": "General"
+  },
+  {
+    "id": 195,
+    "name": "Fist Pump",
+    "command": "/fistpump",
+    "aliases": [],
+    "category": "General"
+  },
+  {
+    "id": 197,
+    "name": "Senor Sabotender",
+    "command": "/sabotender",
+    "aliases": [],
+    "category": "General"
+  },
+  {
+    "id": 202,
+    "name": "Toast",
+    "command": "/toast",
+    "aliases": [],
+    "category": "General"
+  },
+  {
+    "id": 205,
+    "name": "Snap",
+    "command": "/snap",
+    "aliases": [],
+    "category": "General"
+  },
+  {
+    "id": 211,
+    "name": "Flower Shower",
+    "command": "/flowershower",
+    "aliases": [
+      "/petals"
+    ],
+    "category": "General"
+  },
+  {
+    "id": 224,
+    "name": "Paint It Black",
+    "command": "/paintblack",
+    "aliases": [],
+    "category": "General"
+  },
+  {
+    "id": 225,
+    "name": "Paint It Red",
+    "command": "/paintred",
+    "aliases": [],
+    "category": "General"
+  },
+  {
+    "id": 226,
+    "name": "Paint It Yellow",
+    "command": "/paintyellow",
+    "aliases": [],
+    "category": "General"
+  },
+  {
+    "id": 227,
+    "name": "Paint It Blue",
+    "command": "/paintblue",
+    "aliases": [],
+    "category": "General"
+  },
+  {
+    "id": 252,
+    "name": "Ear Wiggle",
+    "command": "/earwiggle",
+    "aliases": [],
+    "category": "General"
+  },
+  {
+    "id": 249,
+    "name": "Magic Trick",
+    "command": "/magictrick",
+    "aliases": [],
+    "category": "General"
+  },
+  {
+    "id": 267,
+    "name": "All Saints\u0027 Charm",
+    "command": "/allsaintscharm",
+    "aliases": [],
+    "category": "General"
+  },
+  {
+    "id": 258,
+    "name": "Jump for Joy 1",
+    "command": "/jumpforjoy1",
+    "aliases": [
+      "/jj1"
+    ],
+    "category": "General"
+  },
+  {
+    "id": 259,
+    "name": "Jump for Joy 2",
+    "command": "/jumpforjoy2",
+    "aliases": [
+      "/jj2"
+    ],
+    "category": "General"
+  },
+  {
+    "id": 260,
+    "name": "Jump for Joy 3",
+    "command": "/jumpforjoy3",
+    "aliases": [
+      "/jj3"
+    ],
+    "category": "General"
+  },
+  {
+    "id": 261,
+    "name": "Jump for Joy 4",
+    "command": "/jumpforjoy4",
+    "aliases": [
+      "/jj4"
+    ],
+    "category": "General"
+  },
+  {
+    "id": 262,
+    "name": "Jump for Joy 5",
+    "command": "/jumpforjoy5",
+    "aliases": [
+      "/jj5"
+    ],
+    "category": "General"
+  },
+  {
+    "id": 276,
+    "name": "Victory Reveal",
+    "command": "/victoryreveal",
+    "aliases": [
+      "/vreveal"
+    ],
+    "category": "General"
+  },
+  {
+    "id": 275,
+    "name": "Humble Triumph",
+    "command": "/humbletriumph",
+    "aliases": [
+      "/waitforit"
+    ],
+    "category": "General"
+  },
+  {
+    "id": 278,
+    "name": "Uchiwasshoi",
+    "command": "/uchiwasshoi",
+    "aliases": [
+      "/bigfan"
+    ],
+    "category": "General"
+  },
+  {
+    "id": 297,
+    "name": "Breaking",
+    "command": "/breakdance",
+    "aliases": [
+      "/breaking"
+    ],
+    "category": "General"
+  },
+  {
+    "id": 304,
+    "name": "Limber Up",
+    "command": "/limberup",
+    "aliases": [
+      "/limber"
+    ],
+    "category": "General"
+  },
+  {
+    "id": 312,
+    "name": "Delighted",
+    "command": "/delighted",
+    "aliases": [
+      "/delight"
+    ],
+    "category": "General"
+  },
+  {
+    "id": 318,
+    "name": "Divine Arm",
+    "command": "/divinearm",
+    "aliases": [],
+    "category": "General"
+  },
+  {
+    "id": 319,
+    "name": "Divine Disk",
+    "command": "/divinedisk",
+    "aliases": [],
+    "category": "General"
+  },
+  {
+    "id": 320,
+    "name": "Divine Tiara",
+    "command": "/divinetiara",
+    "aliases": [],
+    "category": "General"
+  },
+  {
+    "id": 24,
+    "name": "No",
+    "command": "/no",
+    "aliases": [],
+    "category": "General"
+  },
+  {
+    "id": 25,
+    "name": "Deny",
+    "command": "/deny",
+    "aliases": [],
+    "category": "General"
+  },
+  {
+    "id": 10,
+    "name": "Cry",
+    "command": "/cry",
+    "aliases": [],
+    "category": "General"
+  },
+  {
+    "id": 3,
+    "name": "Furious",
+    "command": "/furious",
+    "aliases": [],
+    "category": "General"
+  },
+  {
+    "id": 14,
+    "name": "Fume",
+    "command": "/fume",
+    "aliases": [],
+    "category": "General"
+  },
+  {
+    "id": 309,
+    "name": "Stomp",
+    "command": "/stomp",
+    "aliases": [],
+    "category": "General"
+  },
+  {
+    "id": 26,
+    "name": "Panic",
+    "command": "/panic",
+    "aliases": [],
+    "category": "General"
+  },
+  {
+    "id": 40,
+    "name": "Upset",
+    "command": "/upset",
+    "aliases": [],
+    "category": "General"
+  },
+  {
+    "id": 49,
+    "name": "Disappointed",
+    "command": "/disappointed",
+    "aliases": [],
+    "category": "General"
+  },
+  {
+    "id": 38,
+    "name": "Sulk",
+    "command": "/sulk",
+    "aliases": [],
+    "category": "General"
+  },
+  {
+    "id": 2,
+    "name": "Angry",
+    "command": "/angry",
+    "aliases": [],
+    "category": "General"
+  },
+  {
+    "id": 245,
+    "name": "Deride",
+    "command": "/deride",
+    "aliases": [
+      "/pagaga"
+    ],
+    "category": "General"
+  },
+  {
+    "id": 17,
+    "name": "Huh",
+    "command": "/huh",
+    "aliases": [],
+    "category": "General"
+  },
+  {
+    "id": 32,
+    "name": "Shocked",
+    "command": "/shocked",
+    "aliases": [],
+    "category": "General"
+  },
+  {
+    "id": 33,
+    "name": "Shrug",
+    "command": "/shrug",
+    "aliases": [],
+    "category": "General"
+  },
+  {
+    "id": 36,
+    "name": "Stagger",
+    "command": "/stagger",
+    "aliases": [],
+    "category": "General"
+  },
+  {
+    "id": 1,
+    "name": "Surprised",
+    "command": "/surprised",
+    "aliases": [],
+    "category": "General"
+  },
+  {
+    "id": 256,
+    "name": "Frighten",
+    "command": "/frighten",
+    "aliases": [],
+    "category": "General"
+  },
+  {
+    "id": 12,
+    "name": "Doubt",
+    "command": "/doubt",
+    "aliases": [],
+    "category": "General"
+  },
+  {
+    "id": 47,
+    "name": "Grovel",
+    "command": "/grovel",
+    "aliases": [],
+    "category": "General"
+  },
+  {
+    "id": 111,
+    "name": "Slap",
+    "command": "/slap",
+    "aliases": [],
+    "category": "General"
+  },
+  {
+    "id": 137,
+    "name": "Facepalm",
+    "command": "/facepalm",
+    "aliases": [],
+    "category": "General"
+  },
+  {
+    "id": 233,
+    "name": "Clutch Head",
+    "command": "/clutchhead",
+    "aliases": [],
+    "category": "General"
+  },
+  {
+    "id": 171,
+    "name": "Aback",
+    "command": "/aback",
+    "aliases": [],
+    "category": "General"
+  },
+  {
+    "id": 204,
+    "name": "Headache",
+    "command": "/headache",
+    "aliases": [],
+    "category": "General"
+  },
+  {
+    "id": 230,
+    "name": "Vexed",
+    "command": "/vexed",
+    "aliases": [],
+    "category": "General"
+  },
+  {
+    "id": 291,
+    "name": "Overreact",
+    "command": "/overreact",
+    "aliases": [],
+    "category": "General"
+  },
+  {
+    "id": 45,
+    "name": "Pose",
+    "command": "/pose",
+    "aliases": [],
+    "category": "General"
+  },
+  {
+    "id": 139,
+    "name": "Flex",
+    "command": "/flex",
+    "aliases": [],
+    "category": "General"
+  },
+  {
+    "id": 282,
+    "name": "Pose of the Unbound",
+    "command": "/poseoftheunbound",
+    "aliases": [
+      "/unbound"
+    ],
+    "category": "General"
+  },
+  {
+    "id": 313,
+    "name": "Runway Walk",
+    "command": "/runwaywalk",
+    "aliases": [
+      "/runway"
+    ],
+    "category": "General"
+  },
+  {
+    "id": 8,
+    "name": "Beckon",
+    "command": "/beckon",
+    "aliases": [],
+    "category": "General"
+  },
+  {
+    "id": 85,
+    "name": "Throw",
+    "command": "/throw",
+    "aliases": [],
+    "category": "General"
+  },
+  {
+    "id": 178,
+    "name": "Splash",
+    "command": "/splash",
+    "aliases": [],
+    "category": "General"
+  },
+  {
+    "id": 106,
+    "name": "Hand Over",
+    "command": "/handover",
+    "aliases": [],
+    "category": "General"
+  },
+  {
+    "id": 39,
+    "name": "Think",
+    "command": "/think",
+    "aliases": [],
+    "category": "General"
+  },
+  {
+    "id": 44,
+    "name": "Examine Self",
+    "command": "/examineself",
+    "aliases": [],
+    "category": "General"
+  },
+  {
+    "id": 13,
+    "name": "Doze",
+    "command": "/doze",
+    "aliases": [],
+    "category": "General"
+  },
+  {
+    "id": 27,
+    "name": "Point",
+    "command": "/point",
+    "aliases": [],
+    "category": "General"
+  },
+  {
+    "id": 28,
+    "name": "Poke",
+    "command": "/poke",
+    "aliases": [],
+    "category": "General"
+  },
+  {
+    "id": 37,
+    "name": "Stretch",
+    "command": "/stretch",
+    "aliases": [],
+    "category": "General"
+  },
+  {
+    "id": 22,
+    "name": "Lookout",
+    "command": "/lookout",
+    "aliases": [],
+    "category": "General"
+  },
+  {
+    "id": 54,
+    "name": "Air Quotes",
+    "command": "/airquotes",
+    "aliases": [],
+    "category": "General"
+  },
+  {
+    "id": 23,
+    "name": "Me",
+    "command": "/me",
+    "aliases": [],
+    "category": "General"
+  },
+  {
+    "id": 123,
+    "name": "Backflip",
+    "command": "/backflip",
+    "aliases": [
+      "/bflip"
+    ],
+    "category": "General"
+  },
+  {
+    "id": 128,
+    "name": "Eastern Stretch",
+    "command": "/easternstretch",
+    "aliases": [
+      "/estretch",
+      "/easternstretch"
+    ],
+    "category": "General"
+  },
+  {
+    "id": 142,
+    "name": "Pretty Please",
+    "command": "/prettyplease",
+    "aliases": [
+      "/pplease"
+    ],
+    "category": "General"
+  },
+  {
+    "id": 148,
+    "name": "Spectacles",
+    "command": "/spectacles",
+    "aliases": [],
+    "category": "General"
+  },
+  {
+    "id": 151,
+    "name": "Water Flip",
+    "command": "/waterflip",
+    "aliases": [],
+    "category": "General"
+  },
+  {
+    "id": 153,
+    "name": "Power Up",
+    "command": "/powerup",
+    "aliases": [],
+    "category": "General"
+  },
+  {
+    "id": 159,
+    "name": "Converse",
+    "command": "/converse",
+    "aliases": [],
+    "category": "General"
+  },
+  {
+    "id": 182,
+    "name": "Elucidate",
+    "command": "/elucidate",
+    "aliases": [],
+    "category": "General"
+  },
+  {
+    "id": 231,
+    "name": "Shush",
+    "command": "/shush",
+    "aliases": [
+      "/shh"
+    ],
+    "category": "General"
+  },
+  {
+    "id": 63,
+    "name": "Crimson Lotus",
+    "command": "/crimsonlotus",
+    "aliases": [],
+    "category": "General"
+  },
+  {
+    "id": 250,
+    "name": "Little Ladies\u0027 Dance",
+    "command": "/littleladiesdance",
+    "aliases": [
+      "/ladance"
+    ],
+    "category": "General"
+  },
+  {
+    "id": 191,
+    "name": "Tomestone",
+    "command": "/tomestone",
+    "aliases": [],
+    "category": "General"
+  },
+  {
+    "id": 208,
+    "name": "Insist",
+    "command": "/insist",
+    "aliases": [],
+    "category": "General"
+  },
+  {
+    "id": 206,
+    "name": "Break Fast",
+    "command": "/breakfast",
+    "aliases": [
+      "/bread"
+    ],
+    "category": "General"
+  },
+  {
+    "id": 220,
+    "name": "Eat Rice Ball",
+    "command": "/eatriceball",
+    "aliases": [
+      "/riceball"
+    ],
+    "category": "General"
+  },
+  {
+    "id": 221,
+    "name": "Eat Apple",
+    "command": "/eatapple",
+    "aliases": [
+      "/apple"
+    ],
+    "category": "General"
+  },
+  {
+    "id": 232,
+    "name": "Eat Pizza",
+    "command": "/eatpizza",
+    "aliases": [
+      "/pizza"
+    ],
+    "category": "General"
+  },
+  {
+    "id": 235,
+    "name": "Eat Egg",
+    "command": "/eategg",
+    "aliases": [
+      "/egg"
+    ],
+    "category": "General"
+  },
+  {
+    "id": 247,
+    "name": "Eat Pumpkin Cookie",
+    "command": "/eatpumpkincookie",
+    "aliases": [
+      "/cookie"
+    ],
+    "category": "General"
+  },
+  {
+    "id": 234,
+    "name": "Eat Chocolate",
+    "command": "/eatchocolate",
+    "aliases": [
+      "/choco"
+    ],
+    "category": "General"
+  },
+  {
+    "id": 271,
+    "name": "Eat Chicken",
+    "command": "/eatchicken",
+    "aliases": [],
+    "category": "General"
+  },
+  {
+    "id": 330,
+    "name": "Eat Taco",
+    "command": "/eattaco",
+    "aliases": [
+      "/taco"
+    ],
+    "category": "General"
+  },
+  {
+    "id": 239,
+    "name": "Drink Tea",
+    "command": "/tea",
+    "aliases": [],
+    "category": "General"
+  },
+  {
+    "id": 305,
+    "name": "Drink Green Tea",
+    "command": "/drinkgreentea",
+    "aliases": [
+      "/greentea"
+    ],
+    "category": "General"
+  },
+  {
+    "id": 300,
+    "name": "Lominsan Sip",
+    "command": "/lominsansip",
+    "aliases": [],
+    "category": "General"
+  },
+  {
+    "id": 298,
+    "name": "Gridanian Sip",
+    "command": "/gridaniansip",
+    "aliases": [],
+    "category": "General"
+  },
+  {
+    "id": 299,
+    "name": "Ul\u0027dahn Sip",
+    "command": "/uldahnsip",
+    "aliases": [],
+    "category": "General"
+  },
+  {
+    "id": 277,
+    "name": "Fry Egg",
+    "command": "/fryegg",
+    "aliases": [],
+    "category": "General"
+  },
+  {
+    "id": 207,
+    "name": "Read",
+    "command": "/read",
+    "aliases": [],
+    "category": "General"
+  },
+  {
+    "id": 270,
+    "name": "Reference",
+    "command": "/reference",
+    "aliases": [],
+    "category": "General"
+  },
+  {
+    "id": 209,
+    "name": "Consider",
+    "command": "/consider",
+    "aliases": [
+      "/hmm"
+    ],
+    "category": "General"
+  },
+  {
+    "id": 213,
+    "name": "High Five",
+    "command": "/highfive",
+    "aliases": [
+      "/hifive"
+    ],
+    "category": "General"
+  },
+  {
+    "id": 229,
+    "name": "Pantomime",
+    "command": "/pantomime",
+    "aliases": [
+      "/mime"
+    ],
+    "category": "General"
+  },
+  {
+    "id": 251,
+    "name": "Linkpearl",
+    "command": "/linkpearl",
+    "aliases": [],
+    "category": "General"
+  },
+  {
+    "id": 257,
+    "name": "Advent of Light",
+    "command": "/adventoflight",
+    "aliases": [
+      "/advent"
+    ],
+    "category": "General"
+  },
+  {
+    "id": 284,
+    "name": "Blow Bubbles",
+    "command": "/blowbubbles",
+    "aliases": [],
+    "category": "General"
+  },
+  {
+    "id": 288,
+    "name": "Photograph",
+    "command": "/photograph",
+    "aliases": [],
+    "category": "General"
+  },
+  {
+    "id": 286,
+    "name": "Visage Capture",
+    "command": "/visage",
+    "aliases": [],
+    "category": "General"
+  },
+  {
+    "id": 292,
+    "name": "Twirl",
+    "command": "/twirl",
+    "aliases": [],
+    "category": "General"
+  },
+  {
+    "id": 308,
+    "name": "Blown Away",
+    "command": "/blownaway",
+    "aliases": [],
+    "category": "General"
+  },
+  {
+    "id": 327,
+    "name": "Magitype",
+    "command": "/magitype",
+    "aliases": [],
+    "category": "General"
+  },
+  {
+    "id": 326,
+    "name": "Navigate",
+    "command": "/navigate",
+    "aliases": [
+      "/checkmap"
+    ],
+    "category": "General"
+  },
+  {
+    "id": 238,
+    "name": "Draw Weapon",
+    "command": "/draw",
+    "aliases": [],
+    "category": "General"
+  },
+  {
+    "id": 237,
+    "name": "Sheathe Weapon",
+    "command": "/sheathe",
+    "aliases": [],
+    "category": "General"
+  },
+  {
+    "id": 101,
+    "name": "Step Dance",
+    "command": "/stepdance",
+    "aliases": [
+      "/sdance"
+    ],
+    "category": "Special"
+  },
+  {
+    "id": 102,
+    "name": "Harvest Dance",
+    "command": "/harvestdance",
+    "aliases": [
+      "/hdance"
+    ],
+    "category": "Special"
+  },
+  {
+    "id": 103,
+    "name": "Ball Dance",
+    "command": "/balldance",
+    "aliases": [
+      "/bdance"
+    ],
+    "category": "Special"
+  },
+  {
+    "id": 104,
+    "name": "Manderville Dance",
+    "command": "/mandervilledance",
+    "aliases": [
+      "/mdance"
+    ],
+    "category": "Special"
+  },
+  {
+    "id": 109,
+    "name": "Bomb Dance",
+    "command": "/bombdance",
+    "aliases": [],
+    "category": "Special"
+  },
+  {
+    "id": 114,
+    "name": "Most Gentlemanly",
+    "command": "/hildibrand",
+    "aliases": [
+      "/hildy"
+    ],
+    "category": "Special"
+  },
+  {
+    "id": 118,
+    "name": "Thavnairian Dance",
+    "command": "/thavdance",
+    "aliases": [
+      "/tdance"
+    ],
+    "category": "Special"
+  },
+  {
+    "id": 119,
+    "name": "Gold Dance",
+    "command": "/golddance",
+    "aliases": [
+      "/gdance"
+    ],
+    "category": "Special"
+  },
+  {
+    "id": 120,
+    "name": "Sundrop Dance",
+    "command": "/sundance",
+    "aliases": [
+      "/sundropdance"
+    ],
+    "category": "Special"
+  },
+  {
+    "id": 145,
+    "name": "Moonlift Dance",
+    "command": "/moonlift",
+    "aliases": [],
+    "category": "Special"
+  },
+  {
+    "id": 126,
+    "name": "Moogle Dance",
+    "command": "/mogdance",
+    "aliases": [],
+    "category": "Special"
+  },
+  {
+    "id": 130,
+    "name": "Red Ranger Pose A",
+    "command": "/rangerpose1r",
+    "aliases": [
+      "/rpose1r",
+      "/redrangerposea",
+      "/rrpa"
+    ],
+    "category": "Special"
+  },
+  {
+    "id": 134,
+    "name": "Red Ranger Pose B",
+    "command": "/rangerpose1l",
+    "aliases": [
+      "/rpose1l",
+      "/redrangerposeb",
+      "/rrpb"
+    ],
+    "category": "Special"
+  },
+  {
+    "id": 131,
+    "name": "Black Ranger Pose A",
+    "command": "/rangerpose2r",
+    "aliases": [
+      "/rpose2r",
+      "/blackrangerposea",
+      "/brpa"
+    ],
+    "category": "Special"
+  },
+  {
+    "id": 135,
+    "name": "Black Ranger Pose B",
+    "command": "/rangerpose2l",
+    "aliases": [
+      "/rpose2l",
+      "/blackrangerposeb",
+      "/brpb"
+    ],
+    "category": "Special"
+  },
+  {
+    "id": 132,
+    "name": "Yellow Ranger Pose A",
+    "command": "/rangerpose3r",
+    "aliases": [
+      "/rpose3r",
+      "/yellowrangerposea",
+      "/yrpa"
+    ],
+    "category": "Special"
+  },
+  {
+    "id": 136,
+    "name": "Yellow Ranger Pose B",
+    "command": "/rangerpose3l",
+    "aliases": [
+      "/rpose3l",
+      "/yellowrangerposeb",
+      "/yrpb"
+    ],
+    "category": "Special"
+  },
+  {
+    "id": 129,
+    "name": "Eastern Dance",
+    "command": "/easterndance",
+    "aliases": [
+      "/edance"
+    ],
+    "category": "Special"
+  },
+  {
+    "id": 149,
+    "name": "Songbird",
+    "command": "/songbird",
+    "aliases": [],
+    "category": "Special"
+  },
+  {
+    "id": 167,
+    "name": "Ritual Prayer",
+    "command": "/ritualprayer",
+    "aliases": [],
+    "category": "Special"
+  },
+  {
+    "id": 64,
+    "name": "Charmed",
+    "command": "/charmed",
+    "aliases": [],
+    "category": "Special"
+  },
+  {
+    "id": 65,
+    "name": "Cheer On: Blue",
+    "command": "/cheeronblue",
+    "aliases": [
+      "/cheerob"
+    ],
+    "category": "Special"
+  },
+  {
+    "id": 264,
+    "name": "Cheer On: Bright",
+    "command": "/cheeronbright",
+    "aliases": [
+      "/cheerow"
+    ],
+    "category": "Special"
+  },
+  {
+    "id": 314,
+    "name": "Cheer On: Orange",
+    "command": "/cheeronorange",
+    "aliases": [
+      "/cheeroo"
+    ],
+    "category": "Special"
+  },
+  {
+    "id": 66,
+    "name": "Cheer Wave: Yellow",
+    "command": "/cheerwaveyellow",
+    "aliases": [
+      "/cheerwy",
+      "/cheerwave",
+      "/hiphophurray"
+    ],
+    "category": "Special"
+  },
+  {
+    "id": 265,
+    "name": "Cheer Wave: Violet",
+    "command": "/cheerwaveviolet",
+    "aliases": [
+      "/cheerwv"
+    ],
+    "category": "Special"
+  },
+  {
+    "id": 315,
+    "name": "Cheer Wave: Pink",
+    "command": "/cheerwavepink",
+    "aliases": [
+      "/cheerwp"
+    ],
+    "category": "Special"
+  },
+  {
+    "id": 67,
+    "name": "Cheer Jump: Red",
+    "command": "/cheerjumpred",
+    "aliases": [
+      "/cheerjr",
+      "/cheerjump",
+      "/jumparound"
+    ],
+    "category": "Special"
+  },
+  {
+    "id": 266,
+    "name": "Cheer Jump: Green",
+    "command": "/cheerjumpgreen",
+    "aliases": [
+      "/cheerjg"
+    ],
+    "category": "Special"
+  },
+  {
+    "id": 316,
+    "name": "Cheer Jump: Indigo",
+    "command": "/cheerjumpindigo",
+    "aliases": [
+      "/cheerji"
+    ],
+    "category": "Special"
+  },
+  {
+    "id": 310,
+    "name": "Cheer Rhythm: Red",
+    "command": "/cheerrhythmred",
+    "aliases": [
+      "/cheerrr"
+    ],
+    "category": "Special"
+  },
+  {
+    "id": 321,
+    "name": "Cheer Rhythm: Violet",
+    "command": "/cheerrhythmviolet",
+    "aliases": [
+      "/cheerrv"
+    ],
+    "category": "Special"
+  },
+  {
+    "id": 322,
+    "name": "Cheer Rhythm: Bright",
+    "command": "/cheerrhythmbright",
+    "aliases": [
+      "/cheerrw"
+    ],
+    "category": "Special"
+  },
+  {
+    "id": 311,
+    "name": "Cheer Light: Yellow",
+    "command": "/cheerlightyellow",
+    "aliases": [
+      "/cheerly"
+    ],
+    "category": "Special"
+  },
+  {
+    "id": 323,
+    "name": "Cheer Light: Blue",
+    "command": "/cheerlightblue",
+    "aliases": [
+      "/cheerlb"
+    ],
+    "category": "Special"
+  },
+  {
+    "id": 324,
+    "name": "Cheer Light: Green",
+    "command": "/cheerlightgreen",
+    "aliases": [
+      "/cheerlg"
+    ],
+    "category": "Special"
+  },
+  {
+    "id": 176,
+    "name": "Yol Dance",
+    "command": "/yoldance",
+    "aliases": [],
+    "category": "Special"
+  },
+  {
+    "id": 173,
+    "name": "Box Step",
+    "command": "/boxstep",
+    "aliases": [
+      "/2legit"
+    ],
+    "category": "Special"
+  },
+  {
+    "id": 174,
+    "name": "Side Step",
+    "command": "/sidestep",
+    "aliases": [],
+    "category": "Special"
+  },
+  {
+    "id": 185,
+    "name": "Get Fantasy",
+    "command": "/getfantasy",
+    "aliases": [],
+    "category": "Special"
+  },
+  {
+    "id": 186,
+    "name": "Popoto Step",
+    "command": "/popotostep",
+    "aliases": [],
+    "category": "Special"
+  },
+  {
+    "id": 192,
+    "name": "Heel Toe",
+    "command": "/heeltoe",
+    "aliases": [],
+    "category": "Special"
+  },
+  {
+    "id": 193,
+    "name": "Goobbue Do",
+    "command": "/goobbuedo",
+    "aliases": [
+      "/mysterymachine"
+    ],
+    "category": "Special"
+  },
+  {
+    "id": 187,
+    "name": "Hum",
+    "command": "/hum",
+    "aliases": [],
+    "category": "Special"
+  },
+  {
+    "id": 198,
+    "name": "Manderville Mambo",
+    "command": "/mandervillemambo",
+    "aliases": [
+      "/mmambo"
+    ],
+    "category": "Special"
+  },
+  {
+    "id": 210,
+    "name": "Wasshoi",
+    "command": "/wasshoi",
+    "aliases": [],
+    "category": "Special"
+  },
+  {
+    "id": 212,
+    "name": "Flame Dance",
+    "command": "/flamedance",
+    "aliases": [],
+    "category": "Special"
+  },
+  {
+    "id": 216,
+    "name": "Bee\u0027s Knees",
+    "command": "/beesknees",
+    "aliases": [],
+    "category": "Special"
+  },
+  {
+    "id": 217,
+    "name": "Lali Hop",
+    "command": "/lalihop",
+    "aliases": [],
+    "category": "Special"
+  },
+  {
+    "id": 269,
+    "name": "Lop Hop",
+    "command": "/lophop",
+    "aliases": [],
+    "category": "Special"
+  },
+  {
+    "id": 274,
+    "name": "Love Heart",
+    "command": "/loveheart",
+    "aliases": [
+      "/heart"
+    ],
+    "category": "Special"
+  },
+  {
+    "id": 283,
+    "name": "Bouquet",
+    "command": "/bouquet",
+    "aliases": [],
+    "category": "Special"
+  },
+  {
+    "id": 328,
+    "name": "Cackle",
+    "command": "/cackle",
+    "aliases": [],
+    "category": "Special"
+  },
+  {
+    "id": 150,
+    "name": "Water Float",
+    "command": "/waterfloat",
+    "aliases": [],
+    "category": "Special"
+  },
+  {
+    "id": 155,
+    "name": "Squats",
+    "command": "/squats",
+    "aliases": [],
+    "category": "Special"
+  },
+  {
+    "id": 156,
+    "name": "Push-ups",
+    "command": "/pushups",
+    "aliases": [],
+    "category": "Special"
+  },
+  {
+    "id": 157,
+    "name": "Sit-ups",
+    "command": "/situps",
+    "aliases": [],
+    "category": "Special"
+  },
+  {
+    "id": 158,
+    "name": "Breath Control",
+    "command": "/breathcontrol",
+    "aliases": [],
+    "category": "Special"
+  },
+  {
+    "id": 164,
+    "name": "Attention",
+    "command": "/attention",
+    "aliases": [],
+    "category": "Special"
+  },
+  {
+    "id": 165,
+    "name": "At Ease",
+    "command": "/atease",
+    "aliases": [],
+    "category": "Special"
+  },
+  {
+    "id": 166,
+    "name": "Box",
+    "command": "/box",
+    "aliases": [],
+    "category": "Special"
+  },
+  {
+    "id": 180,
+    "name": "Sweat",
+    "command": "/sweat",
+    "aliases": [
+      "/tillyoubleed"
+    ],
+    "category": "Special"
+  },
+  {
+    "id": 181,
+    "name": "Shiver",
+    "command": "/shiver",
+    "aliases": [],
+    "category": "Special"
+  },
+  {
+    "id": 169,
+    "name": "Tremble",
+    "command": "/tremble",
+    "aliases": [],
+    "category": "Special"
+  },
+  {
+    "id": 170,
+    "name": "Winded",
+    "command": "/winded",
+    "aliases": [],
+    "category": "Special"
+  },
+  {
+    "id": 188,
+    "name": "Confirm",
+    "command": "/confirm",
+    "aliases": [],
+    "category": "Special"
+  },
+  {
+    "id": 189,
+    "name": "Scheme",
+    "command": "/scheme",
+    "aliases": [],
+    "category": "Special"
+  },
+  {
+    "id": 196,
+    "name": "Reprimand",
+    "command": "/reprimand",
+    "aliases": [
+      "/youknowyourname"
+    ],
+    "category": "Special"
+  },
+  {
+    "id": 273,
+    "name": "Slump",
+    "command": "/slump",
+    "aliases": [],
+    "category": "Special"
+  },
+  {
+    "id": 143,
+    "name": "Play Dead",
+    "command": "/playdead",
+    "aliases": [
+      "/pdead"
+    ],
+    "category": "Special"
+  },
+  {
+    "id": 203,
+    "name": "Lean",
+    "command": "/lean",
+    "aliases": [],
+    "category": "Special"
+  },
+  {
+    "id": 214,
+    "name": "Guard",
+    "command": "/guard",
+    "aliases": [],
+    "category": "Special"
+  },
+  {
+    "id": 215,
+    "name": "Malevolence",
+    "command": "/malevolence",
+    "aliases": [],
+    "category": "Special"
+  },
+  {
+    "id": 222,
+    "name": "Wring Hands",
+    "command": "/wringhands",
+    "aliases": [],
+    "category": "Special"
+  },
+  {
+    "id": 223,
+    "name": "Sweep Up",
+    "command": "/sweep",
+    "aliases": [
+      "/broom"
+    ],
+    "category": "Special"
+  },
+  {
+    "id": 241,
+    "name": "Show Right",
+    "command": "/showright",
+    "aliases": [],
+    "category": "Special"
+  },
+  {
+    "id": 242,
+    "name": "Show Left",
+    "command": "/showleft",
+    "aliases": [],
+    "category": "Special"
+  },
+  {
+    "id": 248,
+    "name": "Spirit",
+    "command": "/spirit",
+    "aliases": [],
+    "category": "Special"
+  },
+  {
+    "id": 279,
+    "name": "Attend",
+    "command": "/attend",
+    "aliases": [],
+    "category": "Special"
+  },
+  {
+    "id": 281,
+    "name": "Shake Drink",
+    "command": "/shakedrink",
+    "aliases": [],
+    "category": "Special"
+  },
+  {
+    "id": 280,
+    "name": "Water",
+    "command": "/water",
+    "aliases": [],
+    "category": "Special"
+  },
+  {
+    "id": 293,
+    "name": "Dazed",
+    "command": "/dazed",
+    "aliases": [],
+    "category": "Special"
+  },
+  {
+    "id": 294,
+    "name": "Rage",
+    "command": "/rage",
+    "aliases": [],
+    "category": "Special"
+  },
+  {
+    "id": 295,
+    "name": "Tomescroll",
+    "command": "/tomescroll",
+    "aliases": [],
+    "category": "Special"
+  },
+  {
+    "id": 296,
+    "name": "Study",
+    "command": "/study",
+    "aliases": [],
+    "category": "Special"
+  },
+  {
+    "id": 317,
+    "name": "Carry Book",
+    "command": "/carrybook",
+    "aliases": [],
+    "category": "Special"
+  },
+  {
+    "id": 307,
+    "name": "Pen",
+    "command": "/pen",
+    "aliases": [],
+    "category": "Special"
+  },
+  {
+    "id": 331,
+    "name": "Devour Taco",
+    "command": "/devourtaco",
+    "aliases": [],
+    "category": "Special"
+  },
+  {
+    "id": 306,
+    "name": "Savor Tea",
+    "command": "/savortea",
+    "aliases": [],
+    "category": "Special"
+  },
+  {
+    "id": 303,
+    "name": "Lominsan Gulp",
+    "command": "/lominsangulp",
+    "aliases": [],
+    "category": "Special"
+  },
+  {
+    "id": 301,
+    "name": "Gridanian Gulp",
+    "command": "/gridaniangulp",
+    "aliases": [],
+    "category": "Special"
+  },
+  {
+    "id": 302,
+    "name": "Ul\u0027dahn Gulp",
+    "command": "/uldahngulp",
+    "aliases": [],
+    "category": "Special"
+  },
+  {
+    "id": 329,
+    "name": "Conduct",
+    "command": "/conduct",
+    "aliases": [],
+    "category": "Special"
+  },
+  {
+    "id": 332,
+    "name": "Look Back",
+    "command": "/lookback",
+    "aliases": [],
+    "category": "Special"
+  },
+  {
+    "id": 138,
+    "name": "Zantetsuken",
+    "command": "/zantetsuken",
+    "aliases": [
+      "/ztk"
+    ],
+    "category": "Special"
+  },
+  {
+    "id": 144,
+    "name": "Diamond Dust",
+    "command": "/iceheart",
+    "aliases": [],
+    "category": "Special"
+  },
+  {
+    "id": 62,
+    "name": "Megaflare",
+    "command": "/megaflare",
+    "aliases": [],
+    "category": "Special"
+  },
+  {
+    "id": 175,
+    "name": "Ultima",
+    "command": "/ultima",
+    "aliases": [],
+    "category": "Special"
+  },
+  {
+    "id": 200,
+    "name": "Simulation M",
+    "command": "/simulationm",
+    "aliases": [],
+    "category": "Special"
+  },
+  {
+    "id": 201,
+    "name": "Simulation F",
+    "command": "/simulationf",
+    "aliases": [],
+    "category": "Special"
+  },
+  {
+    "id": 272,
+    "name": "Sundering",
+    "command": "/sundering",
+    "aliases": [
+      "/exodus"
+    ],
+    "category": "Special"
+  },
+  {
+    "id": 50,
+    "name": "Sit",
+    "command": "/lounge",
+    "aliases": [
+      "/sit",
+      "/lounge"
+    ],
+    "category": "Special"
+  },
+  {
+    "id": 52,
+    "name": "Sit on Ground",
+    "command": "/groundsit",
+    "aliases": [],
+    "category": "Special"
+  },
+  {
+    "id": 90,
+    "name": "Change Pose",
+    "command": "/changepose",
+    "aliases": [
+      "/cpose"
+    ],
+    "category": "Special"
+  },
+  {
+    "id": 60,
+    "name": "Visor",
+    "command": "/visor",
+    "aliases": [],
+    "category": "Special"
+  },
+  {
+    "id": 68,
+    "name": "Straight Face",
+    "command": "/straightface",
+    "aliases": [
+      "/straight"
+    ],
+    "category": "Expressions"
+  },
+  {
+    "id": 69,
+    "name": "Smile",
+    "command": "/smile",
+    "aliases": [],
+    "category": "Expressions"
+  },
+  {
+    "id": 70,
+    "name": "Grin",
+    "command": "/grin",
+    "aliases": [],
+    "category": "Expressions"
+  },
+  {
+    "id": 133,
+    "name": "Wink (Right)",
+    "command": "/wink",
+    "aliases": [
+      "/rightwink",
+      "/wink"
+    ],
+    "category": "Expressions"
+  },
+  {
+    "id": 184,
+    "name": "Wink (Left)",
+    "command": "/leftwink",
+    "aliases": [],
+    "category": "Expressions"
+  },
+  {
+    "id": 236,
+    "name": "Content",
+    "command": "/content",
+    "aliases": [],
+    "category": "Expressions"
+  },
+  {
+    "id": 71,
+    "name": "Smirk",
+    "command": "/smirk",
+    "aliases": [],
+    "category": "Expressions"
+  },
+  {
+    "id": 72,
+    "name": "Taunt",
+    "command": "/taunt",
+    "aliases": [],
+    "category": "Expressions"
+  },
+  {
+    "id": 73,
+    "name": "Shut Eyes",
+    "command": "/shuteyes",
+    "aliases": [
+      "/shut"
+    ],
+    "category": "Expressions"
+  },
+  {
+    "id": 74,
+    "name": "Sad",
+    "command": "/sad",
+    "aliases": [],
+    "category": "Expressions"
+  },
+  {
+    "id": 75,
+    "name": "Scared",
+    "command": "/scared",
+    "aliases": [
+      "/fear"
+    ],
+    "category": "Expressions"
+  },
+  {
+    "id": 76,
+    "name": "Amazed",
+    "command": "/amazed",
+    "aliases": [
+      "/awe"
+    ],
+    "category": "Expressions"
+  },
+  {
+    "id": 77,
+    "name": "Ouch",
+    "command": "/ouch",
+    "aliases": [
+      "/ow"
+    ],
+    "category": "Expressions"
+  },
+  {
+    "id": 78,
+    "name": "Annoyed",
+    "command": "/annoyed",
+    "aliases": [
+      "/annoy"
+    ],
+    "category": "Expressions"
+  },
+  {
+    "id": 79,
+    "name": "Alert",
+    "command": "/alert",
+    "aliases": [],
+    "category": "Expressions"
+  },
+  {
+    "id": 80,
+    "name": "Worried",
+    "command": "/worried",
+    "aliases": [
+      "/worry"
+    ],
+    "category": "Expressions"
+  },
+  {
+    "id": 141,
+    "name": "Sneer",
+    "command": "/sneer",
+    "aliases": [],
+    "category": "Expressions"
+  },
+  {
+    "id": 152,
+    "name": "Pucker Up",
+    "command": "/puckerup",
+    "aliases": [],
+    "category": "Expressions"
+  },
+  {
+    "id": 160,
+    "name": "Concentrate",
+    "command": "/concentrate",
+    "aliases": [],
+    "category": "Expressions"
+  },
+  {
+    "id": 161,
+    "name": "Confused",
+    "command": "/disturbed",
+    "aliases": [],
+    "category": "Expressions"
+  },
+  {
+    "id": 162,
+    "name": "Simper",
+    "command": "/simper",
+    "aliases": [],
+    "category": "Expressions"
+  },
+  {
+    "id": 163,
+    "name": "Beam",
+    "command": "/beam",
+    "aliases": [],
+    "category": "Expressions"
+  },
+  {
+    "id": 81,
+    "name": "Big Grin",
+    "command": "/biggrin",
+    "aliases": [],
+    "category": "Expressions"
+  },
+  {
+    "id": 82,
+    "name": "Reflect",
+    "command": "/reflect",
+    "aliases": [],
+    "category": "Expressions"
+  },
+  {
+    "id": 83,
+    "name": "Furrow",
+    "command": "/furrow",
+    "aliases": [],
+    "category": "Expressions"
+  },
+  {
+    "id": 84,
+    "name": "Scoff",
+    "command": "/scoff",
+    "aliases": [],
+    "category": "Expressions"
+  },
+  {
+    "id": 183,
+    "name": "Ponder",
+    "command": "/ponder",
+    "aliases": [
+      "/makeyougohmmm"
+    ],
+    "category": "Expressions"
+  },
+  {
+    "id": 190,
+    "name": "Endure",
+    "command": "/endure",
+    "aliases": [],
+    "category": "Expressions"
+  },
+  {
+    "id": 228,
+    "name": "Fake Smile",
+    "command": "/fakesmile",
+    "aliases": [],
+    "category": "Expressions"
+  }
+]
