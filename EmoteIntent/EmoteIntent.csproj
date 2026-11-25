@@ -2,7 +2,7 @@
 <Project Sdk="Dalamud.NET.Sdk/15.0.0">
 
   <PropertyGroup>
-    <Version>0.5.0.0</Version>
+    <Version>0.5.1.0</Version>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <!-- Manifest fields (DalamudPackager). The assembly name, EmoteIntent, is the plugin's
          InternalName and can never change once released. -->
@@ -25,8 +25,10 @@
     <DevPluginDir Condition="'$(DevPluginDir)' == '' And '$(CI)' != 'true'">$(LOCALAPPDATA)\EmoteIntent\DevPlugin</DevPluginDir>
   </PropertyGroup>
 
-  <!-- After DalamudPackager, which writes EmoteIntent.json (the manifest Dalamud needs) after Build. -->
-  <Target Name="CopyToDevPluginDir" AfterTargets="Build;DefaultDalamudPackagerDebug;DefaultDalamudPackagerRelease" Condition="'$(DevPluginDir)' != ''">
+  <!-- After DalamudPackager, which writes EmoteIntent.json (the manifest Dalamud needs) after Build. Only after
+       this configuration's packager target: after Build, or after a list of both packager targets, MSBuild runs
+       it before the packager and copies the previous build's manifest. -->
+  <Target Name="CopyToDevPluginDir" AfterTargets="DefaultDalamudPackager$(Configuration)" Condition="'$(DevPluginDir)' != ''">
     <ItemGroup>
       <DevPluginFile Include="$(OutDir)EmoteIntent.dll;$(OutDir)EmoteIntent.pdb;$(OutDir)EmoteIntent.json;$(OutDir)EmoteIntent.Core.dll;$(OutDir)EmoteIntent.Core.pdb" />
     </ItemGroup>
