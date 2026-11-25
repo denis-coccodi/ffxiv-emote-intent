@@ -7,8 +7,15 @@ public abstract record IntentResult
     {
     }
 
-    /// <summary>Play this emote: the player named it, or one emote clearly fits.</summary>
-    public sealed record Play(EmoteInfo Emote) : IntentResult;
+    /// <summary>
+    /// Play this emote: the player named it, or one emote clearly fits. <see cref="AlsoFits"/> lists other emotes that
+    /// fit well too ("book" plays Read; Carry Book and Reference also fit), to offer, never to play.
+    /// </summary>
+    public sealed record Play(EmoteInfo Emote) : IntentResult
+    {
+        /// <summary>Other emotes that fit well, best first; empty when none do.</summary>
+        public IReadOnlyList<EmoteInfo> AlsoFits { get; init; } = [];
+    }
 
     /// <summary>Several emotes might fit: show them and let the player choose. Never played on its own.</summary>
     public sealed record Suggest(IReadOnlyList<EmoteInfo> Emotes) : IntentResult;
@@ -37,6 +44,9 @@ public sealed class IntentResolver(PhraseMatcher matcher)
 
     /// <summary>How many emotes a suggestion offers at most.</summary>
     public const int SuggestCount = 3;
+
+    /// <summary>Next to an emote that plays, other matches this good are offered too ("sad" plays Slump; Cry also fits).</summary>
+    public const double AlsoFitsScore = 0.6;
 
     /// <summary>What to do with <paramref name="text"/>, given the character's unlocked emotes.</summary>
     public IntentResult Resolve(string text, IReadOnlyList<EmoteInfo> unlocked)
@@ -68,7 +78,14 @@ public sealed class IntentResolver(PhraseMatcher matcher)
         var exact = matches[0].Score >= 1 && second < 1;
         if (exact || (matches[0].Score >= PlayScore && matches[0].Score - second >= RequiredLead(matches[0].Score)))
         {
-            return new IntentResult.Play(byCommand[matches[0].Command]);
+            // Not the emotes of the played one's own family or feeling list: they're the same gesture or a fallback.
+            var alsoFits = matches.Skip(1)
+                .Where(match => match.Score >= AlsoFitsScore
+                    && !matches[0].Commands.Contains(match.Command, StringComparer.OrdinalIgnoreCase))
+                .Take(SuggestCount)
+                .Select(match => byCommand[match.Command])
+                .ToList();
+            return new IntentResult.Play(byCommand[matches[0].Command]) { AlsoFits = alsoFits };
         }
 
         return new IntentResult.Suggest(matches.Take(SuggestCount).Select(match => byCommand[match.Command]).ToList());

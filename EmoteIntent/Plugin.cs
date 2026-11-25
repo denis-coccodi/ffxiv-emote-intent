@@ -63,6 +63,11 @@ public sealed class Plugin : IDalamudPlugin
         {
             case IntentResult.Play play:
                 Play(play.Emote, request);
+                if (play.AlsoFits.Count > 0)
+                {
+                    suggestions.PrintAlsoFits(play.AlsoFits, request);
+                }
+
                 break;
             case IntentResult.Suggest suggest:
                 suggestions.Print(suggest.Emotes, request);

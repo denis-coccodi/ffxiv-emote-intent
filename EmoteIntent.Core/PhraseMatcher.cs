@@ -88,6 +88,9 @@ public sealed class PhraseMatcher
             .Where(item => item.Match.Score > 0)
             .GroupBy(item => item.Key, StringComparer.OrdinalIgnoreCase)
             .Select(group => group.MaxBy(item => item.Match.Score).Match)
+            // An emote reached through two files (its own and a feeling's list) appears once, at its best.
+            .GroupBy(match => match.Command, StringComparer.OrdinalIgnoreCase)
+            .Select(group => group.MaxBy(match => match.Score)!)
             .OrderByDescending(match => match.Score)
             .ThenBy(match => match.Command, StringComparer.Ordinal)
             .Take(count)
