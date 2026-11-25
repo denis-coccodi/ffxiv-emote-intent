@@ -6,20 +6,14 @@ namespace EmoteIntent;
 [Serializable]
 public sealed class Configuration : IPluginConfiguration
 {
-    /// <summary>The settings format this version writes. 1: the simplified settings and their defaults.</summary>
-    public const int CurrentVersion = 1;
+    /// <summary>The settings format this version writes. 2: one "when /feel finds an emote" choice.</summary>
+    public const int CurrentVersion = 2;
 
     /// <summary>The settings' format; raise it, and migrate in <see cref="Migrate"/>, when a setting changes.</summary>
     public int Version { get; set; } = CurrentVersion;
 
-    /// <summary>
-    /// When /feel finds an emote: false plays it (the default); true never plays by itself but lists the matches as
-    /// links, even a single one, for the player to click.
-    /// </summary>
-    public bool LetMePick { get; set; }
-
-    /// <summary>Also list, as links, the other emotes that might fit ("Also fits: …"). On by default.</summary>
-    public bool ShowAlternatives { get; set; } = true;
+    /// <summary>What /feel does once it has found the best emote. Asks when several fit, by default.</summary>
+    public WhenFound WhenFound { get; set; } = WhenFound.AskWhenSeveral;
 
     /// <summary>
     /// After /feel played an emote by itself, say which one ("Played /cheer (Cheer)."): the game's own line doesn't
@@ -35,9 +29,8 @@ public sealed class Configuration : IPluginConfiguration
             return false;
         }
 
-        // Version 0 (0.10–0.11) had other settings and defaults: start from the new defaults.
-        LetMePick = false;
-        ShowAlternatives = true;
+        // Versions 0-1 (0.10–0.12) had other settings: start from the defaults.
+        WhenFound = WhenFound.AskWhenSeveral;
         ShowPlayedEmote = false;
         Version = CurrentVersion;
         return true;
