@@ -1,4 +1,5 @@
 # /rangerpose2r (Black Ranger Pose A): a black ranger's dramatic one-legged pose.
+@ /rangerpose2r /rangerpose2l
 black ranger
 black ranger pose
 the black one

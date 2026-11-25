@@ -18,7 +18,7 @@ internal static class EmoteRows
             .OrderBy(row => row.Order)
             .ThenBy(row => row.RowId);
 
-    /// <summary>The emote's name, command, other commands and Emote list tab, as plain text.</summary>
+    /// <summary>The emote's name, command, other commands, Emote list tab and description, as plain text.</summary>
     public static EmoteInfo ToInfo(Emote row)
     {
         var command = row.TextCommand.Value;
@@ -28,6 +28,8 @@ internal static class EmoteRows
             .Distinct()
             .ToList();
         var category = row.EmoteCategory.ValueNullable?.Name.ExtractText() ?? string.Empty;
-        return new EmoteInfo(row.RowId, row.Name.ExtractText(), command.Command.ExtractText(), aliases, category);
+        return new EmoteInfo(
+            row.RowId, row.Name.ExtractText(), command.Command.ExtractText(), aliases, category,
+            EmoteDescription.Clean(command.Description.ExtractText().ReplaceLineEndings(" ")));
     }
 }

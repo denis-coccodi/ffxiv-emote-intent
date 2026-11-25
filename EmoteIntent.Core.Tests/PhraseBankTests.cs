@@ -8,6 +8,9 @@ public class PhraseBankTests
 {
     private const int MinPhrasesPerEmote = 30;
 
+    /// <summary>A family (Jump for Joy 1-5, the penlight colours…) is one gesture: it needs fewer phrases.</summary>
+    private const int MinPhrasesPerFamily = 20;
+
     private static readonly PhraseBank Bank = PhraseBank.LoadEmbedded();
 
     [Fact]
@@ -21,13 +24,16 @@ public class PhraseBankTests
             .Select(emote => emote.Command)
             .ToHashSet(StringComparer.OrdinalIgnoreCase);
 
-        Assert.All(Bank.Phrases.Keys, command => Assert.Contains(command, commands));
+        Assert.All(Bank.Commands.Values.SelectMany(family => family), command => Assert.Contains(command, commands));
     }
 
     [Fact]
     public void EveryEmoteHasEnoughPhrases() =>
-        Assert.All(Bank.Phrases, entry => Assert.True(
-            entry.Value.Count >= MinPhrasesPerEmote, $"{entry.Key} has {entry.Value.Count} phrases, at least {MinPhrasesPerEmote} expected"));
+        Assert.All(Bank.Phrases, entry =>
+        {
+            var minimum = Bank.Commands[entry.Key].Count > 1 ? MinPhrasesPerFamily : MinPhrasesPerEmote;
+            Assert.True(entry.Value.Count >= minimum, $"{entry.Key} has {entry.Value.Count} phrases, at least {minimum} expected");
+        });
 
     [Fact]
     public void NoPhraseBelongsToTwoEmotes()

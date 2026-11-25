@@ -6,4 +6,6 @@ namespace EmoteIntent.Core;
 /// <param name="Command">The chat command that plays it, with its slash (e.g. "/hug").</param>
 /// <param name="Aliases">Other commands for the same emote (short forms, aliases), with their slash.</param>
 /// <param name="Category">The Emote list tab it sits in (e.g. "General", "Special", "Expressions").</param>
-public sealed record EmoteInfo(uint Id, string Name, string Command, IReadOnlyList<string> Aliases, string Category);
+/// <param name="Description">The game's own description of what the emote does, if any.</param>
+public sealed record EmoteInfo(
+    uint Id, string Name, string Command, IReadOnlyList<string> Aliases, string Category, string Description = "");

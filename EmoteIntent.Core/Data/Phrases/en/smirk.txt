@@ -29,3 +29,6 @@ confidence
 superior
 condescending
 oh really now
+wry smirk
+smirk wryly
+a wry look

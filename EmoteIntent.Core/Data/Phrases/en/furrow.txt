@@ -2,10 +2,6 @@
 furrow
 furrowed brow
 furrowed brows
-frown
-frowning
-frowns
-*frowns*
 brow
 knit my brows
 displeased
@@ -29,3 +25,11 @@ concerning
 skeptical frown
 puzzled frown
 sour face
+furrow my brow
+brows knitted
+knitted brows
+eyebrows together
+hmm suspicious face
+scrutinize
+scrutinizing
+unsure face

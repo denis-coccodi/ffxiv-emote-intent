@@ -1,4 +1,5 @@
 # /showright (Show Right): kneel and present something with an open hand.
+@ /showright /showleft
 show right
 present
 presenting
@@ -29,3 +30,8 @@ and now
 presenting the
 here's the thing i made
 look what i found
+show left
+show off
+show you
+show off what's on my left
+show off what's on my right

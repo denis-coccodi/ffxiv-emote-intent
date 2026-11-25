@@ -7,7 +7,7 @@ public class IntentResolverTests
 {
     private static readonly PhraseBank Bank = PhraseBank.LoadEmbedded();
     private static readonly IntentResolver Resolver = new(new PhraseMatcher(Bank));
-    private static readonly List<EmoteInfo> AllUnlocked = Bank.Phrases.Keys
+    private static readonly List<EmoteInfo> AllUnlocked = Bank.Commands.Values.SelectMany(commands => commands).Distinct()
         .Select((command, index) => new EmoteInfo((uint)index + 1, command.TrimStart('/'), command, [], "General"))
         .ToList();
 
@@ -59,7 +59,7 @@ public class IntentResolverTests
     [InlineData("high five!", "/highfive")]
     [InlineData("smile", "/smile")]
     [InlineData("i'm cold", "/shiver")]
-    [InlineData("ew gross", "/sneer")]
+    [InlineData("ew gross", "/upset")]
     [InlineData("eye roll", "/annoyed")]
     [InlineData("kiss me", "/puckerup")]
     [InlineData("are you okay?", "/worried")]
