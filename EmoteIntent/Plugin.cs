@@ -20,18 +20,30 @@ public sealed class Plugin : IDalamudPlugin
 
     private readonly EmoteCatalog catalog;
     private readonly IntentResolver resolver;
+    private readonly SuggestionLinks suggestions;
 
     public Plugin()
     {
         catalog = new EmoteCatalog(DataManager, UnlockState);
         resolver = new IntentResolver(new PhraseMatcher(PhraseBank.LoadEmbedded()));
+        suggestions = new SuggestionLinks(ChatGui, id => catalog.Unlocked().FirstOrDefault(emote => emote.Id == id), Play);
         CommandManager.AddHandler(CommandName, new CommandInfo(OnCommand)
         {
             HelpMessage = "Play the emote that fits what you mean, e.g. /feel so happy to see you, or /feel hug.",
         });
     }
 
-    public void Dispose() => CommandManager.RemoveHandler(CommandName);
+    public void Dispose()
+    {
+        CommandManager.RemoveHandler(CommandName);
+        suggestions.Dispose();
+    }
+
+    private static void Play(EmoteInfo emote)
+    {
+        Log.Debug("Playing {Command}", emote.Command);
+        ChatCommand.Run(emote.Command);
+    }
 
     private void OnCommand(string command, string args)
     {
@@ -45,12 +57,10 @@ public sealed class Plugin : IDalamudPlugin
         switch (resolver.Resolve(args, unlocked))
         {
             case IntentResult.Play play:
-                Log.Debug("Playing {Command} for \"{Args}\"", play.Emote.Command, args);
-                ChatCommand.Run(play.Emote.Command);
+                Play(play.Emote);
                 break;
             case IntentResult.Suggest suggest:
-                var options = string.Join(", ", suggest.Emotes.Select(emote => $"{emote.Command} ({emote.Name})"));
-                ChatGui.Print($"Not sure which you mean: {options}. Type the one you want.");
+                suggestions.Print(suggest.Emotes);
                 break;
             default:
                 ChatGui.Print($"No unlocked emote fits \"{args.Trim()}\" yet. The phrase bank covers more emotes with each update.");

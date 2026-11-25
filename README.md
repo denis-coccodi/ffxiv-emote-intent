@@ -10,7 +10,7 @@ A [Dalamud](https://github.com/goatcorp/Dalamud) plugin for Final Fantasy XIV. T
 | --- | --- |
 | `/feel` | Says how many emotes you have unlocked. |
 | `/feel <what you mean>` | Plays the unlocked emote that clearly fits, the same as typing its command. One command plays one emote. |
-| | When a few emotes might fit, it lists them in chat and plays nothing: type the one you want. |
+| | When a few emotes might fit, it lists them in chat as links and plays nothing: click the one you want (or type it). |
 
 ## Phrase bank
 
