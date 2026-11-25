@@ -11,7 +11,7 @@ A [Dalamud](https://github.com/goatcorp/Dalamud) plugin for Final Fantasy XIV. T
 | `/feel` | Says how many emotes you have unlocked. |
 | `/feel <what you mean>` | Plays the unlocked emote that clearly fits, the same as typing its command. One command plays one emote. |
 | | When a few emotes might fit, it lists them in chat as links and plays nothing: click the one you want (or type it). |
-| | After it plays one, chat says which ("Played /read (Read).") and lists others that fit well too, as links ("Also fits: /carrybook…"). |
+| | After it plays one, it lists other emotes that might fit too, as links ("Also fits: /carrybook…"). |
 | `/feel <what you mean> motion` | The same, without the emote's line in the chat log (the game's `/hug motion`). Suggested links play that way too. |
 | `/feel <what you mean> text` | The same, with the emote's line (the plain command). |
 
@@ -21,8 +21,9 @@ A [Dalamud](https://github.com/goatcorp/Dalamud) plugin for Final Fantasy XIV. T
 
 `/feelconfig` (or the gear button in `/xlplugins`) opens the settings:
 
-- **Say which emote /feel played** (on by default): after the emote, chat says "Played /cheer (Cheer).", since the game's own line ("You cheer enthusiastically.") doesn't name the command. Off, only alternatives are listed, when there are any.
-- **List all alternatives, not only close ones** (off by default): every other emote that might fit is listed after the one that played ("Also fits: …"), not only those that fit well.
+- **When /feel finds an emote**: **Play it** (default), or **Let me pick**: nothing plays by itself; the matches are listed as links, even a single one ("Pick one: /read (Read), /carrybook (Carry Book)…"), and you click the one you want.
+- **Also list other emotes that might fit** (on by default): after an emote plays, "Also fits: …" lists the others as links; with "Let me pick", they join the list.
+- **Say which emote played** (off by default; only with "Play it"): "Played /cheer (Cheer)." after /feel played an emote by itself, since the game's own line ("You cheer enthusiastically.") doesn't name the command. Never after you click a link.
 
 Whether the game writes an emote's own line in the chat log is a game setting; `motion` at the end of a `/feel` skips it for that one emote.
 

@@ -1,5 +1,6 @@
 using System.Numerics;
 using Dalamud.Bindings.ImGui;
+using Dalamud.Interface.Utility.Raii;
 using Dalamud.Interface.Windowing;
 
 namespace EmoteIntent;
@@ -22,27 +23,40 @@ internal sealed class SettingsWindow : Window
 
     public override void Draw()
     {
-        var showPlayed = configuration.ShowPlayedEmote;
-        if (ImGui.Checkbox("Say which emote /feel played", ref showPlayed))
+        ImGui.TextUnformatted("When /feel finds an emote:");
+        if (ImGui.RadioButton("Play it", !configuration.LetMePick))
         {
-            configuration.ShowPlayedEmote = showPlayed;
-            save();
+            Set(() => configuration.LetMePick = false);
         }
 
-        ImGui.TextWrapped(
-            "After the emote, chat says \"Played /cheer (Cheer).\": the game's own line (\"You cheer "
-            + "enthusiastically.\") doesn't name the command.");
+        if (ImGui.RadioButton("Let me pick (list the matches as links, even just one)", configuration.LetMePick))
+        {
+            Set(() => configuration.LetMePick = true);
+        }
 
         ImGui.Spacing();
-        var showAll = configuration.ShowAllAlternatives;
-        if (ImGui.Checkbox("List all alternatives, not only close ones", ref showAll))
+        var showAlternatives = configuration.ShowAlternatives;
+        if (ImGui.Checkbox("Also list other emotes that might fit", ref showAlternatives))
         {
-            configuration.ShowAllAlternatives = showAll;
-            save();
+            Set(() => configuration.ShowAlternatives = showAlternatives);
         }
 
-        ImGui.TextWrapped(
-            "Other emotes that might fit are listed after the one that played, as links (\"Also fits: /carrybook\"). "
-            + "Off: only close ones.");
+        // Only when /feel plays by itself: when the player picks, they already know which one played.
+        using (ImRaii.Disabled(configuration.LetMePick))
+        {
+            var showPlayed = configuration.ShowPlayedEmote;
+            if (ImGui.Checkbox("Say which emote played", ref showPlayed))
+            {
+                Set(() => configuration.ShowPlayedEmote = showPlayed);
+            }
+
+            ImGui.TextWrapped("\"Played /cheer (Cheer).\": the game's own line doesn't name the command.");
+        }
+    }
+
+    private void Set(Action change)
+    {
+        change();
+        save();
     }
 }

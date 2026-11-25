@@ -31,6 +31,10 @@ public sealed class Plugin : IDalamudPlugin
     public Plugin()
     {
         configuration = PluginInterface.GetPluginConfig() as Configuration ?? new Configuration();
+        if (configuration.Migrate())
+        {
+            PluginInterface.SavePluginConfig(configuration);
+        }
         catalog = new EmoteCatalog(DataManager, UnlockState);
         matcher = new PhraseMatcher(PhraseBank.LoadEmbedded());
         resolver = new IntentResolver(matcher);
@@ -81,13 +85,21 @@ public sealed class Plugin : IDalamudPlugin
         var request = FeelRequest.Parse(args, matcher.IsPhrase);
         switch (resolver.Resolve(request.Text, unlocked))
         {
+            case IntentResult.Play play when configuration.LetMePick:
+                suggestions.PrintPick(configuration.ShowAlternatives ? [play.Emote, .. play.Alternatives] : [play.Emote], request);
+                break;
             case IntentResult.Play play:
                 Play(play.Emote, request);
-                suggestions.PrintPlayed(
-                    play.Emote,
-                    configuration.ShowAllAlternatives ? play.Alternatives : play.AlsoFits,
-                    request,
-                    configuration.ShowPlayedEmote);
+                if (configuration.ShowPlayedEmote)
+                {
+                    suggestions.PrintPlayed(play.Emote, request);
+                }
+
+                if (configuration.ShowAlternatives && play.Alternatives.Count > 0)
+                {
+                    suggestions.PrintAlsoFits(play.Alternatives, request);
+                }
+
                 break;
             case IntentResult.Suggest suggest:
                 suggestions.Print(suggest.Emotes, request);
