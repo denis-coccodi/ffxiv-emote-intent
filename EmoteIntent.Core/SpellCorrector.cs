@@ -5,9 +5,10 @@ public sealed record Correction(string Typed, string Read);
 
 /// <summary>
 /// Fixes typos against the phrase bank's own words, like a phone keyboard's autocorrect: a word the bank doesn't know
-/// becomes the closest one it does ("exicted" → "excited", "helo" → "hello", "spooookyy" → "spooky"). Words it knows
-/// never change, and short words aren't touched ("hum" stays "hum", not "hug"). No AI: letters added, dropped,
-/// swapped, changed or held down too long.
+/// becomes the closest one it does ("exicted" → "excited", "hapy" → "happy", "spooookyy" → "spooky"). Words it
+/// knows never change, nor do real English words (<see cref="EnglishWords"/>: "raining" isn't "training"), and short
+/// words aren't touched ("hum" stays "hum", not "hug"). No AI: letters added, dropped, swapped, changed or held down
+/// too long.
 /// </summary>
 public sealed class SpellCorrector
 {
@@ -68,13 +69,21 @@ public sealed class SpellCorrector
     private bool Knows(string word) =>
         counts.ContainsKey(word) || (word.EndsWith('s') && counts.ContainsKey(word[..^1]));
 
-    // Letters held down too long first ("happpy", "helo"); else the known word fewest typos away within the allowance,
+    // Letters held down too long first ("happpy", "hugg"); else the known word fewest typos away within the allowance,
     // on a tie the commonest. Typos rarely hit the first letter, so a word that starts differently gets one typo at most.
+    // A real English word the bank doesn't know is no typo ("raining" isn't "training", "loose" isn't "lose"): it's only
+    // fixed when a key was clearly held down, three of a letter in a row ("hellooo").
     private string? Closest(string typed)
     {
-        if (bySquashed.TryGetValue(Squash(typed), out var held))
+        var english = EnglishWords.Contains(typed);
+        if ((!english || HasHeldKey(typed)) && bySquashed.TryGetValue(Squash(typed), out var held))
         {
             return held;
+        }
+
+        if (english)
+        {
+            return null;
         }
 
         var allowed = typed.Length >= TwoTyposLength ? 2 : 1;
@@ -142,6 +151,10 @@ public sealed class SpellCorrector
 
         return previous[b.Length];
     }
+
+    // Three of the same letter in a row: a key held down ("hellooo"), never English spelling.
+    private static bool HasHeldKey(string word) =>
+        Enumerable.Range(2, Math.Max(0, word.Length - 2)).Any(i => word[i] == word[i - 1] && word[i] == word[i - 2]);
 
     // The word with each run of one letter cut to one ("spooookyy" → "spoky").
     private static string Squash(string word) =>
