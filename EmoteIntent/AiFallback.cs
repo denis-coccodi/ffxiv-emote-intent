@@ -64,7 +64,8 @@ internal sealed class AiFallback(
                 {
                     warned = true;
                     await framework.RunOnFrameworkThread(() => chatGui.Print(
-                        $"The AI ({model.Model} in Ollama) didn't answer: is Ollama running? Showing the phrase bank's matches."))
+                        $"The optional AI help ({model.Model} in Ollama) didn't answer: is Ollama running? Showing the usual matches. "
+                        + "/feelconfig switches it off."))
                         .ConfigureAwait(false);
                 }
             }

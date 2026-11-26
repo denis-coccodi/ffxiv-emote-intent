@@ -2,14 +2,14 @@
 <Project Sdk="Dalamud.NET.Sdk/15.0.0">
 
   <PropertyGroup>
-    <Version>0.19.0.0</Version>
+    <Version>0.19.1.0</Version>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <!-- Manifest fields (DalamudPackager). The assembly name, EmoteIntent, is the plugin's
          InternalName and can never change once released. -->
     <Author>Denis Coccodi</Author>
     <Name>Emote Intent</Name>
     <Punchline>Say what you mean, and play the emote that fits.</Punchline>
-    <Description>Type /feel and what you mean ("/feel so happy to see you", "/feel lmao", "/feel o7"), and Emote Intent plays the unlocked emote that fits, or lists the few that might as links to click. /feel all dances (or eat, jumps, poses…) lists every emote of a kind you have. Typos are fixed, and any emote also plays by its name or command. Type /feel alone for help. Runs on your PC, no AI service needed; optionally, a free AI model in Ollama on your own PC helps when it isn't sure. The plugin and its phrase bank were written with AI help (Claude).</Description>
+    <Description>Type /feel and what you mean ("/feel so happy to see you", "/feel lmao", "/feel o7"), and Emote Intent plays the unlocked emote that fits, or lists the few that might as links to click. /feel all dances (or eat, jumps, poses…) lists every emote of a kind you have. Typos are fixed, and any emote also plays by its name or command. Type /feel alone for help. Works entirely on its own, on your PC: no AI, account or download needed. (For players who want it, the settings have an optional extra, off unless you switch it on, that can ask a free AI model running on your own PC when /feel isn't sure.) The plugin and its phrase bank were written with AI help (Claude).</Description>
     <RepoUrl>https://github.com/denis-coccodi/ffxiv-emote-intent</RepoUrl>
     <Tags>emote;emotes;chat;social;roleplay</Tags>
   </PropertyGroup>
