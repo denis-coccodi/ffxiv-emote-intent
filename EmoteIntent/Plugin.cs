@@ -20,6 +20,7 @@ public sealed class Plugin : IDalamudPlugin
     [PluginService] internal static IUnlockState UnlockState { get; private set; } = null!;
     [PluginService] internal static IChatGui ChatGui { get; private set; } = null!;
     [PluginService] internal static ICondition Condition { get; private set; } = null!;
+    [PluginService] internal static IFramework Framework { get; private set; } = null!;
     [PluginService] internal static IPluginLog Log { get; private set; } = null!;
 
     private readonly Configuration configuration;
@@ -31,6 +32,7 @@ public sealed class Plugin : IDalamudPlugin
     private readonly WindowSystem windows = new("EmoteIntent");
     private readonly SettingsWindow settings;
     private readonly MainWindow main;
+    private readonly AiFallback ai;
 
     public Plugin()
     {
@@ -42,9 +44,10 @@ public sealed class Plugin : IDalamudPlugin
         catalog = new EmoteCatalog(DataManager, UnlockState);
         matcher = new PhraseMatcher(PhraseBank.LoadEmbedded());
         resolver = new IntentResolver(matcher);
+        ai = new AiFallback(configuration, resolver, Framework, ChatGui, Log);
         suggestions = new SuggestionLinks(ChatGui, catalog.Unlocked, bundles, Play);
 
-        settings = new SettingsWindow(configuration, () => PluginInterface.SavePluginConfig(configuration));
+        settings = new SettingsWindow(configuration, () => PluginInterface.SavePluginConfig(configuration), ai.CheckAsync);
         windows.AddWindow(settings);
         main = new MainWindow(() => catalog.Unlocked().Count, () => settings.IsOpen = true);
         windows.AddWindow(main);
@@ -72,6 +75,7 @@ public sealed class Plugin : IDalamudPlugin
         PluginInterface.UiBuilder.Draw -= windows.Draw;
         windows.RemoveAllWindows();
         suggestions.Dispose();
+        ai.Dispose();
     }
 
     private static void Play(EmoteInfo emote, FeelRequest request)
@@ -119,6 +123,18 @@ public sealed class Plugin : IDalamudPlugin
                 + ".");
         }
 
+        // Not sure: a model in Ollama, if switched on, says what the text means; the phrase bank's result otherwise.
+        if (ai.Wanted(result))
+        {
+            ai.Ask(request.Text, here, result, understood => Show(understood, request));
+            return;
+        }
+
+        Show(result, request);
+    }
+
+    private void Show(IntentResult result, FeelRequest request)
+    {
         switch (result)
         {
             case IntentResult.Play play when configuration.WhenFound == WhenFound.AlwaysPick:
