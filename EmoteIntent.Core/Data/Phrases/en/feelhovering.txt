@@ -1,0 +1,25 @@
+# Hovering: Simulation (levitate with a glowing weapon), else Advent of Light.
+@ /simulationm /simulationf /adventoflight
+hover
+hovering
+levitate
+levitating
+levitation
+float in the air
+floating in the air
+floating in midair
+midair
+defy gravity
+defying gravity
+anti gravity
+zero gravity
+weightless
+suspended in the air
+rise up
+rising up
+ascend
+ascending
+telekinesis
+magic levitation
+hover in the air
+hovering above the ground
