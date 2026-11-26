@@ -41,20 +41,39 @@ public sealed class OllamaClient
     /// </summary>
     public async Task<AiAnswer> PickAsync(string text, IReadOnlyCollection<string> commands, CancellationToken cancellation)
     {
+        var (content, took) = await ChatAsync(
+            Prompt.SystemMessage, EmotePrompt.User(text), EmotePrompt.Schema(commands), 16384, cancellation).ConfigureAwait(false);
+        return new AiAnswer(EmotePrompt.ParseAnswer(content, commands), took);
+    }
+
+    /// <summary>
+    /// What <paramref name="text"/> means in a few plain words ("frustrated", "dead"), for the phrase bank to turn into
+    /// emotes (<see cref="MeaningPrompt"/>), and how long it took.
+    /// </summary>
+    public async Task<(IReadOnlyList<string> Meanings, TimeSpan Took)> MeaningsAsync(string text, CancellationToken cancellation)
+    {
+        var (content, took) = await ChatAsync(
+            MeaningPrompt.SystemMessage, MeaningPrompt.User(text), MeaningPrompt.Schema(), 2048, cancellation).ConfigureAwait(false);
+        return (MeaningPrompt.ParseAnswer(content), took);
+    }
+
+    private async Task<(string Content, TimeSpan Took)> ChatAsync(
+        string system, string user, JsonObject schema, int contextLength, CancellationToken cancellation)
+    {
         var request = new JsonObject
         {
             ["model"] = Model,
             ["stream"] = false,
             // Thinking models (qwen3…) would think aloud first: slower, and this is a quick choice.
             ["think"] = false,
-            // Keep the model and the cached guide loaded between /feel commands.
+            // Keep the model and its cached instructions loaded between /feel commands.
             ["keep_alive"] = "30m",
-            ["format"] = EmotePrompt.Schema(commands),
-            ["options"] = new JsonObject { ["temperature"] = 0, ["num_ctx"] = 16384 },
+            ["format"] = schema,
+            ["options"] = new JsonObject { ["temperature"] = 0, ["num_ctx"] = contextLength },
             ["messages"] = new JsonArray
             {
-                new JsonObject { ["role"] = "system", ["content"] = Prompt.SystemMessage },
-                new JsonObject { ["role"] = "user", ["content"] = EmotePrompt.User(text) },
+                new JsonObject { ["role"] = "system", ["content"] = system },
+                new JsonObject { ["role"] = "user", ["content"] = user },
             },
         };
 
@@ -66,7 +85,6 @@ public sealed class OllamaClient
             throw new HttpRequestException($"Ollama answered {(int)response.StatusCode}: {body}");
         }
 
-        var content = JsonNode.Parse(body)?["message"]?["content"]?.GetValue<string>() ?? string.Empty;
-        return new AiAnswer(EmotePrompt.ParseAnswer(content, commands), watch.Elapsed);
+        return (JsonNode.Parse(body)?["message"]?["content"]?.GetValue<string>() ?? string.Empty, watch.Elapsed);
     }
 }

@@ -33,19 +33,47 @@ Report("phrase bank", cases.Select(item => (item.Text, item.Right, BankAnswer(it
 
 using var http = new HttpClient { BaseAddress = address, Timeout = TimeSpan.FromMinutes(2) };
 var prompt = new EmotePrompt(guide);
+var mode = Option("--mode") ?? "both";
 foreach (var model in models)
 {
     var client = new OllamaClient(http, prompt, model);
-    // The first request loads the model and reads the whole guide; later ones reuse it, as in the game.
-    await client.PickAsync("hello", commands, CancellationToken.None);
-    var results = new List<(string, HashSet<string>, IReadOnlyList<string>, TimeSpan)>();
-    foreach (var (text, right) in cases)
+    if (mode is "pick" or "both")
     {
-        var answer = await client.PickAsync(text, commands, CancellationToken.None);
-        results.Add((text, right, answer.Commands, answer.Took));
+        // The model chooses among every emote's guide line. The first request loads the model and reads the guide.
+        await client.PickAsync("hello", commands, CancellationToken.None);
+        var results = new List<(string, HashSet<string>, IReadOnlyList<string>, TimeSpan)>();
+        foreach (var (text, right) in cases)
+        {
+            var answer = await client.PickAsync(text, commands, CancellationToken.None);
+            results.Add((text, right, answer.Commands, answer.Took));
+        }
+
+        Report($"{model}, choosing among all emotes", results);
     }
 
-    Report(model, results);
+    if (mode is "meaning" or "both")
+    {
+        // The model says what the text means in plain words, and the phrase bank turns those into emotes.
+        await client.MeaningsAsync("hello", CancellationToken.None);
+        var results = new List<(string, HashSet<string>, IReadOnlyList<string>, TimeSpan)>();
+        var hybrid = new List<(string, HashSet<string>, IReadOnlyList<string>, TimeSpan)>();
+        foreach (var (text, right) in cases)
+        {
+            var (meanings, took) = await client.MeaningsAsync(text, CancellationToken.None);
+            var answer = meanings.Select(BankAnswer).SelectMany(found => found.Take(1))
+                .Concat(meanings.SelectMany(meaning => BankAnswer(meaning).Skip(1)))
+                .Distinct(StringComparer.OrdinalIgnoreCase)
+                .ToList();
+            results.Add(($"{text} [{string.Join(", ", meanings)}]", right, answer, took));
+
+            // As the plugin would: the phrase bank first, the model only when the bank isn't sure.
+            var sure = resolver.Resolve(text, unlocked) is IntentResult.Play;
+            hybrid.Add((text, right, sure ? BankAnswer(text) : answer, sure ? TimeSpan.Zero : took));
+        }
+
+        Report($"{model}, plain words then the phrase bank", results);
+        Report($"{model}, phrase bank first, model when unsure", hybrid);
+    }
 }
 
 // The phrase bank's answer as /feel shows it: the emote it plays, then the alternatives; or what it suggests.
