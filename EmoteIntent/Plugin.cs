@@ -48,8 +48,8 @@ public sealed class Plugin : IDalamudPlugin
 
         CommandManager.AddHandler(CommandName, new CommandInfo(OnCommand)
         {
-            HelpMessage = "Play the emote that fits what you mean, e.g. /feel so happy to see you, or /feel hug. "
-                + "End with \"motion\" to play it without the chat line, or \"text\" to show it.",
+            HelpMessage = "Play the emote that fits what you mean: /feel so happy to see you, /feel hug, /feel all dances. "
+                + "/feel alone (or /feel help) shows how to use it.",
         });
         CommandManager.AddHandler(ConfigCommandName, new CommandInfo((_, _) => settings.Toggle())
         {
@@ -77,9 +77,14 @@ public sealed class Plugin : IDalamudPlugin
     private void OnCommand(string command, string args)
     {
         var unlocked = catalog.Unlocked();
-        if (string.IsNullOrWhiteSpace(args))
+        if (string.IsNullOrWhiteSpace(args) || args.Trim().Equals(Guide.HelpWord, StringComparison.OrdinalIgnoreCase))
         {
-            ChatGui.Print($"You have {unlocked.Count} emotes unlocked. Type {CommandName} and what you want to express.");
+            ChatGui.Print($"Emote Intent: you have {unlocked.Count} emotes unlocked.");
+            foreach (var line in Guide.Lines)
+            {
+                ChatGui.Print("• " + line);
+            }
+
             return;
         }
 
