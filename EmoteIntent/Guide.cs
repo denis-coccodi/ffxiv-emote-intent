@@ -1,17 +1,16 @@
 namespace EmoteIntent;
 
 /// <summary>
-/// How to use /feel, in a few lines, in the main window's Help tab: opened by "/feel" alone, "/feel help" or
-/// "/feel ?", or the plugin list's Open button. The rules players can't guess (bundles, motion/text, typos) belong here.
+/// How to use /feel, in a few lines, in the main window's Help tab: opened by "/feel" alone or "/feel ?", or the plugin list's Open button. The rules players can't guess (bundles, motion/text, typos) belong here.
 /// </summary>
 internal static class Guide
 {
     /// <summary>
-    /// Whether the player asked for this guide: "/feel" alone, "/feel help" or "/feel ?". Only "help" exactly: "help!"
-    /// and "help me" still play Panic.
+    /// Whether the player asked for this guide: "/feel" alone or "/feel ?". "/feel help" is an emote like any text
+    /// (Panic).
     /// </summary>
     public static bool IsAsked(string args) =>
-        args.Trim() is "" or "?" || args.Trim().Equals("help", StringComparison.OrdinalIgnoreCase);
+        args.Trim() is "" or "?";
 
     /// <summary>One line per tip, in the order they're shown.</summary>
     public static readonly IReadOnlyList<string> Lines =

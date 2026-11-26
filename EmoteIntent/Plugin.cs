@@ -53,7 +53,7 @@ public sealed class Plugin : IDalamudPlugin
         CommandManager.AddHandler(CommandName, new CommandInfo(OnCommand)
         {
             HelpMessage = "Play the emote that fits what you mean: /feel so happy to see you, /feel hug, /feel all dances. "
-                + "/feel alone (or /feel help) opens the help window.",
+                + "/feel alone (or /feel ?) opens the help window.",
         });
         CommandManager.AddHandler(ConfigCommandName, new CommandInfo((_, _) => settings.Toggle())
         {

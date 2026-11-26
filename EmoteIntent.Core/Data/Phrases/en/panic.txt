@@ -30,3 +30,4 @@ sos
 chaos
 flail
 flailing
+help
