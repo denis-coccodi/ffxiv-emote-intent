@@ -94,6 +94,8 @@ dotnet run --project tools/AiEval -c Release -- qwen3:4b granite4:3b
 
 By default each model is tried two ways (`--mode pick` or `meaning` for one): choosing among every emote's guide line, and saying what the text means in plain words that the phrase bank turns into emotes, also combined as the plugin would (phrase bank first, model only when the bank isn't sure). It prints how often each one's first choice is right, how often a right emote is among its first three, how fast the model answers, and every miss. The plugin doesn't use a model yet.
 
+The answer key in `cases.txt` is one person's opinion. `--sheet file` also writes a blind sheet: every sentence where the setups' first choices differ, with those emotes shuffled and unlabelled, for someone to tick the ones that fit. `dotnet run --project tools/AiEval -c Release -- --judge file` then scores each setup against those ticks, without running the models again (their answers are saved beside the sheet).
+
 Warnings are build errors, with .NET's recommended analyzers and a list of banned APIs (`BannedSymbols.txt`). The first build sets up two git hooks: Conventional Commits messages, and the three checks above before every push.
 
 Changes go through pull requests to `main`; see [CLAUDE.md](CLAUDE.md). A tag `vX.Y.Z.W` on `main` releases that version (`.github/workflows/release.yaml`, `tools/New-RepoJson.ps1`).
