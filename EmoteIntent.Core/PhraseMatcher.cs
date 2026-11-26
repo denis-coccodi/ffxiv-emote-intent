@@ -24,6 +24,7 @@ public sealed class PhraseMatcher
     private readonly List<Entry> entries = [];
     private readonly Dictionary<string, double> rarity = new(StringComparer.Ordinal);
     private readonly double unknownRarity;
+    private readonly SpellCorrector speller;
 
     /// <summary>Prepares the bank's phrases for matching.</summary>
     public PhraseMatcher(PhraseBank bank)
@@ -47,7 +48,14 @@ public sealed class PhraseMatcher
         }
 
         unknownRarity = Math.Log(1 + entries.Count);
+        speller = new SpellCorrector(entries.Select(entry => entry.Phrase));
     }
+
+    /// <summary>
+    /// <paramref name="text"/> with its typos fixed against the bank's words ("so exicted" → "so excited"), and what
+    /// was fixed; see <see cref="SpellCorrector"/>.
+    /// </summary>
+    public (string Text, IReadOnlyList<Correction> Corrections) Correct(string text) => speller.Correct(text);
 
     /// <summary>Whether <paramref name="text"/> is exactly one of the bank's phrases (case and punctuation aside).</summary>
     public bool IsPhrase(string text)

@@ -8,6 +8,12 @@ public abstract record IntentResult
     }
 
     /// <summary>
+    /// Typos read as the phrase bank's words to reach this result ("exicted" as "excited"); empty when the text was
+    /// used as typed.
+    /// </summary>
+    public IReadOnlyList<Correction> Corrections { get; init; } = [];
+
+    /// <summary>
     /// Play this emote: the player named it, or one emote clearly fits. <see cref="AlsoFits"/> lists other emotes that
     /// fit well too ("book" plays Read; Carry Book and Reference also fit), to offer, never to play.
     /// </summary>
@@ -71,6 +77,18 @@ public sealed class IntentResolver(PhraseMatcher matcher)
     /// (every emote of the game), naming one that isn't unlocked offers the closest ones that are.
     /// </summary>
     public IntentResult Resolve(string text, IReadOnlyList<EmoteInfo> unlocked, IReadOnlyList<EmoteInfo>? all = null)
+    {
+        // Typos are fixed first ("exicted" → "excited"), unless the text names an emote as typed.
+        var named = EmoteNameMatcher.Match(text, unlocked) ?? (all is null ? null : EmoteNameMatcher.Match(text, all));
+        if (named is null && matcher.Correct(text) is { Corrections.Count: > 0 } corrected)
+        {
+            return ResolveAsTyped(corrected.Text, unlocked, all) with { Corrections = corrected.Corrections };
+        }
+
+        return ResolveAsTyped(text, unlocked, all);
+    }
+
+    private IntentResult ResolveAsTyped(string text, IReadOnlyList<EmoteInfo> unlocked, IReadOnlyList<EmoteInfo>? all)
     {
         var byCommand = unlocked
             .GroupBy(emote => emote.Command, StringComparer.OrdinalIgnoreCase)

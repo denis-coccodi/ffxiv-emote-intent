@@ -83,7 +83,15 @@ public sealed class Plugin : IDalamudPlugin
         }
 
         var request = FeelRequest.Parse(args, matcher.IsPhrase);
-        switch (resolver.Resolve(request.Text, unlocked, catalog.All()))
+        var result = resolver.Resolve(request.Text, unlocked, catalog.All());
+        if (result.Corrections.Count > 0)
+        {
+            // Typos are guessed: saying how they were read shows a wrong guess at once.
+            ChatGui.Print("Read " + string.Join(", ", result.Corrections.Select(fix => $"\"{fix.Typed}\" as \"{fix.Read}\""))
+                + ".");
+        }
+
+        switch (result)
         {
             case IntentResult.Play play when configuration.WhenFound == WhenFound.AlwaysPick:
                 suggestions.PrintPick([play.Emote, .. play.Alternatives], request);
