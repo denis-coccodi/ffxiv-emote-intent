@@ -46,3 +46,6 @@ hold up
 wait a minute
 hold on a sec
 wait a sec
+gentle
+heal
+healing

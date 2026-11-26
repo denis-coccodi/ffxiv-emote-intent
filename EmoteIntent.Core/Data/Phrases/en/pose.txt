@@ -31,3 +31,6 @@ screenshot
 screenshot pose
 pose for the screenshot
 cool pose
+model
+dress up
+famous

@@ -34,3 +34,5 @@ pfft no
 wry smile
 smile wryly
 wryly
+cynical
+dismissive

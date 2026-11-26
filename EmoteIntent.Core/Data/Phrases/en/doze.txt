@@ -40,3 +40,6 @@ bone tired
 zonked
 running on empty
 sleep deprived
+lethargic
+listless
+weary

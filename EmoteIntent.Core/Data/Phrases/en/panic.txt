@@ -31,3 +31,15 @@ chaos
 flail
 flailing
 help
+trapped
+i'm trapped
+stuck
+i'm stuck
+cornered
+helpless
+escape
+running
+desperate
+flee
+frantic
+panicky

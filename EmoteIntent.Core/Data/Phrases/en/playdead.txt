@@ -30,3 +30,6 @@ lie down
 need a raise
 raise me
 rez me
+wipe
+wiped
+party wipe

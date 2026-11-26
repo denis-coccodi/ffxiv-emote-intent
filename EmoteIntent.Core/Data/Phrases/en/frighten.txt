@@ -42,3 +42,6 @@ i'm spooky
 scary monster
 spooky monster
 spooky face
+ghost
+vampire
+werewolf

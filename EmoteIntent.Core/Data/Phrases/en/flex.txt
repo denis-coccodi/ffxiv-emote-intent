@@ -30,3 +30,7 @@ biceps
 guns
 these guns
 pump iron
+boastful
+capable
+empowered
+powerful

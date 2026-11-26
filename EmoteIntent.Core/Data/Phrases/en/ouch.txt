@@ -29,3 +29,6 @@ wince
 wincing
 cringe
 cringing
+injured
+wounded
+aching

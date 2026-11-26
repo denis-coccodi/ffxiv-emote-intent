@@ -43,3 +43,7 @@ indifferent
 don't care
 couldn't care less
 not bothered
+fine
+apathetic
+passive
+unsure

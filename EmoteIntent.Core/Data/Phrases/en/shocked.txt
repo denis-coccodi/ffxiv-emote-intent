@@ -30,3 +30,4 @@ o.o
 D:
 :o
 :0
+scandalized
