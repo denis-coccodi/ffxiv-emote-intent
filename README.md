@@ -9,7 +9,7 @@ A [Dalamud](https://github.com/goatcorp/Dalamud) plugin for Final Fantasy XIV. T
 | Command | What it does |
 | --- | --- |
 | `/feel` or `/feel ?` | Opens the Emote Intent window on its Help tab: how to use it, and how many emotes you have unlocked. The plugin list's Open button opens it too. |
-| `/feel <what you mean>` | Plays the unlocked emote that fits, the same as typing its command. One command plays one emote. |
+| `/feel <what you mean>` | Plays the unlocked emote that fits, the same as typing its command. One command plays one emote. Splash and Water Float are only chosen while you swim, Water Flip while you dive, since the game refuses them elsewhere (naming one still tries it). |
 | | When several might fit, it lists them in chat as links and plays nothing: click the one you want (or type it). See Settings for when it asks. |
 | `/feel <emote you don't have>` | Plays nothing: says you don't have it unlocked and lists the closest emotes you do have, as links. |
 | `/feel all <bundle>` | Lists every emote of a bundle you have unlocked, as links: `/feel all eat`, `/feel all jumps`, `/feel all dances`, `/feel all penlights`. Also "all the …" or "every …". |

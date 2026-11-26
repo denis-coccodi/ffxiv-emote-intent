@@ -1,3 +1,4 @@
+using Dalamud.Game.ClientState.Conditions;
 using Dalamud.Game.Command;
 using Dalamud.Interface.Windowing;
 using Dalamud.IoC;
@@ -18,6 +19,7 @@ public sealed class Plugin : IDalamudPlugin
     [PluginService] internal static IDataManager DataManager { get; private set; } = null!;
     [PluginService] internal static IUnlockState UnlockState { get; private set; } = null!;
     [PluginService] internal static IChatGui ChatGui { get; private set; } = null!;
+    [PluginService] internal static ICondition Condition { get; private set; } = null!;
     [PluginService] internal static IPluginLog Log { get; private set; } = null!;
 
     private readonly Configuration configuration;
@@ -105,7 +107,11 @@ public sealed class Plugin : IDalamudPlugin
             return;
         }
 
-        var result = resolver.Resolve(request.Text, unlocked, catalog.All());
+        // Water emotes only play in water: elsewhere they're left out, unless the player names one (the game then says why).
+        var here = EmoteNameMatcher.Match(request.Text, unlocked) is not null
+            ? unlocked
+            : WaterEmotes.Playable(unlocked, Condition[ConditionFlag.Swimming], Condition[ConditionFlag.Diving]);
+        var result = resolver.Resolve(request.Text, here, catalog.All());
         if (result.Corrections.Count > 0)
         {
             // Typos are guessed: saying how they were read shows a wrong guess at once.
