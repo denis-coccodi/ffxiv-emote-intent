@@ -56,6 +56,13 @@ public sealed class PhraseMatcher
         return entries.Exists(entry => entry.Compact == exact);
     }
 
+    /// <summary>The phrases that can play <paramref name="command"/>: its own file's, its family's and its feelings'.</summary>
+    public IReadOnlyList<string> PhrasesOf(string command) =>
+        entries.Where(entry => entry.Commands.Contains(command, StringComparer.OrdinalIgnoreCase))
+            .Select(entry => entry.Phrase)
+            .Distinct(StringComparer.Ordinal)
+            .ToList();
+
     /// <summary>
     /// The best-fitting emotes among <paramref name="commands"/> (the ones the character can play), best first,
     /// one entry per phrase file, at most <paramref name="count"/>. For a family, the command is its first member the
