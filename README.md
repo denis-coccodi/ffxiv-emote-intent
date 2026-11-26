@@ -92,7 +92,7 @@ dotnet run --project tools/EmoteExport -c Release
 dotnet run --project tools/AiEval -c Release -- qwen3:4b granite4:3b
 ```
 
-It prints how often each one's first choice is right, how often a right emote is among its first three, how fast the model answers, and every miss. The plugin doesn't use a model yet.
+By default each model is tried two ways (`--mode pick` or `meaning` for one): choosing among every emote's guide line, and saying what the text means in plain words that the phrase bank turns into emotes, also combined as the plugin would (phrase bank first, model only when the bank isn't sure). It prints how often each one's first choice is right, how often a right emote is among its first three, how fast the model answers, and every miss. The plugin doesn't use a model yet.
 
 Warnings are build errors, with .NET's recommended analyzers and a list of banned APIs (`BannedSymbols.txt`). The first build sets up two git hooks: Conventional Commits messages, and the three checks above before every push.
 
