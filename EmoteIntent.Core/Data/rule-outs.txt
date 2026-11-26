@@ -1,0 +1,7 @@
+# Emotes a text can't mean when it has certain words, unless it also has others. One rule per line:
+#   words that rule out | words that keep them anyway | emotes ruled out
+# Words are compared as /feel reads them (lowercase, a plural "s" dropped). Only for meanings the phrase bank's word
+# overlap can't tell apart, such as "shaking" being both cold and fear.
+
+# Tremble and the other fear emotes are fear only, never cold (user, 2026-11-26).
+cold freezing chilly frozen freeze shiver shivering snow snowing snowstorm winter chill brr brrr frost frosty icy | scared afraid fear fearful terrified frightened spooked spooky nervous horror | /tremble /scared /panic /frighten
