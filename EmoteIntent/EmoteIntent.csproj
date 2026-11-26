@@ -2,7 +2,7 @@
 <Project Sdk="Dalamud.NET.Sdk/15.0.0">
 
   <PropertyGroup>
-    <Version>0.19.3.0</Version>
+    <Version>0.19.4.0</Version>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <!-- Manifest fields (DalamudPackager). The assembly name, EmoteIntent, is the plugin's
          InternalName and can never change once released. -->
@@ -14,6 +14,11 @@
     <Tags>emote;emotes;chat;social;roleplay</Tags>
   </PropertyGroup>
 
+  <!-- The plugin's icon (drawn by the user): Dalamud shows images/icon.png next to the DLL for a dev plugin, and
+       the release's repo.json points IconUrl at this file (tools/New-RepoJson.ps1). -->
+  <ItemGroup>
+    <None Include="images\icon.png" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\EmoteIntent.Core\EmoteIntent.Core.csproj" />
   </ItemGroup>
@@ -33,6 +38,7 @@
       <DevPluginFile Include="$(OutDir)EmoteIntent.dll;$(OutDir)EmoteIntent.pdb;$(OutDir)EmoteIntent.json;$(OutDir)EmoteIntent.Core.dll;$(OutDir)EmoteIntent.Core.pdb" />
     </ItemGroup>
     <Copy SourceFiles="@(DevPluginFile)" DestinationFolder="$(DevPluginDir)" Condition="Exists('%(FullPath)')" SkipUnchangedFiles="true" />
+    <Copy SourceFiles="$(OutDir)images\icon.png" DestinationFolder="$(DevPluginDir)\images" SkipUnchangedFiles="true" />
     <Message Importance="high" Text="Dev plugin: $(DevPluginDir)\EmoteIntent.dll" />
   </Target>
 
