@@ -31,3 +31,5 @@ area clear
 weapon sheathed
 put the sword away
 lower my sword
+sheathes her blade
+sheathes

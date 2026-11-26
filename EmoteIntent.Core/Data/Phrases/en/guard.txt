@@ -47,3 +47,6 @@ cautious
 block
 parry
 tank
+i'll take the aggro
+take the aggro
+i'll tank

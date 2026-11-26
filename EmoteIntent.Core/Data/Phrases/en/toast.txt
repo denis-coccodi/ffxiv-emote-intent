@@ -38,3 +38,5 @@ mead
 sake
 bar
 tavern
+offers a drink
+takes a sip of wine
