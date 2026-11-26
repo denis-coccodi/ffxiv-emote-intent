@@ -84,6 +84,16 @@ dotnet run --project tools/EmoteExport -c Release
 
 `EmoteIntent.Core/Data/emote-guide.txt` describes each emote in more depth (what the character does, and when it fits), written for this project from the game's descriptions and in-game checks, not copied from wikis. It's there for an optional AI model choosing among emotes; a test checks every emote has a line.
 
+### AI evaluation
+
+`tools/AiEval` compares the phrase bank with a model running in [Ollama](https://ollama.com) on the same PC, on about 100 everyday sentences neither was tuned on (`tools/AiEval/cases.txt`, each with the emotes that count as right). With Ollama installed and a model pulled (`ollama pull qwen3:4b`):
+
+```
+dotnet run --project tools/AiEval -c Release -- qwen3:4b granite4:3b
+```
+
+It prints how often each one's first choice is right, how often a right emote is among its first three, how fast the model answers, and every miss. The plugin doesn't use a model yet.
+
 Warnings are build errors, with .NET's recommended analyzers and a list of banned APIs (`BannedSymbols.txt`). The first build sets up two git hooks: Conventional Commits messages, and the three checks above before every push.
 
 Changes go through pull requests to `main`; see [CLAUDE.md](CLAUDE.md). A tag `vX.Y.Z.W` on `main` releases that version (`.github/workflows/release.yaml`, `tools/New-RepoJson.ps1`).
