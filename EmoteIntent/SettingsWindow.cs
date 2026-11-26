@@ -51,18 +51,29 @@ internal sealed class SettingsWindow : Window
         DrawAi();
     }
 
-    // The opt-in AI: a model in Ollama on this PC, asked only when the phrase bank isn't sure.
+    // The opt-in AI: a model in Ollama on this PC, asked only when the phrase bank isn't sure. Folded away by default
+    // and worded so nobody thinks /feel needs it: most players never will (user, 2026-11-26).
     private void DrawAi()
     {
+        var state = configuration.UseAi ? "on" : "off";
+        if (!ImGui.CollapsingHeader($"Optional extra: AI help ({state})###EmoteIntentAi"))
+        {
+            return;
+        }
+
+        ImGui.TextWrapped("You don't need this: /feel works fully without it, and nothing here runs unless you tick the box. "
+            + "It's for players who already use AI programs and want a little extra help when /feel isn't sure.");
+        ImGui.Spacing();
+
         var useAi = configuration.UseAi;
         if (ImGui.Checkbox("When /feel isn't sure, ask an AI model on this PC", ref useAi))
         {
             Set(() => configuration.UseAi = useAi);
         }
 
-        ImGui.TextWrapped("Free and private: the model runs in Ollama on your own PC, and what you type never leaves it. "
-            + "Install Ollama (ollama.com), then download the model once: ollama pull gemma3:4b (about 3 GB). "
-            + "The first answer after a while takes a few seconds while the model loads.");
+        ImGui.TextWrapped("Free and private: the model runs in Ollama, a free program on your own PC, and what you type never "
+            + "leaves it. To set it up, install Ollama (ollama.com), then download the model once: ollama pull gemma3:4b "
+            + "(about 3 GB). The first answer after a while takes a few seconds while the model loads.");
 
         using (ImRaii.Disabled(!configuration.UseAi))
         {
