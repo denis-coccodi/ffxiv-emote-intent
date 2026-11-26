@@ -51,6 +51,9 @@ public class FeelingsAndStatesTests
     [InlineData("snarky", "/airquotes")]
     [InlineData("stubborn", "/insist")]
     [InlineData("brokenhearted", "/cry")]
+    [InlineData("smells delicious", "/amazed")]
+    [InlineData("that smells so good", "/amazed")]
+    [InlineData("mouth watering", "/amazed")]
     public void PlaysTheEmoteItMeans(string text, string command) =>
         Assert.Equal(command, Assert.IsType<IntentResult.Play>(Resolver.Resolve(text, AllUnlocked)).Emote.Command);
 }

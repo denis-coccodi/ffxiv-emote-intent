@@ -80,7 +80,7 @@
 /fume | Fumes and steams with annoyance. | Annoyed, irritated, grumpy, pissed off, miffed.
 /stomp | Stomps a foot on the ground in anger. | Frustration, a tantrum, childish anger, stamping your foot.
 /panic | Flails around in panic. | Panicking, help!, trapped, frantic, everything going wrong.
-/upset | Recoils in disgust. | Disgusted, grossed out, "ew", repulsed, something smells.
+/upset | Recoils with a look of loathing. | Disgusted by someone or what they did, repulsed by a person, "ew, you".
 /disappointed | Slumps in utter disappointment. | Disappointed, let down, bummed, "aww", "shoot".
 /sulk | Wallows in self-pity, sulking. | Sulking, pouting, jealous, lonely, left out, feeling sorry for yourself.
 /angry | Shows anger. | Angry, mad, cross, upset with someone.
@@ -277,7 +277,7 @@
 /shuteyes | Shuts the eyes. | Eyes closed, resting, not looking.
 /sad | Frowns sadly. | A sad face, unhappy, down.
 /scared | Stares in fear. | A frightened face, creeped out, scared.
-/amazed | Stares in awe. | An amazed face, awestruck.
+/amazed | Leans forward, hands under the chin, eyes sparkling. | Awestruck, starry-eyed; food or something that smells or looks delicious; a beautiful sight.
 /ouch | Cringes in pain. | Ouch, hurt, injured, cringe.
 /annoyed | Furrows the brow, annoyed. | An annoyed face, irritated, eye roll.
 /alert | Senses something amiss. | Alert, vigilant, suspicious noise.
