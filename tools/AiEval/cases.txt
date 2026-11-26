@@ -1,0 +1,99 @@
+# Everyday things players might type after /feel, written without looking at the phrase bank, so neither the bank
+# nor a model was tuned on them. Each line: what's typed | every emote that counts as a right answer.
+just finished a 3 hour raid and i can barely keep my eyes open | /doze /stretch /winded /slump
+my static finally cleared the savage fight!! | /victorypose /cheer /fistpump /hurray /joy /jumpforjoy3 /jumpforjoy1 /jumpforjoy2 /jumpforjoy4 /jumpforjoy5 /psych
+someone sniped the house plot i wanted | /furious /fume /angry /rage /stomp /slump /cry /disappointed /sulk
+the tank pulled the whole dungeon and we all died | /facepalm /playdead /panic /shocked /vexed /clutchhead
+i can't believe you did that, you're amazing | /wow /clap /amazed /thumbsup /dote /charmed
+waiting for my friend to log in | /hum /lean /doze /stretch /tomescroll /lookout /attend
+i'm sorry, that was my fault | /easternbow /bow /slump /grovel /prettyplease
+please forgive me | /grovel /prettyplease /easternbow /bow /kneel /pray
+that joke was so bad it's funny | /laugh /chuckle /facepalm /deride /biggrin
+i have no idea where i'm going | /navigate /huh /shrug /lookout /dazed
+my glamour finally looks perfect | /twirl /pose /examineself /runwaywalk /beam /victorypose /flex
+it's freezing in coerthas | /shiver
+this desert is way too hot | /sweat /uchiwasshoi /winded
+look at that sunset | /point /wow /amazed /lookout /photograph /content
+i'm not falling for that | /doubt /scoff /no /deny /smirk /furrow
+you're absolutely right | /yes /thumbsup /clap /point
+nope, not doing that | /no /deny /shrug
+i'm so proud of you | /clap /hug /beam /congratulate /cheer /thumbsup /handtoheart
+welcome to the free company | /welcome /greet /wave /bow /clap
+good night everyone, see you tomorrow | /goodbye /wave /doze /bow
+the boss one-shot me again | /playdead /slump /facepalm /stagger /cry /furious /vexed
+i got the mount i farmed for weeks | /victorypose /joy /jumpforjoy3 /fistpump /cheer /hurray /psych /delighted /jumpforjoy1 /jumpforjoy2 /jumpforjoy4 /jumpforjoy5
+watch this | /backflip /pose /magictrick /point /flex /showright /showleft
+shh, the boss is asleep | /shush
+i'm hiding from my fc leader | /shush /scheme /panic /tremble /lookout /playdead
+i'm keeping an eye on you | /point /lookout /doubt /guard /alert /furrow
+you scared me! | /aback /surprised /shocked /panic /tremble /stagger /scared
+boo! | /frighten
+let's go team, we've got this | /rally /cheer /psych /fistpump /determined /spirit
+i need a break from all this | /stretch /lounge /groundsit /doze /breathcontrol /tea /slump
+time for some tea | /tea /drinkgreentea /savortea
+i'm starving, is it lunch yet | /eatriceball /eatapple /eatpizza /eatchicken /eattaco /breakfast /eategg /devourtaco
+cheers to a great night | /toast /cheer
+you're making me blush | /blush
+i love you all | /loveheart /blowkiss /hug /dote /handtoheart /embrace
+come over here | /beckon /wave /point
+that's what she said | /airquotes /smirk /wink /leftwink /chuckle /laugh
+ugh, mondays | /slump /vexed /sulk /headache /stretch /shrug /fume
+what did you just say? | /huh /shocked /aback /surprised /doubt /furrow
+i'm thinking about it | /think /consider /ponder /concentrate
+lol | /laugh /chuckle
+i'm so nervous for my first savage | /sweat /worried /tremble /wringhands /panic
+we did it! | /victorypose /cheer /joy /hurray /fistpump /jumpforjoy3 /highfive /jumpforjoy1 /jumpforjoy2 /jumpforjoy4 /jumpforjoy5 /psych
+high five! | /highfive
+i'm out of here | /goodbye /wave /panic /blownaway
+my head is killing me | /headache /clutchhead /ouch
+that was disgusting | /upset /disturbed
+i'll protect you | /guard /battlestance /determined /handtoheart /draw
+bring it on | /battlestance /psych /determined /box /flex /taunt /draw
+i'm the strongest | /flex /powerup /victorypose /smirk /pose
+nobody understands me | /sulk /slump /cry /sad
+i miss my old static | /sulk /reflect /slump /sad /cry
+this is so cute | /dote /delighted /charmed /joy /wow
+i'm bored out of my mind | /stretch /doze /hum /sulk /slump /tomescroll
+let me take a picture | /photograph /visage
+reading a good book | /read /carrybook /study /reference
+time to work | /magitype /psych /stretch /study /sweep /pen
+i'm cleaning my house | /sweep
+gotta go, my food is ready | /goodbye /wave /eatriceball /eatpizza /eatchicken
+thank you so much for the help | /bow /easternbow /thumbsup /handtoheart /hug
+i'm so done with this | /slump /facepalm /vexed /fume /sulk /clutchhead /shrug /deny
+i don't care anymore | /shrug /sulk /slump
+whatever you say | /shrug /yes /airquotes
+the music in this zone is great | /hum /dance /content /cheeronblue /cheerlightblue
+let's party | /dance /cheer /toast /golddance /getfantasy
+i'm on fire today | /flex /psych /victorypose /powerup /fistpump /smirk
+he's such a villain | /point /furrow /malevolence /cackle /doubt /scoff
+mwahaha | /cackle /scheme /malevolence
+i'm up to something | /scheme /smirk /wink
+the healer is sleeping again | /facepalm /point /poke /doze /vexed /shrug
+wake up! | /poke /snap /slap /beckon
+cutie | /dote /wink /blowkiss /stroke /charmed
+good boy | /stroke
+let me explain | /elucidate /converse /insist
+listen to me! | /insist /elucidate /point /reprimand
+you're grounded | /reprimand /point /furrow
+i'm feeling cute today | /twirl /pose /beam /wink /examineself /dote
+smells like fish in here | /upset /disturbed
+this is fine | /fakesmile /shrug /sweat /content /lean
+i can't do this anymore | /slump /cry /clutchhead /grovel /playdead /winded
+she said yes! | /joy /cheer /victorypose /jumpforjoy3 /hurray /delighted /fistpump /congratulate /jumpforjoy1 /jumpforjoy2 /jumpforjoy4 /jumpforjoy5 /psych
+happy new year | /cheer /toast /congratulate /hurray /flowershower /joy
+merry christmas | /cheer /wave /joy /flowershower /hug /greet /congratulate
+rest in peace | /respect /pray /bow /slump /cry
+oops | /sweat /aback /blush /facepalm /ouch /shrug /surprised
+whoops my bad | /sweat /easternbow /bow /blush /facepalm /shrug
+are you serious right now | /facepalm /vexed /shocked /doubt /furrow /huh
+it's raining | /lookout /shiver /sad /slump
+i want to fly | /adventoflight /simulationm /simulationf /blownaway /backflip /flex
+i'm getting married | /joy /cheer /bouquet /dote /blush /jumpforjoy3 /hurray /flowershower /jumpforjoy1 /jumpforjoy2 /jumpforjoy4 /jumpforjoy5 /delighted
+i'm on my phone | /tomestone /tomescroll /linkpearl
+call me later | /linkpearl /wave /goodbye
+let's fight | /battlestance /box /draw /psych /determined
+i give up | /slump /shrug /playdead /kneel /grovel /winded
+so sleepy | /doze /stretch
+this smells great | /content /delighted /happy /eatriceball /tea
+i won the lottery | /joy /victorypose /jumpforjoy3 /cheer /hurray /fistpump /gratuity /delighted /jumpforjoy1 /jumpforjoy2 /jumpforjoy4 /jumpforjoy5 /psych
