@@ -30,4 +30,17 @@ public class JudgingNotesTests
     [InlineData("miss the good old days", "/sulk")]
     public void PlaysTheEmoteItMeans(string text, string command) =>
         Assert.Equal(command, Assert.IsType<IntentResult.Play>(Resolver.Resolve(text, AllUnlocked)).Emote.Command);
+
+    // Not being fooled: a head shake, and Cackle fits too (user): each offers the other as also fitting.
+    [Theory]
+    [InlineData("nice try", "/no", "/cackle")]
+    [InlineData("not buying it", "/no", "/cackle")]
+    [InlineData("you can't fool me", "/no", "/cackle")]
+    [InlineData("nice try buddy", "/cackle", "/no")]
+    public void NotFooledOffersBothNoAndCackle(string text, string played, string alsoFits)
+    {
+        var result = Assert.IsType<IntentResult.Play>(Resolver.Resolve(text, AllUnlocked));
+        Assert.Equal(played, result.Emote.Command);
+        Assert.Contains(result.AlsoFits, emote => emote.Command == alsoFits);
+    }
 }
