@@ -8,7 +8,7 @@ A [Dalamud](https://github.com/goatcorp/Dalamud) plugin for Final Fantasy XIV. T
 
 | Command | What it does |
 | --- | --- |
-| `/feel` or `/feel help` | Shows how to use it in chat, with how many emotes you have unlocked. The same tips are in the settings window. |
+| `/feel`, `/feel help` or `/feel ?` | Opens the Emote Intent window on its Help tab: how to use it, and how many emotes you have unlocked. The plugin list's Open button opens it too. |
 | `/feel <what you mean>` | Plays the unlocked emote that fits, the same as typing its command. One command plays one emote. |
 | | When several might fit, it lists them in chat as links and plays nothing: click the one you want (or type it). See Settings for when it asks. |
 | `/feel <emote you don't have>` | Plays nothing: says you don't have it unlocked and lists the closest emotes you do have, as links. |

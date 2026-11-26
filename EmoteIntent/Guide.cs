@@ -1,8 +1,8 @@
 namespace EmoteIntent;
 
 /// <summary>
-/// How to use /feel, in a few lines: printed in chat by "/feel" alone or "/feel help", and shown in the settings
-/// window. The rules players can't guess (bundles, motion/text, typos) belong here.
+/// How to use /feel, in a few lines, in the main window's Help tab: opened by "/feel" alone, "/feel help" or
+/// "/feel ?", or the plugin list's Open button. The rules players can't guess (bundles, motion/text, typos) belong here.
 /// </summary>
 internal static class Guide
 {
