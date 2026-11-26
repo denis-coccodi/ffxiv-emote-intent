@@ -7,7 +7,7 @@ namespace EmoteIntent;
 
 /// <summary>
 /// The plugin's main window, opened from the plugin list's Open button. One tab for now, Help: how to use /feel
-/// (also opened by "/feel" alone, "/feel help" or "/feel ?").
+/// (also opened by "/feel" alone or "/feel ?").
 /// </summary>
 internal sealed class MainWindow : Window
 {

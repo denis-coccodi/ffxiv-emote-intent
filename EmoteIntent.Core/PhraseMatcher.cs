@@ -148,7 +148,13 @@ public sealed class PhraseMatcher
     private sealed record Query(string Exact, HashSet<string> Words, double Weight, HashSet<string> Pairs, bool IsStripped);
 
     // What counts as typing a phrase exactly: Compact, minus sentence punctuation around it ("cheers!" is "cheers").
-    private static string Exact(string text) => TextNormalizer.Compact(text).Trim('.', ',', '!', '?', ';', ' ');
+    // Punctuation alone stays as typed: "???" and "?" are different phrases, not both empty.
+    private static string Exact(string text)
+    {
+        var compact = TextNormalizer.Compact(text);
+        var trimmed = compact.Trim('.', ',', '!', '?', ';', ' ');
+        return trimmed.Length > 0 ? trimmed : compact;
+    }
 
     // How much a word says about the emote: rarer words more, function words ("like", "my") a fifth of that.
     private double Rarity(string word) =>
