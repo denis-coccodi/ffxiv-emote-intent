@@ -27,7 +27,7 @@
   </ItemGroup>
 
   <!-- Every local build, from main or any worktree, also lands in one fixed folder, so Dalamud's Dev Plugin
-       Location is set once (README: Install) and its automatic reloading picks up each new build.
+       Location is set once (DEVELOPMENT.md: Try a development build) and its automatic reloading picks up each new build.
        Override with -p:DevPluginDir=..., turn off with -p:DevPluginDir=. CI doesn't copy. -->
   <PropertyGroup>
     <DevPluginDir Condition="'$(DevPluginDir)' == '' And '$(CI)' != 'true'">$(LOCALAPPDATA)\EmoteIntent\DevPlugin</DevPluginDir>

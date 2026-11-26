@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <!-- Dev tool: runs everyday sentences (cases.txt) through the phrase bank and through a model in Ollama, and
-       compares how often each picks a right emote, and how fast the model answers. README: AI evaluation. -->
+       compares how often each picks a right emote, and how fast the model answers. DEVELOPMENT.md: AI evaluation. -->
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>net10.0</TargetFramework>

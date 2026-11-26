@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <!-- Dev tool: reads every emote from the installed game with Lumina (the library Dalamud uses) and writes
-       EmoteIntent.Core/Data/emotes.json. Run it again after a patch that adds emotes (README: Emote data). -->
+       EmoteIntent.Core/Data/emotes.json. Run it again after a patch that adds emotes (DEVELOPMENT.md: Emote data). -->
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>net10.0</TargetFramework>
