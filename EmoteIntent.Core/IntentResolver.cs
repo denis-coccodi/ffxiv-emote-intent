@@ -88,6 +88,36 @@ public sealed class IntentResolver(PhraseMatcher matcher)
         return ResolveAsTyped(text, unlocked, all);
     }
 
+    /// <summary>
+    /// What a model's plain words for the text mean, through the phrase bank (<see cref="Ai.MeaningPrompt"/>): each
+    /// meaning's best emote first, in the model's order, then the rest. Plays when the first meaning alone would
+    /// play; otherwise suggests.
+    /// </summary>
+    public IntentResult ResolveMeanings(IReadOnlyList<string> meanings, IReadOnlyList<EmoteInfo> unlocked)
+    {
+        var offered = meanings.Select(meaning => Resolve(meaning, unlocked)).ToList();
+        var emotes = offered.Select(Offered).Where(list => list.Count > 0).Select(list => list[0])
+            .Concat(offered.SelectMany(result => Offered(result).Skip(1)))
+            .DistinctBy(emote => emote.Command, StringComparer.OrdinalIgnoreCase)
+            .ToList();
+        if (emotes.Count == 0)
+        {
+            return new IntentResult.NoMatch();
+        }
+
+        return offered[0] is IntentResult.Play
+            ? new IntentResult.Play(emotes[0]) { Alternatives = emotes.Skip(1).Take(SuggestCount).ToList() }
+            : new IntentResult.Suggest(emotes.Take(SuggestCount).ToList());
+    }
+
+    // The emotes a result offers, best first.
+    private static IReadOnlyList<EmoteInfo> Offered(IntentResult result) => result switch
+    {
+        IntentResult.Play play => [play.Emote, .. play.Alternatives],
+        IntentResult.Suggest suggest => suggest.Emotes,
+        _ => [],
+    };
+
     private IntentResult ResolveAsTyped(string text, IReadOnlyList<EmoteInfo> unlocked, IReadOnlyList<EmoteInfo>? all)
     {
         var byCommand = unlocked

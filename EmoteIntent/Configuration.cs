@@ -21,6 +21,18 @@ public sealed class Configuration : IPluginConfiguration
     /// </summary>
     public bool ShowPlayedEmote { get; set; }
 
+    /// <summary>
+    /// When the phrase bank isn't sure, ask a model running in Ollama on this PC what the text means (AiFallback).
+    /// Off by default: it needs Ollama installed and the model downloaded.
+    /// </summary>
+    public bool UseAi { get; set; }
+
+    /// <summary>The Ollama model asked: gemma3:4b did best of the small free models tried (README, AI evaluation).</summary>
+    public string AiModel { get; set; } = DefaultAiModel;
+
+    /// <summary>The model suggested until the player picks another.</summary>
+    public const string DefaultAiModel = "gemma3:4b";
+
     /// <summary>Brings settings saved by an older version up to date; true when something changed and needs saving.</summary>
     public bool Migrate()
     {

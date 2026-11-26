@@ -72,10 +72,13 @@ foreach (var model in models)
         foreach (var (text, right) in cases)
         {
             var (meanings, took) = await client.MeaningsAsync(text, CancellationToken.None);
-            var answer = meanings.Select(BankAnswer).SelectMany(found => found.Take(1))
-                .Concat(meanings.SelectMany(meaning => BankAnswer(meaning).Skip(1)))
-                .Distinct(StringComparer.OrdinalIgnoreCase)
-                .ToList();
+            // As the plugin does it (AiFallback): each meaning through the phrase bank.
+            IReadOnlyList<string> answer = resolver.ResolveMeanings(meanings, unlocked) switch
+            {
+                IntentResult.Play play => [play.Emote.Command, .. play.Alternatives.Select(emote => emote.Command)],
+                IntentResult.Suggest suggest => suggest.Emotes.Select(emote => emote.Command).ToList(),
+                _ => [],
+            };
             results.Add((text, right, answer, took));
             Console.WriteLine($"   {text} → {string.Join(", ", meanings)}");
 
