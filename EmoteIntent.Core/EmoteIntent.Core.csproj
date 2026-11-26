@@ -14,6 +14,8 @@
     <EmbeddedResource Include="Data\bundles.txt" LogicalName="EmoteIntent.bundles.txt" />
     <!-- What each emote shows and when it fits, for an AI model choosing among them (EmoteGuide.LoadEmbedded). -->
     <EmbeddedResource Include="Data\emote-guide.txt" LogicalName="EmoteIntent.emote-guide.txt" />
+    <!-- Emotes some words rule out ("cold" never means Tremble), for IntentResolver (RuleOuts.LoadEmbedded). -->
+    <EmbeddedResource Include="Data\rule-outs.txt" LogicalName="EmoteIntent.rule-outs.txt" />
     <!-- The ENABLE word list (public domain), so typo correction leaves real words alone (EnglishWords). -->
     <EmbeddedResource Include="Data\english-words.txt.gz" LogicalName="EmoteIntent.english-words.txt.gz" />
   </ItemGroup>

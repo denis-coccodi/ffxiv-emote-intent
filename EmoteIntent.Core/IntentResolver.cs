@@ -48,6 +48,8 @@ public abstract record IntentResult
 /// <summary>Decides which emote, if any, fits what the player typed, among the emotes they have unlocked.</summary>
 public sealed class IntentResolver(PhraseMatcher matcher)
 {
+    private readonly RuleOuts ruleOuts = RuleOuts.LoadEmbedded();
+
     /// <summary>A match at least this good plays at once when no other emote comes close.</summary>
     public const double PlayScore = 0.6;
 
@@ -124,7 +126,9 @@ public sealed class IntentResolver(PhraseMatcher matcher)
             .GroupBy(emote => emote.Command, StringComparer.OrdinalIgnoreCase)
             .ToDictionary(group => group.Key, group => group.First(), StringComparer.OrdinalIgnoreCase);
 
-        var matches = matcher.Rank(text, byCommand.Keys)
+        // Emotes the text's words rule out ("cold" never means Tremble) aren't matched; naming one still plays it.
+        var ruledOut = ruleOuts.RuledOut(text);
+        var matches = matcher.Rank(text, byCommand.Keys.Where(command => !ruledOut.Contains(command)).ToList())
             .Where(match => match.Score >= SuggestScore)
             .ToList();
 

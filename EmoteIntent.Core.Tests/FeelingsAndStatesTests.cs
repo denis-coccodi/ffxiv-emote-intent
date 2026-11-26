@@ -64,6 +64,7 @@ public class FeelingsAndStatesTests
     [InlineData("freezing")]
     [InlineData("brrr")]
     [InlineData("shivering")]
+    [InlineData("shaking from the cold")]
     [InlineData("chills")]
     [InlineData("teeth chattering")]
     public void ColdNeverPlaysTremble(string text)
@@ -79,12 +80,4 @@ public class FeelingsAndStatesTests
         Assert.DoesNotContain(offered, emote => emote.Command == "/tremble");
     }
 
-    // "shaking" is shared with "shaking with fear": without Shiver, Tremble may be suggested but never plays.
-    [Fact]
-    public void ShakingFromTheColdNeverPlaysTremble()
-    {
-        Assert.Equal("/shiver", Assert.IsType<IntentResult.Play>(Resolver.Resolve("shaking from the cold", AllUnlocked)).Emote.Command);
-        var withoutShiver = AllUnlocked.Where(emote => emote.Command != "/shiver").ToList();
-        Assert.False(Resolver.Resolve("shaking from the cold", withoutShiver) is IntentResult.Play { Emote.Command: "/tremble" });
-    }
 }
