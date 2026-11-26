@@ -2,7 +2,7 @@
 <Project Sdk="Dalamud.NET.Sdk/15.0.0">
 
   <PropertyGroup>
-    <Version>0.14.1.0</Version>
+    <Version>0.15.0.0</Version>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <!-- Manifest fields (DalamudPackager). The assembly name, EmoteIntent, is the plugin's
          InternalName and can never change once released. -->
