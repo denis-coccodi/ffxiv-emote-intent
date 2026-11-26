@@ -77,7 +77,7 @@ public sealed class Plugin : IDalamudPlugin
     private void OnCommand(string command, string args)
     {
         var unlocked = catalog.Unlocked();
-        if (string.IsNullOrWhiteSpace(args) || args.Trim().Equals(Guide.HelpWord, StringComparison.OrdinalIgnoreCase))
+        if (Guide.IsAsked(args))
         {
             ChatGui.Print($"Emote Intent: you have {unlocked.Count} emotes unlocked.");
             foreach (var line in Guide.Lines)

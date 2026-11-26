@@ -6,8 +6,12 @@ namespace EmoteIntent;
 /// </summary>
 internal static class Guide
 {
-    /// <summary>What "/feel help" asks for; "/feel" alone shows the same.</summary>
-    public const string HelpWord = "help";
+    /// <summary>
+    /// Whether the player asked for this guide: "/feel" alone, "/feel help" or "/feel ?". Only "help" exactly: "help!"
+    /// and "help me" still play Panic.
+    /// </summary>
+    public static bool IsAsked(string args) =>
+        args.Trim() is "" or "?" || args.Trim().Equals("help", StringComparison.OrdinalIgnoreCase);
 
     /// <summary>One line per tip, in the order they're shown.</summary>
     public static readonly IReadOnlyList<string> Lines =

@@ -24,6 +24,15 @@ public class EmoteBundlesTests
     }
 
     [Fact]
+    public void EveryEmoteButTheUtilitiesIsInABundle()
+    {
+        var bundled = Bundles.All.SelectMany(bundle => bundle.Commands).ToHashSet(StringComparer.OrdinalIgnoreCase);
+        var outside = All.Select(emote => emote.Command).Where(command => !bundled.Contains(command))
+            .Except(["/changepose", "/visor", "/shiver"]).Distinct().ToList();
+        Assert.Empty(outside);
+    }
+
+    [Fact]
     public void NoNameBelongsToTwoBundles()
     {
         var names = Bundles.All.SelectMany(bundle => bundle.Names).ToList();
@@ -98,7 +107,8 @@ public class EmoteBundlesTests
     public void KnowsTheBundleOfAnEmote()
     {
         Assert.Equal("Eat", Bundles.Of("/eatpizza")?.Name);
-        Assert.Null(Bundles.Of("/hug"));
+        Assert.Equal("Friend", Bundles.Of("/hug")?.Name);
+        Assert.Null(Bundles.Of("/changepose"));
     }
 
     [Fact]
