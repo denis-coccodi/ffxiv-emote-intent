@@ -7,7 +7,6 @@ refuse
 i refuse
 refused
 reject
-rejected
 absolutely not
 no way in hell
 not a chance
@@ -34,3 +33,4 @@ do not
 stop
 stop that
 stop it now
+go away

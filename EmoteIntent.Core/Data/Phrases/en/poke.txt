@@ -18,7 +18,6 @@ hey wake up
 you awake
 are you there
 still there
-afk
 are you afk
 hello anyone home
 anybody home
@@ -30,3 +29,5 @@ notice me please
 attention please
 poking the bear
 poke the bear
+tickle
+afk

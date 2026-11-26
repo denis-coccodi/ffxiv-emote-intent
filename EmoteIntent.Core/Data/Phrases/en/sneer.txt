@@ -5,7 +5,6 @@ contempt
 contemptuous
 vile
 how dare you peasant
-peasant
 beneath me
 you're beneath me
 how pathetic
@@ -30,3 +29,5 @@ worm
 insect
 you are nothing
 pitiful creature
+spiteful
+peasant

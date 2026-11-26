@@ -40,3 +40,5 @@ discipline
 by your command
 as ordered
 affirmative
+loyalty
+honor

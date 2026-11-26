@@ -42,3 +42,6 @@ knight me
 be knighted
 accept the oath
 take the oath
+surrender
+i surrender
+i yield

@@ -38,3 +38,4 @@ enchantment
 sorcery
 i put a spell on you
 a spell on you
+cast

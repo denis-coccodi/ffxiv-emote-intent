@@ -30,3 +30,5 @@ deliberate
 deliberating
 maybe maybe not
 we'll see
+interested
+intrigued

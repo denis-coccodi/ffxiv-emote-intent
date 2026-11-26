@@ -36,3 +36,4 @@ smart
 clever
 the answer is
 eureka moment
+inspired
