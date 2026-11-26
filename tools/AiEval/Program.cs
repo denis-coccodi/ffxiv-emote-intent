@@ -2,10 +2,21 @@
 // choice is right, how often a right emote is among its first three, and how fast the model answers.
 //
 //   dotnet run --project tools/AiEval -c Release -- qwen3:4b [granite4:3b …] [--cases file] [--url http://127.0.0.1:11434]
+//       [--mode pick|meaning|both] [--sheet file]
+//   dotnet run --project tools/AiEval -c Release -- --judge file
+//
+// --sheet also writes a blind sheet for a person to judge the first choices (BlindSheet), and --judge scores a
+// ticked one, so the comparison doesn't rest on cases.txt's answer key alone.
 //
 // Every emote counts as unlocked. Answers that are wrong are listed, so they can be judged by eye.
 using EmoteIntent.Core;
 using EmoteIntent.Core.Ai;
+
+if (Option("--judge") is { } judged)
+{
+    BlindSheet.Score(judged);
+    return;
+}
 
 var models = args.TakeWhile(arg => !arg.StartsWith("--", StringComparison.Ordinal)).ToList();
 var casesPath = Option("--cases") ?? Path.Combine(AppContext.BaseDirectory, "cases.txt");
@@ -29,6 +40,7 @@ if (unknown.Count > 0)
 }
 
 Console.WriteLine($"{cases.Count} sentences, {commands.Count} emotes.");
+var runs = new List<Run>();
 Report("phrase bank", cases.Select(item => (item.Text, item.Right, BankAnswer(item.Text), TimeSpan.Zero)).ToList());
 
 using var http = new HttpClient { BaseAddress = address, Timeout = TimeSpan.FromMinutes(2) };
@@ -64,7 +76,8 @@ foreach (var model in models)
                 .Concat(meanings.SelectMany(meaning => BankAnswer(meaning).Skip(1)))
                 .Distinct(StringComparer.OrdinalIgnoreCase)
                 .ToList();
-            results.Add(($"{text} [{string.Join(", ", meanings)}]", right, answer, took));
+            results.Add((text, right, answer, took));
+            Console.WriteLine($"   {text} → {string.Join(", ", meanings)}");
 
             // As the plugin would: the phrase bank first, the model only when the bank isn't sure.
             var sure = resolver.Resolve(text, unlocked) is IntentResult.Play;
@@ -74,6 +87,11 @@ foreach (var model in models)
         Report($"{model}, plain words then the phrase bank", results);
         Report($"{model}, phrase bank first, model when unsure", hybrid);
     }
+}
+
+if (Option("--sheet") is { } sheet)
+{
+    BlindSheet.Write(sheet, guide, runs);
 }
 
 // The phrase bank's answer as /feel shows it: the emote it plays, then the alternatives; or what it suggests.
@@ -86,6 +104,7 @@ IReadOnlyList<string> BankAnswer(string text) => resolver.Resolve(text, unlocked
 
 void Report(string name, List<(string Text, HashSet<string> Right, IReadOnlyList<string> Answer, TimeSpan Took)> results)
 {
+    runs.Add(new Run(name, results.ToDictionary(result => result.Text, result => result.Answer)));
     var first = results.Count(result => result.Answer.Count > 0 && result.Right.Contains(result.Answer[0]));
     var three = results.Count(result => result.Answer.Take(3).Any(result.Right.Contains));
     var none = results.Count(result => result.Answer.Count == 0);
