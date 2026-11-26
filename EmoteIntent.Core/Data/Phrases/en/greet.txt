@@ -57,3 +57,5 @@ gm all
 gm everyone
 morning everyone
 helo
+i'm back from dinner
+back from dinner
