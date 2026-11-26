@@ -224,7 +224,7 @@
 /box | Puts up the fists and throws boxing punches. | Boxing, punching, fighting, training.
 /sweat | Wipes the sweat from the brow. | Sweating, nervous, phew, relieved, awkward, hot.
 /shiver | Shivers from the cold. | Cold, freezing, chilly, snow.
-/tremble | Trembles with fear. | Scared, afraid, terrified, frightened.
+/tremble | Trembles with fear. | Scared, afraid, terrified, frightened. Fear only, never cold.
 /winded | Falls to one knee, out of breath. | Exhausted, out of breath, worn out after effort.
 /confirm | Checks that everything is as it should be. | Confirming, double-checking, "all good".
 /scheme | Rubs the hands together, plotting. | Scheming, plotting, sneaky, up to no good.

@@ -56,4 +56,35 @@ public class FeelingsAndStatesTests
     [InlineData("mouth watering", "/amazed")]
     public void PlaysTheEmoteItMeans(string text, string command) =>
         Assert.Equal(command, Assert.IsType<IntentResult.Play>(Resolver.Resolve(text, AllUnlocked)).Emote.Command);
+
+    // Tremble is fear only (user, 2026-11-26): being cold never plays or offers it, even without Shiver.
+    [Theory]
+    [InlineData("i'm cold")]
+    [InlineData("so cold")]
+    [InlineData("freezing")]
+    [InlineData("brrr")]
+    [InlineData("shivering")]
+    [InlineData("chills")]
+    [InlineData("teeth chattering")]
+    public void ColdNeverPlaysTremble(string text)
+    {
+        Assert.Equal("/shiver", Assert.IsType<IntentResult.Play>(Resolver.Resolve(text, AllUnlocked)).Emote.Command);
+        var withoutShiver = AllUnlocked.Where(emote => emote.Command != "/shiver").ToList();
+        var offered = Resolver.Resolve(text, withoutShiver) switch
+        {
+            IntentResult.Play play => [play.Emote, .. play.Alternatives],
+            IntentResult.Suggest suggest => suggest.Emotes,
+            _ => [],
+        };
+        Assert.DoesNotContain(offered, emote => emote.Command == "/tremble");
+    }
+
+    // "shaking" is shared with "shaking with fear": without Shiver, Tremble may be suggested but never plays.
+    [Fact]
+    public void ShakingFromTheColdNeverPlaysTremble()
+    {
+        Assert.Equal("/shiver", Assert.IsType<IntentResult.Play>(Resolver.Resolve("shaking from the cold", AllUnlocked)).Emote.Command);
+        var withoutShiver = AllUnlocked.Where(emote => emote.Command != "/shiver").ToList();
+        Assert.False(Resolver.Resolve("shaking from the cold", withoutShiver) is IntentResult.Play { Emote.Command: "/tremble" });
+    }
 }
