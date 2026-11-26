@@ -24,6 +24,7 @@ public sealed class Plugin : IDalamudPlugin
     private readonly EmoteCatalog catalog;
     private readonly PhraseMatcher matcher;
     private readonly IntentResolver resolver;
+    private readonly EmoteBundles bundles = EmoteBundles.LoadEmbedded();
     private readonly SuggestionLinks suggestions;
     private readonly WindowSystem windows = new("EmoteIntent");
     private readonly SettingsWindow settings;
@@ -38,7 +39,7 @@ public sealed class Plugin : IDalamudPlugin
         catalog = new EmoteCatalog(DataManager, UnlockState);
         matcher = new PhraseMatcher(PhraseBank.LoadEmbedded());
         resolver = new IntentResolver(matcher);
-        suggestions = new SuggestionLinks(ChatGui, id => catalog.Unlocked().FirstOrDefault(emote => emote.Id == id), Play);
+        suggestions = new SuggestionLinks(ChatGui, catalog.Unlocked, bundles, Play);
 
         settings = new SettingsWindow(configuration, () => PluginInterface.SavePluginConfig(configuration));
         windows.AddWindow(settings);
@@ -83,6 +84,21 @@ public sealed class Plugin : IDalamudPlugin
         }
 
         var request = FeelRequest.Parse(args, matcher.IsPhrase);
+        // "all eat" lists a whole bundle, "all" the bundles; typos fixed as for any text ("all jumsp").
+        if ((bundles.Request(request.Text) ?? bundles.Request(matcher.Correct(request.Text).Text)) is { } asked)
+        {
+            if (asked.Bundle is null)
+            {
+                suggestions.PrintBundles(request);
+            }
+            else
+            {
+                suggestions.PrintBundle(asked.Bundle, request);
+            }
+
+            return;
+        }
+
         var result = resolver.Resolve(request.Text, unlocked, catalog.All());
         if (result.Corrections.Count > 0)
         {
@@ -109,7 +125,7 @@ public sealed class Plugin : IDalamudPlugin
 
                 if (configuration.WhenFound == WhenFound.PlayBest && play.Alternatives.Count > 0)
                 {
-                    suggestions.PrintAlsoFits(play.Alternatives, request);
+                    suggestions.PrintAlsoFits(play.Emote, play.Alternatives, request);
                 }
 
                 break;

@@ -10,6 +10,8 @@
   <!-- The phrase bank ships inside the assembly (PhraseBank.LoadEmbedded). -->
   <ItemGroup>
     <EmbeddedResource Include="Data\Phrases\en\*.txt" LogicalName="EmoteIntent.Phrases.en.%(Filename)%(Extension)" />
+    <!-- Emotes that go together, listed whole by "/feel all eat" (EmoteBundles.LoadEmbedded). -->
+    <EmbeddedResource Include="Data\bundles.txt" LogicalName="EmoteIntent.bundles.txt" />
   </ItemGroup>
 
 </Project>
