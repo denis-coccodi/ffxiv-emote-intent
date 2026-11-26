@@ -3,6 +3,15 @@
   <!-- Everything that doesn't need the game: the tests cover it without Dalamud. -->
   <PropertyGroup>
     <TargetFramework>net10.0</TargetFramework>
+    <!-- Core is the shared logic: every public member says what it does. -->
+    <NoWarn>$(NoWarn.Replace('CS1591', ''))</NoWarn>
   </PropertyGroup>
+
+  <!-- The phrase bank ships inside the assembly (PhraseBank.LoadEmbedded). -->
+  <ItemGroup>
+    <EmbeddedResource Include="Data\Phrases\en\*.txt" LogicalName="EmoteIntent.Phrases.en.%(Filename)%(Extension)" />
+    <!-- Emotes that go together, listed whole by "/feel all eat" (EmoteBundles.LoadEmbedded). -->
+    <EmbeddedResource Include="Data\bundles.txt" LogicalName="EmoteIntent.bundles.txt" />
+  </ItemGroup>
 
 </Project>

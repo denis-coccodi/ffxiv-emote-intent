@@ -1,0 +1,10 @@
+#!/bin/sh
+# Runs the same checks as the `test` workflow before anything is pushed, so a red
+# check is caught here instead of on the pull request (feature-branch skill).
+# Git runs it from here: the first `dotnet build` points core.hooksPath at .githooks.
+set -e
+export DOTNET_NOLOGO=1 DOTNET_CLI_TELEMETRY_OPTOUT=1
+echo "pre-push: build, tests and format check (the test workflow's steps)..."
+dotnet build -c Release -v q -nologo
+dotnet test -c Release --no-build -v q -nologo
+dotnet format --verify-no-changes

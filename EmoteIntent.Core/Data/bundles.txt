@@ -1,0 +1,36 @@
+# Bundles of emotes that go together: "/feel all eat" lists every one the character has unlocked, as links.
+# One bundle per line: Name | other names it answers to | its emotes, in the order they're listed.
+# An emote may be in several bundles; the first one it's in gives the "See all N … emotes" link.
+# Kinds of emote
+Eat | eating, food, foods, snack, snacks, eats, meal, meals | /eatriceball /eatapple /eatpizza /eategg /eatchicken /eattaco /devourtaco /eatpumpkincookie /eatchocolate /breakfast /fryegg
+Drink | drinks, drinking, sip, sips, gulp, gulps, tea | /tea /savortea /drinkgreentea /lominsansip /gridaniansip /uldahnsip /lominsangulp /gridaniangulp /uldahngulp /shakedrink /toast
+Jump | jumps, jumping, hop, hops | /jumpforjoy1 /jumpforjoy2 /jumpforjoy3 /jumpforjoy4 /jumpforjoy5 /cheerjumpred /cheerjumpgreen /cheerjumpindigo /lophop /lalihop /backflip
+Dance | dances, dancing | /dance /stepdance /harvestdance /balldance /mandervilledance /mandervillemambo /bombdance /hildibrand /thavdance /golddance /sundance /moonlift /mogdance /easterndance /songbird /yoldance /boxstep /sidestep /getfantasy /popotostep /heeltoe /goobbuedo /flamedance /beesknees /littleladiesdance /breakdance /wasshoi /uchiwasshoi
+Pose | poses, posing | /pose /flex /victorypose /battlestance /poseoftheunbound /humbletriumph /victoryreveal /runwaywalk /powerup /determined /twirl /rangerpose1r /rangerpose1l /rangerpose2r /rangerpose2l /rangerpose3r /rangerpose3l /lookback
+Penlight | penlights, penlight cheers, cheer lights, glowsticks, glow sticks, idol | /cheeronblue /cheeronbright /cheeronorange /cheerwaveyellow /cheerwaveviolet /cheerwavepink /cheerjumpred /cheerjumpgreen /cheerjumpindigo /cheerrhythmred /cheerrhythmviolet /cheerrhythmbright /cheerlightyellow /cheerlightblue /cheerlightgreen
+Paint | paints, painting, paint it | /paintblack /paintred /paintyellow /paintblue
+Greeting | greetings, greet, hello, hellos, hi, bow, bows, goodbye, goodbyes, bye, farewell | /greet /wave /bow /easternbow /welcome /easterngreeting /laliho /ohokaliy /goodbye /kneel /respect
+Salute | salutes, saluting, military, soldier | /salute /gcsalute /imperialsalute /attention /atease
+Laugh | laughs, laughing | /chuckle /laugh /cackle /deride /biggrin
+Workout | workouts, exercise, exercises, training, gym | /squats /pushups /situps /breathcontrol /limberup /stretch /easternstretch /sweat /winded /box
+Sit | sits, sitting, seat, rest, resting | /lounge /groundsit /doze /lean /playdead
+Book | books, reading, read | /read /reference /study /carrybook /tomescroll /tomestone /pen /spectacles
+Spell | spells, magic, summon, summons, limit break, limit breaks | /zantetsuken /iceheart /megaflare /ultima /allsaintscharm /sundering /simulationm /simulationf /adventoflight /crimsonlotus /divinearm /divinedisk /divinetiara /magictrick
+Weapon | weapons, sword, fight, fighting, battle | /draw /sheathe /battlestance /guard /lookout /sundering
+Water | swim, swimming, underwater | /waterfloat /waterflip /splash /water
+Photo | photos, picture, pictures, camera, selfie | /photograph /visage
+Gesture | gestures, hand, hands, sign, signs | /point /beckon /yes /no /deny /thumbsup /shush /airquotes /showright /showleft /handover /me /poke /pantomime /insist /confirm /elucidate /converse /snap /wringhands
+Work | working, job, jobs, chores, busy | /magitype /linkpearl /navigate /sweep /conduct /attend /study /pen
+Silly | fun, funny, goofy, joke, jokes, meme, memes | /haurchefant /sabotender /earwiggle /blowbubbles /blownaway /throw /spirit /mandervilledance /hildibrand /overreact /playdead /prettyplease
+# Feelings
+Friend | friends, friendly, buddy, buddies, team, teammates | /fistbump /highfive /hug /embrace /comfort /soothe /stroke /gratuity /toast
+Pray | prayer, prayers, praying, worship | /pray /ritualprayer /respect /kneel /grovel
+Love | loves, loving, romance, romantic, affection, flirt, flirting | /blowkiss /loveheart /dote /handtoheart /hug /embrace /bouquet /charmed /puckerup /wink /leftwink /stroke /flowershower /blush
+Happy | happiness, joy, glad | /happy /joy /delighted /beam /smile /grin /content /psych /hum
+Cheer | cheers, cheering, celebrate, celebrating, celebration, party | /cheer /hurray /rally /clap /congratulate /fistpump /victorypose /jumpforjoy3 /toast /flowershower
+Angry | anger, mad, rage, annoyed | /angry /furious /fume /rage /stomp /vexed /annoyed /malevolence /slap /reprimand /upset
+Sad | sadness, upset, crying, cry, depressed | /cry /sulk /slump /disappointed /sad
+Scared | scare, fear, afraid, spooky, nervous | /tremble /panic /frighten /scared /aback /worried
+Surprised | surprise, shock, shocked, amazed, wow | /surprised /shocked /wow /aback /overreact /amazed /eureka /stagger /dazed
+Think | thinking, thoughts, confused, puzzled | /think /consider /ponder /huh /doubt /disturbed /concentrate /examineself /scheme /clutchhead /headache /facepalm /shrug
+Expression | expressions, face, faces, facial expressions | /straightface /smile /grin /wink /leftwink /content /smirk /taunt /shuteyes /sad /scared /amazed /ouch /annoyed /alert /worried /sneer /puckerup /concentrate /disturbed /simper /beam /biggrin /reflect /furrow /scoff /ponder /endure /fakesmile

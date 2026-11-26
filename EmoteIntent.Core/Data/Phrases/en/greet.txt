@@ -1,0 +1,58 @@
+# /greet (Greeting): a friendly raised-hand greeting.
+hello
+hello there
+hi
+hi there
+hey
+hey there
+heya
+hiya
+howdy
+yo
+sup
+what's up
+whats up
+good morning
+good afternoon
+good evening
+greetings
+greetings friend
+salutations
+how are you
+how's it going
+how are you doing
+long time no see
+nice to see you
+good to see you
+so happy to see you
+happy to see you
+great to see you again
+o/
+\o
+hallo
+hola
+bonjour
+ciao
+morning
+evening all
+hello everyone
+hi everyone
+hi all
+hey all
+say hello
+say hi
+greet someone
+greet my friend
+first time meeting
+introduce myself
+back
+i'm back
+im back
+i'm home
+i have returned
+guess who's back
+back again
+gm
+gm all
+gm everyone
+morning everyone

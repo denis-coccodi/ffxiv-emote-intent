@@ -1,0 +1,54 @@
+name: release
+
+# Pushing a tag vX.Y.Z.W on main publishes that version: a GitHub release with the plugin (latest.zip) and the
+# custom repository feed (repo.json) players add in Dalamud. The feed URL never changes:
+# https://github.com/<owner>/<repo>/releases/latest/download/repo.json
+on:
+  push:
+    tags: ['v*.*.*.*']
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: windows-2022
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+      # Only what's on main is released: main is always tested and reviewed.
+      - name: Check the tag is on main
+        shell: pwsh
+        run: |
+          git merge-base --is-ancestor $env:GITHUB_SHA origin/main
+          if ($LASTEXITCODE -ne 0) { throw "$env:GITHUB_REF_NAME isn't on main: tag a commit of main." }
+      - uses: actions/setup-dotnet@v5
+        with:
+          global-json-file: global.json
+      - name: Download Dalamud
+        shell: pwsh
+        run: |
+          Invoke-WebRequest -Uri https://goatcorp.github.io/dalamud-distrib/latest.zip -OutFile latest.zip
+          Expand-Archive -Force latest.zip "$env:AppData\XIVLauncher\addon\Hooks\dev"
+      - run: dotnet build -c Release
+      - run: dotnet test -c Release --no-build
+      - run: dotnet format --verify-no-changes
+      # The release notes list the pull requests merged since the last release; the feed carries them as the
+      # changelog Dalamud shows next to an update. New-RepoJson.ps1 refuses a tag that isn't the plugin's version.
+      - name: Publish the release
+        shell: pwsh
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          $tag = $env:GITHUB_REF_NAME
+          $out = 'EmoteIntent/bin/Release/EmoteIntent'
+          $version = (Get-Content -Raw "$out/EmoteIntent.json" | ConvertFrom-Json).AssemblyVersion
+          if ("v$version" -ne $tag) { throw "Tag $tag doesn't match the plugin's version $version." }
+          gh release create $tag "$out/latest.zip" --title "Emote Intent $version" --generate-notes --verify-tag
+          if ($LASTEXITCODE -ne 0) { throw 'Creating the release failed.' }
+          $notes = gh release view $tag --json body --jq .body
+          ./tools/New-RepoJson.ps1 -Manifest "$out/EmoteIntent.json" -Tag $tag -Repository $env:GITHUB_REPOSITORY `
+            -Out repo.json -Changelog ($notes -join "`n")
+          gh release upload $tag repo.json
+          if ($LASTEXITCODE -ne 0) { throw 'Uploading repo.json failed.' }

@@ -2,14 +2,14 @@
 <Project Sdk="Dalamud.NET.Sdk/15.0.0">
 
   <PropertyGroup>
-    <Version>0.1.0.0</Version>
+    <Version>0.17.1.0</Version>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <!-- Manifest fields (DalamudPackager). The assembly name, EmoteIntent, is the plugin's
          InternalName and can never change once released. -->
     <Author>Denis Coccodi</Author>
     <Name>Emote Intent</Name>
     <Punchline>Say what you mean, and play the emote that fits.</Punchline>
-    <Description>Type /feel and the emote you want, and Emote Intent plays it if you have it unlocked. Early version: it matches emote names and commands for now; matching what you mean ("/feel so happy to see you") is being built.</Description>
+    <Description>Type /feel and what you mean ("/feel so happy to see you", "/feel lmao", "/feel o7"), and Emote Intent plays the unlocked emote that fits, or lists the few that might as links to click. /feel all dances (or eat, jumps, poses…) lists every emote of a kind you have. Typos are fixed, and any emote also plays by its name or command. Type /feel alone for help. Runs on your PC, no AI service needed. The plugin and its phrase bank were written with AI help (Claude).</Description>
     <RepoUrl>https://github.com/denis-coccodi/ffxiv-emote-intent</RepoUrl>
     <Tags>emote;emotes;chat;social;roleplay</Tags>
   </PropertyGroup>
@@ -17,5 +17,23 @@
   <ItemGroup>
     <ProjectReference Include="..\EmoteIntent.Core\EmoteIntent.Core.csproj" />
   </ItemGroup>
+
+  <!-- Every local build, from main or any worktree, also lands in one fixed folder, so Dalamud's Dev Plugin
+       Location is set once (README: Install) and its automatic reloading picks up each new build.
+       Override with -p:DevPluginDir=..., turn off with -p:DevPluginDir=. CI doesn't copy. -->
+  <PropertyGroup>
+    <DevPluginDir Condition="'$(DevPluginDir)' == '' And '$(CI)' != 'true'">$(LOCALAPPDATA)\EmoteIntent\DevPlugin</DevPluginDir>
+  </PropertyGroup>
+
+  <!-- After DalamudPackager, which writes EmoteIntent.json (the manifest Dalamud needs) after Build. Only after
+       this configuration's packager target: after Build, or after a list of both packager targets, MSBuild runs
+       it before the packager and copies the previous build's manifest. -->
+  <Target Name="CopyToDevPluginDir" AfterTargets="DefaultDalamudPackager$(Configuration)" Condition="'$(DevPluginDir)' != ''">
+    <ItemGroup>
+      <DevPluginFile Include="$(OutDir)EmoteIntent.dll;$(OutDir)EmoteIntent.pdb;$(OutDir)EmoteIntent.json;$(OutDir)EmoteIntent.Core.dll;$(OutDir)EmoteIntent.Core.pdb" />
+    </ItemGroup>
+    <Copy SourceFiles="@(DevPluginFile)" DestinationFolder="$(DevPluginDir)" Condition="Exists('%(FullPath)')" SkipUnchangedFiles="true" />
+    <Message Importance="high" Text="Dev plugin: $(DevPluginDir)\EmoteIntent.dll" />
+  </Target>
 
 </Project>
