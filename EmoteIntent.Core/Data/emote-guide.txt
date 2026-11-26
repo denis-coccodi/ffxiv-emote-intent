@@ -1,0 +1,297 @@
+# What each emote shows and when players use it, for an AI model choosing among them (and for people).
+# One emote per line: /command | what the character visibly does | when it fits.
+# Written for this project from the game's own descriptions (emotes.json), the phrase files and in-game checks;
+# nothing is copied from wikis or the Lodestone.
+/bow | Bows politely from the waist. | Thanking someone, a formal greeting or goodbye, showing respect, a polite apology.
+/easternbow | A deep, formal bow in the Far Eastern (Doman, Hingan) style, hands at the sides. | Deep gratitude or respect, a sincere apology, formal or traditional settings.
+/welcome | Opens the arms wide in a welcoming gesture. | Welcoming someone in or back, "welcome home", greeting a newcomer, "you're welcome".
+/greet | Raises a hand in a friendly hello. | Saying hello or hi to someone, greeting a friend.
+/goodbye | Waves farewell. | Saying goodbye, see you later, good night, logging off.
+/wave | Waves a hand energetically. | Waving at someone, getting attention, a casual hi or bye, "over here".
+/kneel | Goes down on one knee. | Kneeling in respect or loyalty, before royalty, proposing, swearing fealty, yielding.
+/salute | A crisp military salute. | Saluting, "yes sir", acknowledging an order, respect between soldiers, o7.
+/gcsalute | The salute of the player's Grand Company (Maelstrom, Twin Adder or Immortal Flames). | Grand Company pride, saluting fellow members, official military greeting.
+/imperialsalute | The Garlean Empire's salute, fist raised across the chest. | Roleplaying a Garlean soldier, "glory to the Empire", villainous or ironic loyalty.
+/easterngreeting | Places a fist in the open palm and bows slightly, a martial-arts greeting. | Greeting a rival or sparring partner, respectful eastern greeting, before a duel.
+/laliho | The dwarves' cheerful greeting, hands raised. | Saying "lali-ho", a cheery hello, dwarf or Lalafell-flavoured greetings.
+/ohokaliy | A greeting from Tural (Dawntrail), arms moving in welcome. | Greeting in the Tural or Hanuhanu way, a warm tropical hello.
+/chuckle | A small, amused laugh. | Mild amusement, "heh", "hehe", something mildly funny.
+/laugh | Bursts out laughing, a big hearty laugh. | Something very funny, lol, lmao, rofl, laughing hard.
+/joy | Jumps up once with joy, arms raised. | Yay, hooray, good news, being thrilled or elated.
+/happy | Throws the arms out with a bright, happy look. | Feeling happy, glad, cheerful, pleased.
+/rally | Raises a fist to rally the group. | "Let's go", encouraging the party, rallying the team before a fight.
+/soothe | Calms someone with gentle, downward hand motions. | "Calm down", "relax", "easy now", settling someone who is upset or excited.
+/blush | Covers the face, cheeks turning red. | Being embarrassed, flattered, shy, flustered, having a crush.
+/comfort | Pats and consoles someone gently. | Comforting a sad friend, "there there", sympathy, support, caring.
+/psych | Clenches the fists and psychs themselves up. | Getting pumped, hyped, motivated, ready to go, determined excitement.
+/pray | Clasps the hands together in prayer. | Praying, hoping for luck, begging the RNG, wishing, being thankful to the gods.
+/respect | A solemn, silent gesture of respect with the head bowed. | Paying respects, mourning, "F", "rip", a moment of silence.
+/handtoheart | Gently places a hand over the heart. | A sincere promise, swearing an oath, being touched or moved, loyalty, sincerity.
+/blowkiss | Blows a kiss through the air towards someone. | Flirting, sending love, "love you", "mwah", affectionate goodbye.
+/dote | Throws a heartfelt, adoring kiss at a beloved. | Adoring someone, being lovestruck, "so cute", fawning, in love.
+/dance | Starts a simple dance. | Dancing, partying, celebrating, music playing.
+/yes | Nods in agreement. | Yes, agreeing, ok, sure, acknowledging, "got it".
+/thumbsup | Gives a strong thumbs up. | Approval, good job, nice, great, "sounds good", agreement.
+/clap | Applauds with both hands. | Applause, well done, well played, bravo, congratulating a performance.
+/congratulate | Claps and offers congratulations. | Congrats, gratz on a clear, a level up, an achievement, a birthday.
+/cheer | Cheers enthusiastically with both arms up. | Cheering someone on, "go go", supporting the team, celebrating a win.
+/determined | Punches a fist into the open palm, ready for action. | Being determined, resolute, "let's do this", brave, bold, ready to fight.
+/hurray | A hearty "huzzah" with arms raised high. | Hip hip hooray, three cheers, triumphant celebration.
+/hug | Gives someone a warm, friendly hug. | Hugging, comfort, greeting a close friend, affection, "hugs".
+/embrace | A close, tender, loving embrace. | Holding someone close, romance, deep comfort, a heartfelt reunion.
+/stroke | Pets someone on the head. | Headpats, petting a pet or a friend, "good boy", gentle affection.
+/fistbump | Holds out a fist for a fist bump. | Bro fist, "pound it", friendly agreement, teamwork, a casual handshake.
+/battlestance | Takes a ready stance for battle. | Ready to fight, "fight me", "come at me", combat, challenging someone, aggression.
+/victorypose | Strikes a triumphant victory pose. | Winning, victory, a clear, being the champion, triumph.
+/eureka | Raises a finger as a bright idea strikes. | "I've got it", an idea, a realisation, understanding suddenly, inspiration.
+/haurchefant | A warm, beaming thumbs up in tribute to Ser Haurchefant. | Fervent approval, encouragement, a heartfelt "you can do it", Haurchefant references.
+/wow | Sparkles with amazement and admiration. | Wow, amazing, impressed, awed, starstruck, "so cool".
+/gratuity | Scatters gold coins at someone's feet. | Tipping, paying, "take my money", generosity, showing off wealth, bribery.
+/fistpump | Pumps the arms in triumph. | "Yes!", nailed it, crushing a boss, satisfaction at a win, "let's go".
+/sabotender | Does an impression of the Gold Saucer's cactuar mascot, Senor Sabotender. | Being goofy or silly, cactuar jokes, Gold Saucer fun.
+/toast | Raises a glass in a toast. | Cheers, toasting, celebrating with drinks, "to us".
+/snap | Snaps the fingers. | Snapping, sassy flair, "fabulous", getting attention, an idea, waking someone.
+/flowershower | Tosses fragrant flower petals into the air. | Celebration, weddings, romance, festive happiness, showering someone with love.
+/paintblack | Swabs the floor with black paint. | Painting, art, a gloomy or edgy black mood.
+/paintred | Swabs the floor with red paint. | Painting, art, passion, anger or fiery red.
+/paintyellow | Swabs the floor with yellow paint. | Painting, art, bright sunny yellow.
+/paintblue | Swabs the floor with blue paint. | Painting, art, calm blue.
+/earwiggle | Wiggles suddenly enormous ears. | Being playful, curious, listening intently, mischievous fun.
+/magictrick | Performs a little magic trick. | Magic, showing a trick, "ta-da", surprising someone, entertainment.
+/allsaintscharm | Swishes and flicks a wand to cast a spell (All Saints' Wake). | Casting a spell, witchy magic, Halloween fun.
+/jumpforjoy1 | Jumps happily for joy. | Excited, thrilled, overjoyed, jumping around.
+/jumpforjoy2 | Jumps merrily for joy. | Excited, thrilled, overjoyed, jumping around.
+/jumpforjoy3 | Jumps enthusiastically for joy. | Very excited, hyped, overjoyed, jumping up and down.
+/jumpforjoy4 | Jumps cheerfully for joy. | Excited, thrilled, overjoyed, jumping around.
+/jumpforjoy5 | Jumps for joy like a sabotender. | Excited in a silly way, overjoyed, jumping around.
+/victoryreveal | Waits anxiously for results, then reacts to the reveal (Fall Guys). | Waiting for results, suspense, "did we win?", anticipation.
+/humbletriumph | Strikes a modest, mildly triumphant pose. | A small win, humble pride, "not bad", quiet satisfaction.
+/uchiwasshoi | Dances while stirring the air with a giant festival fan. | Summer festivals, being hot, fanning yourself, festive dancing.
+/breakdance | A stylish, powerful breakdance on the floor. | Showing off dance moves, hip-hop, breaking, energetic partying.
+/limberup | Winds up an arm in a brisk warm-up stretch. | Warming up, getting ready for a fight or workout, exercise.
+/delighted | Cups the face in barely contained delight. | Delighted, giddy, thrilled, squealing with happiness, adorable things.
+/divinearm | Raises a weapon as radiant light bursts from the Divine Artifact on the arm. | A heroic power-up, divine light, a dramatic magical pose.
+/divinedisk | Radiant light shines from the Divine Artifact on the chest. | A heroic power-up, divine light, a dramatic magical pose.
+/divinetiara | Radiant light shines from the Divine Artifact on the head. | Enlightenment, divine light, a dramatic magical pose.
+/no | Shakes the head no. | No, nope, disagreeing, refusing politely.
+/deny | Crosses the arms firmly, refusing outright. | Strongly disagreeing, "absolutely not", rejecting, denying, "go away".
+/cry | Bursts into tears. | Crying, heartbroken, very sad, tearful, grieving.
+/furious | Shakes with fury, absolutely enraged. | Furious, livid, enraged, outraged.
+/fume | Fumes and steams with annoyance. | Annoyed, irritated, grumpy, pissed off, miffed.
+/stomp | Stomps a foot on the ground in anger. | Frustration, a tantrum, childish anger, stamping your foot.
+/panic | Flails around in panic. | Panicking, help!, trapped, frantic, everything going wrong.
+/upset | Recoils in disgust. | Disgusted, grossed out, "ew", repulsed, something smells.
+/disappointed | Slumps in utter disappointment. | Disappointed, let down, bummed, "aww", "shoot".
+/sulk | Wallows in self-pity, sulking. | Sulking, pouting, jealous, lonely, left out, feeling sorry for yourself.
+/angry | Shows anger. | Angry, mad, cross, upset with someone.
+/deride | Points and laughs mockingly. | Mocking, laughing at someone, teasing, ridiculing, "haha loser".
+/huh | Tilts the head, puzzled. | Confused, "huh?", "what?", not understanding, bewildered.
+/shocked | Reacts in shock. | Shocked, stunned, "omg", "no way", dumbfounded.
+/shrug | Shrugs the shoulders. | Don't know, idk, whatever, no idea, indifferent, "meh".
+/stagger | Staggers back for a moment, reeling. | Reeling from a hit, stumbling, clumsy, shaken, overwhelmed.
+/surprised | Reacts with surprise. | Surprised, "oh!", unexpected news, a pleasant surprise.
+/frighten | Tries to look menacing and scary. | Boo!, spooky, scaring someone, ghosts, monsters, Halloween.
+/doubt | Looks doubtful and unconvinced. | Doubtful, skeptical, suspicious, sus, "really?", "I don't buy it".
+/grovel | Falls prostrate on the ground in unworthiness. | Begging forgiveness, worshipping, "I'm not worthy", desperate pleading.
+/slap | Slaps someone. | Slapping, smacking sense into someone, "how dare you".
+/facepalm | Buries the face in a hand in frustration. | Facepalm, "really?", someone did something dumb, exasperation.
+/clutchhead | Clutches the head in anguish. | Despair, overwhelmed, agonising, distraught, "this is too much".
+/aback | Starts back, taken aback. | Taken aback, startled, alarmed, caught off guard.
+/headache | Rubs a pounding headache. | A headache, stressed, frazzled, feeling ill, hungover.
+/vexed | Visibly frustrated and fed up. | Exasperated, fed up, frustrated, offended.
+/overreact | A big, theatrical overreaction of absolute shock. | Overreacting, being dramatic, absolute shock, "NANI?!".
+/pose | Strikes a signature pose. | Posing, gpose, photos, fashion, showing off an outfit.
+/flex | Flexes the muscles. | Strong, muscles, showing off, gym, confident, "do you even lift".
+/poseoftheunbound | A bold, dramatic pose freed from all inhibition. | Over-the-top posing, being extra, dramatic flair.
+/runwaywalk | Struts confidently like a fashion model. | Fashion, catwalk, strutting, confidence, showing off glamour.
+/beckon | Beckons someone over. | "Come here", "follow me", calling someone over.
+/throw | Throws an object, like a snowball. | Throwing something, a snowball fight, tossing.
+/splash | Splashes water playfully (in water). | Playing in water, splashing someone, swimming fun.
+/handover | Holds out a hand, giving something. | Handing something over, giving a gift, "here you go", offering.
+/think | Becomes lost in thought, hand on chin. | Thinking, pondering, "hmm", considering, deciding.
+/examineself | Looks oneself over admiringly. | Checking an outfit, vanity, admiring yourself, glamour.
+/doze | Nods off to sleep (in a bed if one is near). | Sleepy, tired, napping, sleeping, bored, afk.
+/point | Points at something. | Pointing, "look there", "you", "over there", accusing.
+/poke | Pokes someone. | Poking, nudging, boop, waking someone up, "are you there?".
+/stretch | A big stretch and yawn. | Stretching, waking up, bored, tired, lazy.
+/lookout | Scans the horizon with a hand over the eyes. | Looking around, searching, keeping watch, exploring, spying.
+/airquotes | Makes air quotes with the fingers. | Sarcasm, "so-called", irony, snark.
+/me | Points at oneself. | "Me?", "I'll do it", volunteering, talking about yourself.
+/backflip | Does a backflip. | Showing off, acrobatics, excitement, ninja moves.
+/easternstretch | Morning stretching exercises in the Far Eastern style. | Morning exercise, limbering up, calisthenics.
+/prettyplease | Pleads with clasped hands and puppy eyes. | Please, begging, asking a favour, "pretty please".
+/spectacles | Adjusts a pair of spectacles. | Nerdy, smart, scholarly, calculating, "actually...", being clever.
+/waterflip | A somersault underwater. | Playing underwater, swimming tricks.
+/powerup | Gathers power with a shout, aura flaring. | Powering up, showing true strength, getting serious, limit break.
+/converse | Chats animatedly with someone. | Talking, chatting, gossiping, conversation.
+/elucidate | Explains with a flourish of the hands. | Explaining, teaching, "let me explain", lecturing.
+/shush | Puts a finger to the lips. | Shh, quiet, a secret, "be quiet".
+/crimsonlotus | A martial-arts routine of punches and kicks. | Martial arts, kicking, fighting moves, training.
+/littleladiesdance | The cute Little Ladies' Day dance. | A cute dance, idols, girly celebration.
+/tomestone | Taps on a tomestone (a phone-like device). | Checking your phone, texting, looking something up.
+/insist | Speaks emphatically, insisting. | Insisting, "I mean it", stubborn, arguing a point.
+/breakfast | Chows down on a piece of bread. | Breakfast, eating bread, hungry.
+/eatriceball | Eats a rice ball. | Eating, hungry, a snack, lunch.
+/eatapple | Bites into an apple. | Eating an apple, a healthy snack, hungry.
+/eatpizza | Eats a slice of pizza. | Pizza, eating, hungry, junk food.
+/eategg | Casually eats a boiled egg. | Eating an egg, a snack.
+/eatpumpkincookie | Nibbles a pumpkin cookie. | Cookies, Halloween treats, a sweet snack.
+/eatchocolate | Eats Valentione's chocolate. | Chocolate, sweets, Valentine's Day.
+/eatchicken | Eats a piece of fried chicken. | Fried chicken, eating, hungry, stuffed.
+/eattaco | Eats a big taco. | Tacos, eating, hungry.
+/tea | Sips serenely from a teacup. | Tea time, thirsty, relaxing, classy, sipping.
+/drinkgreentea | Sips a soothing cup of green tea. | Green tea, calm, zen, peaceful.
+/lominsansip | Takes a sip of mulled Lominsan punch from a mug. | Drinking, a pub, Limsa Lominsa, pirates.
+/gridaniansip | Takes a sip of mulled Gridanian punch from a mug. | Drinking, Gridania.
+/uldahnsip | Takes a sip of mulled Ul'dahn punch from a mug. | Drinking, Ul'dah, fancy and rich.
+/fryegg | Fries an egg in a pan. | Cooking, breakfast, chef.
+/read | Pores over a book. | Reading, studying, a good book.
+/reference | Consults a reference book. | Looking something up, research, checking the guide.
+/consider | Mulls over a curious question. | Considering, intrigued, weighing options, interested.
+/highfive | Gives someone a high five. | High five, celebrating together, teamwork.
+/pantomime | Mimes an invisible wall. | Miming, clowning, silly performance.
+/linkpearl | Talks into a linkpearl. | A call, talking on the phone, "brb", contacting someone.
+/adventoflight | Soars into the sky, then makes a heroic landing. | Flying, soaring, a heroic entrance.
+/blowbubbles | Blows bubbles into the air. | Carefree play, bubbles, whimsy.
+/photograph | Takes a photo with an instant camera. | Taking a picture, photos, screenshots.
+/visage | Takes a selfie with an exotablet. | Selfies, taking a picture of yourself.
+/twirl | Spins merrily to show off an outfit. | Twirling, showing off clothes, feeling pretty.
+/blownaway | Gets hurled backwards by a great force. | Being blown away, knocked back, a storm, flying backwards, mind blown.
+/magitype | Types on a conjured keyboard. | Working, typing, paperwork, busy.
+/navigate | Consults a map to get bearings. | Lost, finding the way, directions, travelling, sailing.
+/draw | Readies a weapon. | Drawing a weapon, ready to fight, stabbing.
+/sheathe | Puts a weapon away. | Sheathing, standing down, peace.
+/stepdance | A step dance with fast footwork, upper body still. | Step dancing, Irish dancing, footwork.
+/harvestdance | The Vanu Vanu's silly rain dance. | A silly tribal dance, praying for rain.
+/balldance | A ballroom dance. | Ballroom dancing, a formal dance.
+/mandervilledance | The Manderville family dance. | Hildibrand silliness, a goofy dance.
+/bombdance | A festive swing-and-sway dance from the Moonfire Faire. | Summer festival dancing.
+/hildibrand | Hildibrand Manderville's gentlemanly flexing pose. | Being a gentleman, flexing, Hildibrand.
+/thavdance | A sinuous Thavnairian dance. | Exotic dancing, belly dance.
+/golddance | The Gold Saucer dance. | Gold Saucer, celebration, partying.
+/sundance | The Vanu Vanu's silly sundrop dance. | A silly tribal dance, sunshine.
+/moonlift | A joyful kicking dance. | Happy dancing, kicking.
+/mogdance | Dances like a moogle. | Moogles, kupo, cute dancing.
+/rangerpose1r | A red sentai hero pose, palm thrust forward. | Super sentai, hero poses, Power Rangers.
+/rangerpose1l | A red sentai hero pose, palm thrust forward (other side). | Super sentai, hero poses, Power Rangers.
+/rangerpose2r | A black sentai hero's dramatic one-legged pose. | Super sentai, hero poses, Power Rangers.
+/rangerpose2l | A black sentai hero's dramatic one-legged pose (other side). | Super sentai, hero poses, Power Rangers.
+/rangerpose3r | A yellow sentai hero's pose, one arm raised high. | Super sentai, hero poses, Power Rangers.
+/rangerpose3l | A yellow sentai hero's pose, one arm raised high (other side). | Super sentai, hero poses, Power Rangers.
+/easterndance | A smooth, flowing Far Eastern dance. | Graceful, elegant traditional dance.
+/songbird | A graceful stage performance with music swirling around. | Singing, performing on stage, an idol show.
+/ritualprayer | A solemn ritual prayer. | Ritual, worship, ceremony.
+/charmed | Falls into a lovestruck trance, hearts in the eyes. | Charmed, smitten, starstruck, dazzled.
+/cheeronblue | Waves both hands enthusiastically with blue glowing penlights. | Concerts, idols, cheering with glowsticks.
+/cheeronbright | Waves both hands enthusiastically with white glowing penlights. | Concerts, idols, cheering with glowsticks.
+/cheeronorange | Waves both hands enthusiastically with orange glowing penlights. | Concerts, idols, cheering with glowsticks.
+/cheerwaveyellow | Waves one yellow glowing penlight in the air. | Concerts, idols, cheering with glowsticks.
+/cheerwaveviolet | Waves one violet glowing penlight in the air. | Concerts, idols, cheering with glowsticks.
+/cheerwavepink | Waves one pink glowing penlight in the air. | Concerts, idols, cheering with glowsticks.
+/cheerjumpred | Jumps and cheers with red glowing penlights. | Concerts, jumping with excitement, idols.
+/cheerjumpgreen | Jumps and cheers with green glowing penlights. | Concerts, jumping with excitement, idols.
+/cheerjumpindigo | Jumps and cheers with indigo glowing penlights. | Concerts, jumping with excitement, idols.
+/cheerrhythmred | Keeps the beat with red glowing penlights. | Concerts, keeping the rhythm, idols.
+/cheerrhythmviolet | Keeps the beat with violet glowing penlights. | Concerts, keeping the rhythm, idols.
+/cheerrhythmbright | Keeps the beat with white glowing penlights. | Concerts, keeping the rhythm, idols.
+/cheerlightyellow | Sways gently side to side with yellow glowing penlights. | Slow songs at concerts, swaying.
+/cheerlightblue | Sways gently side to side with blue glowing penlights. | Slow songs at concerts, swaying.
+/cheerlightgreen | Sways gently side to side with green glowing penlights. | Slow songs at concerts, swaying.
+/yoldance | An Azim Steppe dance with arms spread like wings. | Au Ra steppe culture, soaring dance.
+/boxstep | A strolling box-step dance. | Casual dancing.
+/sidestep | Sways side to side with fists up. | Casual dancing, grooving.
+/getfantasy | Marches with high knees and pumping fists. | Energetic dancing, hyped.
+/popotostep | A disco dance with a pointing flourish. | Disco, funky dancing.
+/heeltoe | A slick heel-toe step with a flourish of the arms. | Stylish dancing.
+/goobbuedo | A fluid, wobbly, almost hypnotic dance. | Goobbue silliness, weird dancing.
+/hum | Swings the arms and hums a merry tune. | Humming, singing, waiting idly, carefree.
+/mandervillemambo | Hildibrand's famous, super silly mambo. | A very silly dance, crazy fun.
+/wasshoi | Lets out a joyous festival chant. | Festivals, chanting, celebration.
+/flamedance | A hula-like dance on the beach. | Beach parties, hula, summer.
+/beesknees | A sultry, sexy dance. | Seductive dancing, flirting, sexy.
+/lalihop | A squatting, kicking dwarven dance. | Dwarves, silly kicking dance.
+/lophop | A bouncy bunny hop. | Hopping, bunnies, cute bouncing.
+/loveheart | Makes a heart shape with the hands. | Love, "love you", hearts, appreciation.
+/bouquet | Presents a beautiful bouquet of flowers. | Giving flowers, romance, a date, congratulations.
+/cackle | Erupts into a haughty, villainous cackle. | Evil laughter, villainy, haughty triumph, "mwahaha".
+/waterfloat | Floats lazily on the back in water. | Floating, relaxing in water.
+/squats | Does a set of squats. | Exercise, workout, leg day.
+/pushups | Does a set of push-ups. | Exercise, workout, training.
+/situps | Does a set of sit-ups. | Exercise, workout, training.
+/breathcontrol | Takes a slow breath and relaxes. | Calm, meditation, relaxing, yoga, controlling yourself.
+/attention | Stands at attention. | Military attention, "yes sir", discipline.
+/atease | Stands relaxed with feet apart. | At ease, resting, relaxed and composed.
+/box | Puts up the fists and throws boxing punches. | Boxing, punching, fighting, training.
+/sweat | Wipes the sweat from the brow. | Sweating, nervous, phew, relieved, awkward, hot.
+/shiver | Shivers from the cold. | Cold, freezing, chilly, snow.
+/tremble | Trembles with fear. | Scared, afraid, terrified, frightened.
+/winded | Falls to one knee, out of breath. | Exhausted, out of breath, worn out after effort.
+/confirm | Checks that everything is as it should be. | Confirming, double-checking, "all good".
+/scheme | Rubs the hands together, plotting. | Scheming, plotting, sneaky, up to no good.
+/reprimand | Wags a finger to scold someone. | Scolding, "naughty", telling someone off, strict.
+/slump | Hangs the head and slumps in defeat. | Sad, defeated, depressed, gave up, ashamed.
+/playdead | Drops to the ground and plays dead. | Playing dead, a wipe, "I'm dead", fainting.
+/lean | Leans back casually. | Relaxing, being cool, casual, waiting.
+/guard | Stands watch over someone, protective. | Guarding, protecting, defending, tanking, on watch.
+/malevolence | Radiates dark menace and curses someone. | Evil, menacing, cursing, villainous, hateful.
+/wringhands | Wrings the hands obsequiously. | Grovelling politely, servile, eager to please, nervous fawning.
+/sweep | Sweeps the floor. | Cleaning, chores, tidying.
+/showright | Kneels and presents something on the right with an open hand. | Presenting, showing off, "ta-da", this way.
+/showleft | Kneels and presents something on the left with an open hand. | Presenting, showing off, "ta-da", this way.
+/spirit | Raises a fist with team spirit. | Team spirit, fighting spirit, supporting your side.
+/attend | Waits attentively for the next orders. | Waiting for orders, a butler or maid, at your service.
+/shakedrink | Shakes a cocktail in a shaker. | Bartending, cocktails, mixing drinks.
+/water | Sprinkles water from a watering can. | Watering plants, gardening.
+/dazed | Stumbles about seeing stars. | Dazed, dizzy, drunk, confused, out of it.
+/rage | Shakes with explosive rage. | Rage, extreme anger, losing it.
+/tomescroll | Taps on a tomestone (phone) over and over without stopping. | Scrolling a phone endlessly, doomscrolling, bored.
+/study | Studies intently. | Studying, homework, learning.
+/carrybook | Holds a book to the chest with both hands. | Carrying a book, a student or scholar, waiting.
+/pen | Scribbles notes with a quill pen. | Writing, taking notes, signing.
+/devourtaco | Eats a big taco over and over without stopping. | Feasting, eating continuously, very hungry.
+/savortea | Sips green tea over and over while seated. | A long, relaxing tea time.
+/lominsangulp | Sips Lominsan punch over and over. | Drinking at the bar for a while.
+/gridaniangulp | Sips Gridanian punch over and over. | Drinking at the bar for a while.
+/uldahngulp | Sips Ul'dahn punch over and over. | Drinking at the bar for a while.
+/conduct | Conducts like an orchestra conductor. | Conducting music, directing, being in charge.
+/lookback | Glances back over the shoulder. | Looking back, a dramatic glance, posing.
+/zantetsuken | Odin's sword-slash pose. | Odin, a dramatic sword strike.
+/iceheart | Envelops oneself in Shiva's diamond dust. | Ice, cold, Shiva, frosty.
+/megaflare | Casts Bahamut's Megaflare. | Bahamut, explosive power, dragons.
+/ultima | Unleashes the might of Ultima. | Ultima, overwhelming power.
+/simulationm | Spins and levitates with a shimmering synthesized sword (Omega). | Levitating, hovering, a sword of light.
+/simulationf | Spins and levitates with a shimmering synthesized spear (Omega). | Levitating, hovering, a spear of light.
+/sundering | Leaps with a glowing sword, strikes the ground, then levitates (Exodus). | World-ending power, a dramatic sword strike.
+/lounge | Sits down (on a chair if one is near). | Sitting, resting, taking a seat.
+/groundsit | Sits down on the ground. | Sitting on the floor, resting, campfire.
+/changepose | Switches to the next idle stance. | Changing idle pose.
+/visor | Opens or closes the helmet visor. | Toggling the visor.
+/straightface | Returns to a neutral, straight face. | Serious, blank face, deadpan.
+/smile | A warm smile. | Smiling, friendly, happy.
+/grin | A wide grin. | Grinning, cheeky, pleased.
+/wink | Winks with the right eye. | Winking, flirting, "wink wink", a secret.
+/leftwink | Winks with the left eye. | Winking, flirting, "wink wink", a secret.
+/content | Smiles in warm satisfaction. | Content, satisfied, comfortable, at peace.
+/smirk | A wry, knowing smirk. | Smug, cocky, knowing, arrogant.
+/taunt | A taunting grin. | Taunting, provoking, cocky challenge.
+/shuteyes | Shuts the eyes. | Eyes closed, resting, not looking.
+/sad | Frowns sadly. | A sad face, unhappy, down.
+/scared | Stares in fear. | A frightened face, creeped out, scared.
+/amazed | Stares in awe. | An amazed face, awestruck.
+/ouch | Cringes in pain. | Ouch, hurt, injured, cringe.
+/annoyed | Furrows the brow, annoyed. | An annoyed face, irritated, eye roll.
+/alert | Senses something amiss. | Alert, vigilant, suspicious noise.
+/worried | Looks worried. | Worried, anxious, concerned, nervous.
+/sneer | Sneers contemptuously. | Contempt, scorn, looking down on someone.
+/puckerup | Closes the eyes and puckers the lips. | Wanting a kiss, kissy face.
+/concentrate | Knits the brows in concentration. | Concentrating, focused, crafting.
+/disturbed | Twists the face in confusion and unease. | Confused, disturbed, uncomfortable, creeped out.
+/simper | Gives a lazy, coy smile. | A coy smile, smug, lazy smile.
+/beam | Grins from ear to ear. | Beaming, proud, joyful.
+/biggrin | Breaks into a broad, open smile. | A big grin, laughing face, very happy.
+/reflect | Closes the eyes and gathers thoughts. | Reflecting, nostalgic, wistful, calm thought.
+/furrow | Furrows the eyebrows. | Stern, disapproving, judging, glaring.
+/scoff | Smiles wryly, dismissive. | Scoffing, dismissive, cynical.
+/ponder | Loses oneself in thought. | Pondering deeply.
+/endure | Grits the teeth and bears it. | Enduring, holding on, toughing it out.
+/fakesmile | Forces a smile. | A fake smile, pretending to be fine, awkward.

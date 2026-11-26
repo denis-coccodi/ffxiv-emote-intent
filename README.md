@@ -82,6 +82,8 @@ dotnet format --verify-no-changes
 dotnet run --project tools/EmoteExport -c Release
 ```
 
+`EmoteIntent.Core/Data/emote-guide.txt` describes each emote in more depth (what the character does, and when it fits), written for this project from the game's descriptions and in-game checks, not copied from wikis. It's there for an optional AI model choosing among emotes; a test checks every emote has a line.
+
 Warnings are build errors, with .NET's recommended analyzers and a list of banned APIs (`BannedSymbols.txt`). The first build sets up two git hooks: Conventional Commits messages, and the three checks above before every push.
 
 Changes go through pull requests to `main`; see [CLAUDE.md](CLAUDE.md). A tag `vX.Y.Z.W` on `main` releases that version (`.github/workflows/release.yaml`, `tools/New-RepoJson.ps1`).
