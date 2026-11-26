@@ -1,0 +1,18 @@
+# Bundles of emotes that go together: "/feel all eat" lists every one the character has unlocked, as links.
+# One bundle per line: Name | other names it answers to | its emotes, in the order they're listed.
+# A bundle name never needs "all": "/feel all <name>" and the "all N <name> emotes" link find it.
+Eat | eating, food, foods, snack, snacks, eats | /eatriceball /eatapple /eatpizza /eategg /eatchicken /eattaco /devourtaco /eatpumpkincookie /eatchocolate /breakfast
+Drink | drinks, drinking, sip, sips, gulp, gulps | /tea /savortea /drinkgreentea /lominsansip /gridaniansip /uldahnsip /lominsangulp /gridaniangulp /uldahngulp /shakedrink /toast
+Jump | jumps, jumping, hop, hops | /jumpforjoy1 /jumpforjoy2 /jumpforjoy3 /jumpforjoy4 /jumpforjoy5 /cheerjumpred /cheerjumpgreen /cheerjumpindigo /lophop /lalihop /backflip
+Dance | dances, dancing | /dance /stepdance /harvestdance /balldance /mandervilledance /mandervillemambo /bombdance /hildibrand /thavdance /golddance /sundance /moonlift /mogdance /easterndance /songbird /yoldance /boxstep /sidestep /getfantasy /popotostep /heeltoe /goobbuedo /flamedance /beesknees /littleladiesdance /breakdance /wasshoi /uchiwasshoi
+Pose | poses, posing | /pose /flex /victorypose /battlestance /poseoftheunbound /humbletriumph /rangerpose1r /rangerpose1l /rangerpose2r /rangerpose2l /rangerpose3r /rangerpose3l
+Penlight | penlights, penlight cheers, cheer lights, glowsticks, glow sticks, idol | /cheeronblue /cheeronbright /cheeronorange /cheerwaveyellow /cheerwaveviolet /cheerwavepink /cheerjumpred /cheerjumpgreen /cheerjumpindigo /cheerrhythmred /cheerrhythmviolet /cheerrhythmbright /cheerlightyellow /cheerlightblue /cheerlightgreen
+Paint | paints, painting, paint it | /paintblack /paintred /paintyellow /paintblue
+Greeting | greetings, greet, hello, hellos, hi, bow, bows | /greet /wave /bow /easternbow /welcome /easterngreeting /laliho /ohokaliy
+Salute | salutes, saluting | /salute /gcsalute /imperialsalute /attention
+Laugh | laughs, laughing | /chuckle /laugh /cackle /deride /biggrin
+Workout | workouts, exercise, exercises, training, gym | /squats /pushups /situps /breathcontrol /limberup /stretch /easternstretch
+Sit | sits, sitting, seat | /lounge /groundsit
+Book | books, reading, read | /read /reference /study /carrybook /tomescroll /tomestone
+Spell | spells, magic, summon, summons, limit break, limit breaks | /zantetsuken /iceheart /megaflare /ultima /allsaintscharm /sundering /simulationm /simulationf /adventoflight
+Expression | expressions, face, faces, facial expressions | /straightface /smile /grin /wink /leftwink /content /smirk /taunt /shuteyes /sad /scared /amazed /ouch /annoyed /alert /worried /sneer /puckerup /concentrate /disturbed /simper /beam /biggrin /reflect /furrow /scoff /ponder /endure /fakesmile

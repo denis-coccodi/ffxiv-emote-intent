@@ -12,8 +12,12 @@ A [Dalamud](https://github.com/goatcorp/Dalamud) plugin for Final Fantasy XIV. T
 | `/feel <what you mean>` | Plays the unlocked emote that fits, the same as typing its command. One command plays one emote. |
 | | When several might fit, it lists them in chat as links and plays nothing: click the one you want (or type it). See Settings for when it asks. |
 | `/feel <emote you don't have>` | Plays nothing: says you don't have it unlocked and lists the closest emotes you do have, as links. |
+| `/feel all <bundle>` | Lists every emote of a bundle you have unlocked, as links: `/feel all eat`, `/feel all jumps`, `/feel all dances`, `/feel all penlights`. Also "all the …" or "every …". |
+| `/feel all` | Lists the bundles, as links: Eat, Drink, Jump, Dance, Pose, Penlight, Paint, Greeting, Salute, Laugh, Workout, Sit, Book, Spell, Expression. |
 | `/feel <what you mean> motion` | The same, without the emote's line in the chat log (the game's `/hug motion`). Suggested links play that way too. |
 | `/feel <what you mean> text` | The same, with the emote's line (the plain command). |
+
+When a listed or played emote belongs to a bundle, the line ends with a link to the rest ("See all 9 eat emotes."). Bundles are in `EmoteIntent.Core/Data/bundles.txt`.
 
 `motion` and `text` only count as the last word, and not when the whole text is a phrase that ends with them ("reading the quest text").
 
