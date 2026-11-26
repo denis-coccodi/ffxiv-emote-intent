@@ -17,7 +17,7 @@ public class SpellCorrectorTests
     [InlineData("so exicted!", "so excited!")]
     [InlineData("hapy", "happy")]
     [InlineData("happpy", "happy")]
-    [InlineData("helo", "hello")]
+    [InlineData("happpppy", "happy")]
     [InlineData("hugg", "hug")]
     [InlineData("spooookyy", "spooky")]
     [InlineData("tierd", "tired")]
@@ -44,8 +44,17 @@ public class SpellCorrectorTests
     [InlineData("kupo")]
     [InlineData("o7")]
     [InlineData("<3")]
+    [InlineData("raining")]
+    [InlineData("it's raining")]
+    [InlineData("loose")]
+    [InlineData("fond")]
+    [InlineData("irate")]
     public void LeavesKnownShortAndUnrelatedWordsAlone(string typed) =>
         Assert.Empty(Matcher.Correct(typed).Corrections);
+
+    [Fact]
+    public void ItsRainingIsNotTraining() =>
+        Assert.DoesNotContain(Emotes(Resolver.Resolve("it's raining", AllUnlocked)), command => command is "/limberup" or "/squats" or "/pushups");
 
     [Theory]
     [InlineData("exicted", "excited")]

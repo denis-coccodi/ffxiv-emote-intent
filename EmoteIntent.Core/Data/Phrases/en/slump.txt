@@ -59,3 +59,4 @@ sluggish
 useless
 woeful
 worthless
+deflated

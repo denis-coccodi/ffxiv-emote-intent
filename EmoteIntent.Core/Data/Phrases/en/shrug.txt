@@ -47,3 +47,4 @@ fine
 apathetic
 passive
 unsure
+careless

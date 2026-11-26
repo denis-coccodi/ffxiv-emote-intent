@@ -33,3 +33,4 @@ serious
 staring
 reserved
 stoic
+numb
