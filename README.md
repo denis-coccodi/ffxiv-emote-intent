@@ -4,6 +4,22 @@ A [Dalamud](https://github.com/goatcorp/Dalamud) plugin for Final Fantasy XIV. T
 
 **Early version.** `/feel` understands what you mean for 292 of the game's 295 emotes (`/feel so happy to see you`, `/feel excited`, `/feel give me a big hug`, `/feel idk`, `/feel i'm cold`, `/feel o7`). Near-identical emotes share their phrases and play whichever you have unlocked (Jump for Joy 1–5, the penlight cheers, the Ranger poses, both winks). Only Visor and Change Pose (utilities) and Water Flip (underwater only) play by name or command alone. Any emote also plays by its name, command or alias (`/feel hug`, `/feel /hug`). Matching runs on your PC from a phrase bank shipped with the plugin. It works entirely on its own: no AI, account or download needed. For players who want it there's an optional extra, off unless you switch it on, that asks a free AI model on your own PC when the phrase bank isn't sure (see below); nothing you type leaves your PC.
 
+## Install
+
+Emote Intent isn't on Dalamud's official plugin list: you add its plugin repository once, then install it like any other plugin.
+
+1. In the game, type `/xlsettings` and open the **Experimental** tab.
+2. Under **Custom Plugin Repositories**, Dalamud first shows a **READ THIS FIRST!** warning: custom repositories aren't checked by the Dalamud team, so only add ones from people you trust. After a few seconds, press **Ok, I have read and understood this warning**.
+3. Paste this URL into the empty field, press **+**, and make sure **Enabled** is ticked next to it:
+   ```
+   https://github.com/denis-coccodi/ffxiv-emote-intent/releases/latest/download/repo.json
+   ```
+   Then press the **Save** button.
+4. Type `/xlplugins`, open **All Plugins**, search for **Emote Intent** and press **Install**.
+5. Type `/feel` to see how to use it, or just try `/feel so happy to see you`.
+
+Updates arrive like any plugin's: Dalamud offers them in `/xlplugins` (reopen it to check for new ones). Each [release](https://github.com/denis-coccodi/ffxiv-emote-intent/releases) lists what changed. To remove it, uninstall it in `/xlplugins` and delete the URL from the repository list.
+
 ## Commands
 
 | Command | What it does |
@@ -44,20 +60,7 @@ Typos are fixed before matching, like a phone keyboard's autocorrect and without
 
 The phrases follow what each emote does in the game: its own description, exported with the emote list to `EmoteIntent.Core/Data/emotes.json` ("Cup your face in barely contained ecstasy."), and screenshots where that isn't enough. They were written with AI help (Claude) and are checked by tests: every file names real emotes, has at least 30 phrases (20 for a family), no phrase belongs to two files, and about 150 everyday words and sentences ("excited", "jealous", "brb", "i'm back") must keep playing the emote they play now.
 
-## Install
-
-Emote Intent comes from its own plugin repository, not Dalamud's official list:
-
-1. In the game, open `/xlsettings` → Experimental → Custom Plugin Repositories, paste this URL, press **+**, then save:
-   ```
-   https://github.com/denis-coccodi/ffxiv-emote-intent/releases/latest/download/repo.json
-   ```
-2. Open `/xlplugins` → All Plugins, find **Emote Intent** and install it. Updates come the same way as for any plugin.
-3. Type `/feel` to see how to use it.
-
-Each [release](https://github.com/denis-coccodi/ffxiv-emote-intent/releases) lists what changed.
-
-### Try a development build
+## Try a development build
 
 1. Build it (below): every local build, from any branch or worktree, also copies the plugin to `%LOCALAPPDATA%\EmoteIntent\DevPlugin`. Or download the `EmoteIntent` artifact from a [test run](https://github.com/denis-coccodi/ffxiv-emote-intent/actions/workflows/test.yaml) and unzip the `latest.zip` inside it.
 2. In the game, open `/xlsettings` → Experimental → Dev Plugin Locations, add the path to the DLL itself (a folder is refused): `%LOCALAPPDATA%\EmoteIntent\DevPlugin\EmoteIntent.dll` written out in full (e.g. `C:\Users\<you>\AppData\Local\EmoteIntent\DevPlugin\EmoteIntent.dll`), or `EmoteIntent.dll` from the unzipped `latest.zip`. Press **+**, then save. Don't install the released plugin at the same time.
