@@ -83,7 +83,7 @@ public sealed class Plugin : IDalamudPlugin
         }
 
         var request = FeelRequest.Parse(args, matcher.IsPhrase);
-        switch (resolver.Resolve(request.Text, unlocked))
+        switch (resolver.Resolve(request.Text, unlocked, catalog.All()))
         {
             case IntentResult.Play play when configuration.WhenFound == WhenFound.AlwaysPick:
                 suggestions.PrintPick([play.Emote, .. play.Alternatives], request);
@@ -104,6 +104,9 @@ public sealed class Plugin : IDalamudPlugin
                     suggestions.PrintAlsoFits(play.Alternatives, request);
                 }
 
+                break;
+            case IntentResult.Locked locked:
+                suggestions.PrintLocked(locked.Wanted, locked.Closest, request);
                 break;
             case IntentResult.Suggest suggest:
                 suggestions.Print(suggest.Emotes, request);

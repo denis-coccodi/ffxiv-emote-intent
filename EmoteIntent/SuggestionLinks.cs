@@ -28,6 +28,23 @@ internal sealed class SuggestionLinks(
     public void PrintPick(IReadOnlyList<EmoteInfo> emotes, FeelRequest request) =>
         Print("Pick one: ", emotes, request, ". Click it, or type it.");
 
+    /// <summary>
+    /// "You don't have Hug (/hug) unlocked. Closest you have: /a (A), /b (B). Click one, or type it.", or that nothing
+    /// you have comes close.
+    /// </summary>
+    public void PrintLocked(EmoteInfo wanted, IReadOnlyList<EmoteInfo> closest, FeelRequest request)
+    {
+        var lead = $"You don't have {wanted.Name} ({wanted.Command}) unlocked";
+        if (closest.Count == 0)
+        {
+            chatGui.Print(lead + ", and none of your emotes comes close.");
+        }
+        else
+        {
+            Print(lead + ". Closest you have: ", closest, request, ". Click one, or type it.");
+        }
+    }
+
     /// <summary>"Also fits: /a (A), /b (B)." after an emote played, each one a link.</summary>
     public void PrintAlsoFits(IReadOnlyList<EmoteInfo> emotes, FeelRequest request) =>
         Print("Also fits: ", emotes, request, ".");
