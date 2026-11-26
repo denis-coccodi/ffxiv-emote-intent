@@ -35,8 +35,6 @@ foreach ($property in $plugin.PSObject.Properties) {
 $entry.DownloadLinkInstall = $zip
 $entry.DownloadLinkUpdate = $zip
 $entry.DownloadLinkTesting = $zip
-# The icon as committed at this release's tag, so an older feed never shows a newer icon.
-$entry.IconUrl = "https://raw.githubusercontent.com/$Repository/$Tag/EmoteIntent/images/icon.png"
 $entry.IsHide = $false
 $entry.IsTestingExclusive = $false
 $entry.LastUpdate = [DateTimeOffset]::UtcNow.ToUnixTimeSeconds()
