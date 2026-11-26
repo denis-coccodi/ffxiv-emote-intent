@@ -28,6 +28,7 @@ public sealed class Plugin : IDalamudPlugin
     private readonly SuggestionLinks suggestions;
     private readonly WindowSystem windows = new("EmoteIntent");
     private readonly SettingsWindow settings;
+    private readonly MainWindow main;
 
     public Plugin()
     {
@@ -43,13 +44,16 @@ public sealed class Plugin : IDalamudPlugin
 
         settings = new SettingsWindow(configuration, () => PluginInterface.SavePluginConfig(configuration));
         windows.AddWindow(settings);
+        main = new MainWindow(() => catalog.Unlocked().Count, () => settings.IsOpen = true);
+        windows.AddWindow(main);
         PluginInterface.UiBuilder.Draw += windows.Draw;
         PluginInterface.UiBuilder.OpenConfigUi += settings.Toggle;
+        PluginInterface.UiBuilder.OpenMainUi += main.Toggle;
 
         CommandManager.AddHandler(CommandName, new CommandInfo(OnCommand)
         {
             HelpMessage = "Play the emote that fits what you mean: /feel so happy to see you, /feel hug, /feel all dances. "
-                + "/feel alone (or /feel help) shows how to use it.",
+                + "/feel alone (or /feel help) opens the help window.",
         });
         CommandManager.AddHandler(ConfigCommandName, new CommandInfo((_, _) => settings.Toggle())
         {
@@ -61,6 +65,7 @@ public sealed class Plugin : IDalamudPlugin
     {
         CommandManager.RemoveHandler(ConfigCommandName);
         CommandManager.RemoveHandler(CommandName);
+        PluginInterface.UiBuilder.OpenMainUi -= main.Toggle;
         PluginInterface.UiBuilder.OpenConfigUi -= settings.Toggle;
         PluginInterface.UiBuilder.Draw -= windows.Draw;
         windows.RemoveAllWindows();
@@ -79,11 +84,7 @@ public sealed class Plugin : IDalamudPlugin
         var unlocked = catalog.Unlocked();
         if (Guide.IsAsked(args))
         {
-            ChatGui.Print($"Emote Intent: you have {unlocked.Count} emotes unlocked.");
-            foreach (var line in Guide.Lines)
-            {
-                ChatGui.Print("• " + line);
-            }
+            main.IsOpen = true;
 
             return;
         }
@@ -141,7 +142,7 @@ public sealed class Plugin : IDalamudPlugin
                 suggestions.Print(suggest.Emotes, request);
                 break;
             default:
-                ChatGui.Print($"No unlocked emote fits \"{request.Text}\" yet. The phrase bank covers more emotes with each update.");
+                ChatGui.Print($"No unlocked emote fits \"{request.Text}\" yet. /feel ? shows how to use /feel.");
                 break;
         }
     }

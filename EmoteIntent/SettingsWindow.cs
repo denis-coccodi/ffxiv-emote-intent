@@ -41,17 +41,6 @@ internal sealed class SettingsWindow : Window
 
             ImGui.TextWrapped("\"Played /cheer (Cheer).\": the game's own line doesn't name the command.");
         }
-
-        ImGui.Spacing();
-        if (ImGui.CollapsingHeader("How to use /feel", ImGuiTreeNodeFlags.DefaultOpen))
-        {
-            foreach (var line in Guide.Lines)
-            {
-                ImGui.Bullet();
-                ImGui.SameLine();
-                ImGui.TextWrapped(line);
-            }
-        }
     }
 
     private void Choice(WhenFound value, string label, string detail)
