@@ -1,5 +1,6 @@
 using System.Globalization;
 using System.Text;
+using System.Text.RegularExpressions;
 using EmoteIntent.Core;
 
 /// <summary>
@@ -7,7 +8,7 @@ using EmoteIntent.Core;
 /// choices differ, with those emotes shuffled and unlabelled, to tick the ones that fit. The setups' answers are
 /// saved beside it (sheet + ".answers.tsv"), so the ticked sheet can be scored later without running the models.
 /// </summary>
-internal static class BlindSheet
+internal static partial class BlindSheet
 {
     private const char Tab = '\t';
 
@@ -43,25 +44,30 @@ internal static class BlindSheet
         Console.WriteLine($"\n{number} sentences to judge in {path}");
     }
 
-    /// <summary>Scores each setup's first choices against the ticks in a judged sheet.</summary>
+    /// <summary>
+    /// Scores each setup's first choices against the ticks in a judged sheet. An x anywhere between the brackets
+    /// counts ("[x]", "[ x]"), and notes written after a sentence or an emote are ignored.
+    /// </summary>
     public static void Score(string path)
     {
+        var answers = File.ReadAllLines(AnswersPath(path)).Select(line => line.Split(Tab)).ToList();
+        var sentences = answers.Select(parts => parts[1]).Distinct().OrderByDescending(text => text.Length).ToList();
         var ticked = new Dictionary<string, HashSet<string>>(StringComparer.OrdinalIgnoreCase);
         HashSet<string>? current = null;
         foreach (var line in File.ReadAllLines(path).Where(line => line.Length > 0 && !line.StartsWith('#')))
         {
-            var trimmed = line.Trim();
-            if (!trimmed.StartsWith('['))
+            if (Sentence().Match(line) is { Success: true } numbered)
             {
-                current = ticked[trimmed[(trimmed.IndexOf(". ", StringComparison.Ordinal) + 2)..]] = new(StringComparer.OrdinalIgnoreCase);
+                var text = sentences.First(text => numbered.Groups[1].Value.StartsWith(text, StringComparison.OrdinalIgnoreCase));
+                current = ticked[text] = new(StringComparer.OrdinalIgnoreCase);
             }
-            else if (current is not null && trimmed.Length > 4 && trimmed[1] is not ' ' and not ']')
+            else if (Tick().Match(line) is { Success: true } tick && current is not null
+                && tick.Groups[1].Value.Contains('x', StringComparison.OrdinalIgnoreCase))
             {
-                current.Add(trimmed[3..].Trim().Split(' ')[0]);
+                current.Add(tick.Groups[2].Value);
             }
         }
 
-        var answers = File.ReadAllLines(AnswersPath(path)).Select(line => line.Split(Tab)).ToList();
         Console.WriteLine($"{ticked.Count} judged sentences, first choice ticked as fitting:");
         foreach (var setup in answers.GroupBy(parts => parts[0]))
         {
@@ -70,6 +76,12 @@ internal static class BlindSheet
             Console.WriteLine($"   {right,3}/{judged.Count}  {setup.Key}");
         }
     }
+
+    [GeneratedRegex(@"^\d+\.\s+(.+)$")]
+    private static partial Regex Sentence();
+
+    [GeneratedRegex(@"^\s*\[([^\]]*)\]\s*(/\S+)")]
+    private static partial Regex Tick();
 
     private static string? First(Run run, string text) =>
         run.Answers.TryGetValue(text, out var answer) && answer.Count > 0 ? answer[0] : null;
