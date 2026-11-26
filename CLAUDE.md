@@ -10,4 +10,4 @@
 - Matching runs on the player's PC. AI is only a fallback the player switches on with their own API key or local model; the plugin never ships or calls a key of ours. Remembering a phrase → emote only happens when the player ticks it, and can always be undone.
 - Several Claude windows and agents may work on this repo at once, so make each change in its own git worktree, stage files by name and don't use `git stash` (the `everise` plugin's guard, switched on in `.claude/settings.json`, blocks the commands that would trample others' work).
 - Releases (`release` skill): a `vX.Y.Z.W` tag on `main` runs `.github/workflows/release.yaml`, which publishes `latest.zip` and the `repo.json` feed players add in Dalamud. Release only when the user says so.
-- Keep `README.md` in step with what the plugin does, in the same pull request, and document only what exists.
+- Keep `README.md` (for players: install, commands, settings) and `DEVELOPMENT.md` (building, data, tools) in step with what the plugin does, in the same pull request, and document only what exists.

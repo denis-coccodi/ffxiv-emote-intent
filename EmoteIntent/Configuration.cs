@@ -27,7 +27,7 @@ public sealed class Configuration : IPluginConfiguration
     /// </summary>
     public bool UseAi { get; set; }
 
-    /// <summary>The Ollama model asked: gemma3:4b did best of the small free models tried (README, AI evaluation).</summary>
+    /// <summary>The Ollama model asked: gemma3:4b did best of the small free models tried (DEVELOPMENT.md, AI evaluation).</summary>
     public string AiModel { get; set; } = DefaultAiModel;
 
     /// <summary>The model suggested until the player picks another.</summary>
